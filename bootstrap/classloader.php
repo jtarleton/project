@@ -6,6 +6,8 @@
 // session_start();
 date_default_timezone_set('America/New_York');
 
+define('DOCROOT', '/var/project/');
+
 //CONFIG
 foreach (glob(DOCROOT.'config/*.php') as $filename)
 {
@@ -33,14 +35,14 @@ foreach (glob(DOCROOT.'app1/models/*.php') as $filename)
 
 
 //VIEW
-foreach (glob(DOCROOT.'app1/layout/*.php') as $filename)
+foreach (glob(DOCROOT.'app1/views/layout/*.php') as $filename)
 {
     require_once($filename);
 }
 
 foreach (glob(DOCROOT.'app1/views/*.php') as $filename)
 {
-    require_once($filename);
+ //   require_once($filename);
 }
 
 
