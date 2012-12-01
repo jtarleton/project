@@ -18,8 +18,7 @@ class ActionController
 
 	public function dispatch($p) 
 	{
-		///var/project/app1/views/indexSuccess.php
-		require( sprintf('/var/project/app1/views/%sSuccess.php', $p));
+		Layout::getInstance()->rndr('yo'); //file_get_contents( sprintf('/var/project/app1/views/%sSuccess.php', $p)) );
 	}
 
 	

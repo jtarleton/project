@@ -19,4 +19,18 @@ class Layout
 		
 		return self::$instance;
 	} 
+
+
+	public function rndr($tpl) 
+	{
+		
+		ob_start();
+		?>
+		<html>
+		<head></head><body> 
+		<?php echo $tpl; ?>
+		</body>
+		</html>
+		<?php 	echo ob_get_contents();
+	}
 }
