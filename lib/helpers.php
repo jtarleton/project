@@ -1,9 +1,8 @@
 <?php
 
-function link_to($href='#', $display='Click Me', array $opts=array(
+function link_to($display='Click Me' , $href='#', array $opts=array(
 'class'=>null,
 'id'=>null,
-'href'=>null,
 'target'=>null,
 'title'=>null
 ))

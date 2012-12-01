@@ -1,0 +1,813 @@
+/*
+Theme Name: metropolis
+Theme URI: http://www.jamestarleton.com/metropolis
+Description: A minimized and professional designed SEO-ready WordPress theme by <a href="http://www.jamestarleton.com/">James Tarleton</a> based on a design by nodethirtythree. Compatible with WordPress 3.2.1. Valid CSS & HTML.
+Version: 1.0
+Author: James Tarleton
+Author URI: http://www.jamestarleton.com/
+Tags: two-columns, right-sidebar
+
+	metropolis v1.0
+	http://www.jamestarleton.com/
+
+	This theme was designed and built by James Tarleton,
+	whose website you will find at http://www.jamestarleton.com/
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+
+
+
+
+#time {
+
+
+
+
+} */
+
+* { 
+	margin:0;
+	padding:0;
+}	
+
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url('http://www.jamestarleton.com/images/bg.jpg') no-repeat; 
+background-position:center bottom; 
+background-attachment:fixed;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	color: #333; 
+
+}
+
+h1, h2, h3 {
+	margin: 0;
+}
+
+h1, h2 {
+	font-weight: normal;
+}
+
+h1 {
+	font-size: 32px;
+}
+
+
+
+p, ol, ul, dl {
+	margin-top: 0;
+	text-align: justify;
+	line-height: 2.2;
+}
+
+ul {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+
+strong {
+	color: #000;
+}
+
+a:link 
+{
+	color:#586882;
+	text-decoration: none;
+}
+
+a:visited 
+{ color:#586882;
+	text-decoration: none;
+}
+
+
+
+a:hover 
+{ color:#586882;
+	text-decoration: none;
+}
+
+a:active 
+{ color:#586882;
+	text-decoration: none;* { 
+	margin:0;
+	padding:0;
+}	
+
+}
+
+
+
+
+
+
+
+h1 a:link {
+	text-decoration: none;
+	color:#FFFAA9;
+	font-family: "Palatino Linotype", Palatino, serif;
+	
+	
+}
+
+h1 a:visited { color:#FFFAA9;
+	 text-decoration: none;
+	font-family: "Palatino Linotype", Palatino, serif;
+	
+	
+}
+h1 a:hover { color:#FFFAA9;
+	 text-decoration: none;
+	font-family: "Palatino Linotype", Palatino, serif;
+	
+	
+}
+h1 a:active { color:#FFFAA9;
+	text-decoration: none; 
+	font-family: "Palatino Linotype", Palatino, serif;
+	
+	
+}
+
+h2{
+color:#333;
+font-size:22px;
+}
+
+.post h2 {
+margin-bottom:3px;
+
+}
+
+
+
+h2 a:link {
+
+	
+}
+
+h2 a:visited {
+
+	
+	
+}
+h2 a:hover { 
+	
+	
+}
+h2 a:active {
+	
+	
+	
+}
+
+#sidebar p {
+font-family: Verdana, sans-serif; font-size:12px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a img {
+	border: 0;
+}
+
+.alignleft {
+	float: left;
+}
+
+.alignright {
+	float: right;
+}
+
+.aligncenter {
+	margin: 0 auto;
+}
+
+img.alignleft {
+	margin: 0 27px 0 0;
+}
+
+img.alignright {
+	margin: 0 0 0 27px;
+}
+
+img.border {
+	padding: 4px;
+	border: 1px solid #E9E4D8;
+}
+
+/* Wrapper */
+
+#wrapper {
+	background: transparent; /* url(bg02.jpg) repeat-x; */
+}
+
+.container {
+	width: 1000px;
+	margin: 0 auto;
+font-family: "Palatino Linotype", Palatino, serif;
+}
+
+.clearfix {
+	clear: both;
+}
+
+/* Header */
+
+#header {
+	height: 211px;
+	background: transparent url(http://www.jamestarleton.com/images/bg04.png);
+	background-repeat: no-repeat:
+	 
+}
+
+/* Logo */
+
+#logo {
+font-family: "Palatino Linotype", Palatino, serif;
+	float: left;
+	width: 308px;
+	height: 211px;
+}
+
+#logo h1, #logo p {
+font-family: "Palatino Linotype", Palatino, serif;
+	/* text-transform: lowercase; */
+	line-height: 1;
+}
+
+#logo h1 {
+font-family: "Palatino Linotype", Palatino, serif;
+	padding: 137px 0 0 50px;
+	letter-spacing: -1.5px;
+	font-size: 28px;
+	font-weight:450;
+	color: silver;
+}
+
+#logo h1 sup {
+font-family: "Palatino Linotype", Palatino, serif;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+#logo p {
+	padding: 0 0 0 50px;
+	font-size: 13px;
+	color: #F8AB80;
+}
+
+#logo a {
+	text-decoration: none;
+}
+
+#logo a:hover {
+	text-decoration: none;
+}
+
+#logo h1 a { color:#F5F5F5;
+	
+}
+
+#logo p a {
+	color: #DB8F43;
+}
+
+/* Banner */
+
+#banner {
+	float: left;
+	height: 118px;
+	padding: 93px 0 0 0;
+}
+
+/* Menu */
+
+#menu {
+	height: 76px;
+	background: url(http://www.jamestarleton.com/images/bg04.png) no-repeat 0 -211px; 
+}
+
+#menu ul {
+	height: 67px;
+	margin: 0 25px;
+	padding: 9px 0 0 14px;
+	background: url(http://www.jamestarleton.com/images/bg05.jpg);
+	list-style: none;
+	line-height: 1
+}
+
+#menu li {
+	float: left;
+	height: 35px;
+	padding: 15px 20px 0 20px;
+}
+
+#menu li.active {
+	background: url(http://www.jamestarleton.com/images/bg06.jpg) no-repeat;
+}
+
+#menu a {
+	text-transform: lowercase;
+	text-decoration: none;
+	letter-spacing: -1px;
+	font-size: 18px;
+	color: #F5F5F5;
+}
+
+#menu a:hover {
+	
+}
+
+/* Bar */
+
+.bar {
+	height: 48px;
+padding-top:0px;
+	margin: 0px 25px;
+margin-bottom: 0px;
+	background: #F2FCE4 url(http://www.jamestarleton.com/images/bg07.jpg);
+	background-repeat:repeat-x;
+	background-position:bottom left;
+}
+
+.bar .text {
+	float: left;
+	padding: 17px 0 0 25px;
+	text-transform: lowercase;
+	font-size: 14px;
+	color: #809064;
+}
+
+/* Top Bar */
+
+#top-bar {
+	background-color: transparent;
+	background: url(http://www.jamestarleton.com/images/bg04.png);
+	background-repeat:no-repeat;
+	background-position:0 -287px;
+	//border:1px solid green;
+	min-height: 900px;
+}
+
+/* Search */
+
+#search {
+	float: right;
+	width: 245px;
+	height: 48px;
+	background: url(http://www.jamestarleton.com/images/bg08.jpg) no-repeat 0 12px; 
+}
+
+#search form, #search fieldset {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#search .input-text {
+	float: left;
+	width: 178px;
+	margin: 12px 0 0 0;
+	padding: 4px 10px;
+	font: inherit;
+	line-height: normal;
+	border: none;
+	background: none;
+	color: inherit;
+}
+
+#search .input-submit {
+	display: none;
+}
+
+/* Page */
+
+#page {
+	width:974px;
+	background: transparent; 
+margin:0 auto;
+padding-left:4px;
+
+	background: #FFF;
+border:1px solid transparent;
+}
+
+/* Content */
+
+#content {
+	float: left;
+	border:1px solid transparent;
+	width:600px;
+	overflow:hidden;
+	padding:  25px  25px;
+margin:0px;
+margin-left:10px;
+	background: #FFF; /*  transparent url(http://www.jamestarleton.com/images/bg04.png) no-repeat;
+	background-position: inherit; */
+	
+	
+	font-family:	"lucida grande",tahoma,verdana,arial,sans-serif;
+
+
+
+font-family: 'Ubuntu Beta', UbuntuBeta, Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
+body - "Ubuntu Beta", UbuntuBeta, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Tahoma, sans-serif
+body - Helvetica, Arial, 'Liberation Sans', FreeSans, sans-serif
+
+
+
+
+font-size:	11px;
+font-weight:	400;
+font-style:	normal;
+color:	#333;
+text-transform:	none;
+text-decoration:	none;
+letter-spacing:normal;
+word-spacing:	normal;
+line-height:	14px;
+text-align:	start;
+vertical-align:	baseline;
+direction:	ltr;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+/* Post */
+
+
+.post {
+
+/*
+font-family:	"Helvetica Neue",Helvetica,Arial,sans-serif; */
+font-family: Verdana, Tahoma, Geneva, sans-serif;
+
+
+font-size:	12px;
+font-weight:	400;
+font-style:	normal;
+color:	#666666;
+text-transform:	none;
+text-decoration:	none;
+letter-spacing:	normal;
+word-spacing:	normal;
+line-height:	16px;
+text-align:	start;
+vertical-align:	baseline;
+direction:	ltr;
+
+font-family:	"lucida grande",tahoma,verdana,arial,sans-serif;
+font-size:	11px;
+font-weight:	400;
+font-style:	normal;
+color:	#1A1A1A;
+text-transform:	none;
+text-decoration:	none;
+letter-spacing:normal;
+word-spacing:	normal;
+line-height:	14px;
+text-align:	start;
+vertical-align:	baseline;
+direction:	ltr;
+
+}
+
+.post .title, .post .date {
+	padding: 0 25px;
+font-size: 28px;
+}
+
+.post .title {
+	margin: 0;
+	padding: 50px 0;
+}
+h2 {
+color:#333333;
+font-family: Tahoma, Geneva, sans-serif;
+font-weight:750;
+	
+}
+	
+	color: #5A5544;
+}
+
+.post .title a {
+	text-decoration: none;
+	color:#586882;
+}
+
+.post .title a:hover {
+	color:red;
+	text-decoration: none;
+}
+
+
+.post .date {
+	line-height: normal;
+	color: #ACAAA1;
+}
+
+.post .entry {
+	margin: 0 25px;
+	padding: 20px 0;
+	border-top: 1px solid #E5E1D8;
+}
+
+.post .meta {
+	background:#E5ECDB none repeat scroll 0 0;
+	border-bottom:1px solid #DDE5CE;
+	height:53px;
+}
+
+.post .meta p {
+	line-height:  normal;
+}
+
+.post .meta .tags {
+	float: left;
+	padding: 20px 0 0 25px;
+}
+
+.post .meta .links {
+	float: right;
+	padding: 20px 25px 0 0;
+}
+
+.post .meta .comments {
+	margin-right: 30px;
+	padding-left: 22px;
+	background: url(http://www.jamestarleton.com/images/img04.gif) no-repeat 0 50%; 
+}
+
+.post .meta .more {
+	padding-left: 17px;
+	background: url(http://www.jamestarleton.com/images/img05.gif) no-repeat 0 50%;
+}
+
+
+	
+
+/* Sidebar */
+
+#sidebar {
+	border:1px solid transparent;
+	float: right;
+	width: 246px;
+	padding: 24px 50px 0 0;
+	background: transparent; /* url('bg04.png') no-repeat 100% -335px; */ 
+	margin:0px;
+	margin-right:14px;
+	
+	
+	
+	
+	
+	
+	font-family:	"lucida grande",tahoma,verdana,arial,sans-serif;
+font-size:	11px;
+font-weight:	400;
+font-style:	normal;
+color:	#1A1A1A;
+text-transform:	none;
+text-decoration:	none;
+letter-spacing:normal;
+word-spacing:	normal;
+line-height:	14px;
+text-align:	start;
+vertical-align:	baseline;
+direction:	ltr;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+#sidebar ul {
+	margin: 0;
+	padding: 0 0 0 25px;
+	list-style: none;
+	line-height: normal;
+	border-left: 1px solid #E5E1D8;
+}
+
+#sidebar li {
+}
+
+#sidebar li ul {
+	padding: 0;
+	line-height: 3.5;
+	border: none;
+}
+
+#sidebar li li {
+}
+
+#sidebar h2 {
+	margin: 0 0 20px 0;
+	padding: 20px 0 5px 0;
+	border-bottom: 1px solid #E5E1D8;
+}
+
+/* 2 Columns */
+
+.two-cols {
+	margin: 0 25px;
+	padding: 35px 35px 0 35px;
+	background: #28241E url(http://www.jamestarleton.com/images/bg09.jpg) repeat-x;
+	color: #736F6A;
+}
+
+.two-cols .col1 {
+	float: left;
+	width: 595px;
+}
+
+.two-cols .col2 {
+	float: right;
+	width: 210px;
+	padding: 0 0 0 25px;
+	border-left: 1px solid #423C31;
+}
+
+.two-cols h2 {
+	font-size: 26px;
+	color: #F5F5F5;
+}
+
+.two-cols a {
+	color: #736F6A;
+}
+
+/* Footer */
+
+#footer {
+	background:  url(http://www.jamestarleton.com/images/bg10.png) no-repeat; 
+	padding: 55px 0;
+}
+
+#footer p {
+	text-align: center;
+	color: #8F8B83;
+}
+
+#footer a {
+	color: #8F8B83;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************************************************************************************
+SIDEBAR
+*************************************************************************************/
+.widget {
+	background: #fff;
+	margin-bottom: 20px;
+	padding: 15px 18px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	box-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+.widgettitle {
+	width: 100%;
+	display: block;
+	padding: 6px 18px 7px 18px;	
+	margin: 0 0 -5px 0;
+	position: relative;
+	left: -18px;
+	top: -16px;
+	border-bottom: solid 1px #848484;
+	font-size: 16px;
+	color: #eee;
+	background: #433f40 url(http://andreasviklund.com/wp-content/themes/avcom2012/images/gradient-meta.jpg) top left no-repeat;
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.15);
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0,.15);
+	box-shadow: 0 1px 1px rgba(0,0,0,.15);
+	text-shadow: 1px 1px 3px rgba(0,0,0,.4);
+}
+.widgettitle a {
+	color: #333;
+	text-decoration: none;
+}
+.widget ul {
+	margin: 0;
+	padding: 0;
+}
+.widget li {
+	margin: 0;
+	padding: 6px 0;
+	list-style: none;
+	clear: both;
+	border-bottom: solid 1px #ddd;
+}
+.widget li:last-child {
+	border-bottom: none;
+}
+.widget ul ul {
+	margin: 6px 0 -6px 0px;
+	padding: 0;
+	border-top: solid 1px #ddd;
+}
+.widget ul ul li {
+	margin: 0;
+	padding-left: 10px;
+}
+
