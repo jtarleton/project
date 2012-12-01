@@ -1,0 +1,349 @@
+* { 
+	margin:0;
+	padding:0;
+}	
+body {	
+	margin:0;
+	padding:0;
+	color:#7F7F7F;
+	border:0px solid #696969;			/* This removes the border around the viewport in old versions of IE */
+	font-size:68%;
+	font-weight:normal;
+	letter-spacing:0.5px;
+	font-family:Verdana, sans-serif;
+background: url('http://www.osiris-project.org/project/public/images/bg.jpg') no-repeat; 
+background-position:center bottom; 
+background-attachment:fixed;
+} 
+blockquote {
+opacity:1.0; !important
+z-index:99;
+padding:10px;
+font-size:13px;
+letter-spacing:0.2px;
+margin: 45px;
+color:lime;
+font-weight: 500;
+font-family: 'Inconsolata', serif;
+line-height:1.2;
+background: #212121;
+border-top: 1px solid #666;
+border-bottom: 1px solid #666;
+}
+
+input,select, button{margin:0px;padding:0px;font-family:Verdana,Arial,Sans-serif;font-size:9px;font-weight:normal;}
+/* 
+      body {
+        font-family: 'Lucida Grande', Verdana, Arial, sans-serif;
+      }
+      h1 a {
+        text-decoration: none;
+        color: #3b5998;
+      }
+      h1 a:hover {
+        text-decoration: underline;
+      }
+*/
+a:link { 
+	background-color:transparent; 
+	color:salmon; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+a:visited {
+	background-color:transparent; 
+	color:salmon; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+a:hover { 
+	background-color: transparent; 
+	color: #FFA07A; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+a:active { 
+	background-color: transparent; 
+	color: #FFA07A; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+#header {
+	font-weight:900; 
+	font-family:URW Palladio L, sans-serif; 
+	line-height:30px;
+	font-size:20px; 
+	color:gold;
+	background:transparent; 
+	margin:0; 
+	padding:0;
+}
+
+.header2{
+display:inline;
+}
+
+.lightsocial_element {
+
+float:left;
+padding:5px;
+}
+
+
+
+/*
+#header a:link { 
+	background-color:transparent; 
+	color: #FCB514; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+#header a:visited {
+	background-color:transparent; 
+	color:#FCB514; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+#header a:hover { 
+	background-color: transparent; 
+	color: gold; 
+	font-weight:bold; 
+	text-decoration:underline;
+}
+#header a:active { 
+	background-color: transparent; 
+	color: gold; 
+	font-weight:bold; 
+	text-decoration:none;
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mainContainer{
+	border-bottom:0px solid #202020;
+	
+	margin:0; 
+	padding:0px;
+	width:1600px;
+}
+#innerContainer{
+	color:#CCCCCC;
+	padding:5px 20px;
+	margin:0 auto; 
+	width:1600px;
+	font-family:Verdana,sans-serif;
+	font-size:11.1px;
+	font-weight:400;
+	letter-spacing:0.1px;
+	line-height:22px;
+	
+
+	vertical-align:top;
+}
+.contactinput {
+	line-height:14px;
+	font-size:10.5px;
+
+	padding:1px;
+	font-family:Arial, sans-serif;
+	background:#111111; color:#696969;
+	border:0px solid #696969; 
+}
+
+
+
+
+#submitBtn {
+background-postion: top center;
+background:#000 url('../images/EmailFooter_submit.gif'); width:58px; height:19px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* footer ----------------------------------------------- */
+#footer {
+	clear:both;
+	//margin:5.5em 0 0;
+	border-top:0px solid #f4f3ed}
+#footer_holder {
+	padding:0 0 .5em;
+	border-top:1px solid #e4e2dd;
+	background:#F8F7F3 url(http://www.starbucks.com/static/images/background.jpg) no-repeat 0px -545px;
+	color:#5e554c}
+
+#footer p {
+	display:inline;
+	position:relative;
+	//top:-1.55em;
+	margin:0;
+	padding:0 1.5em 0 18px;
+	border-bottom:0px solid #f5f4f1;
+	font:.9em/1.444 Verdana,sans-serif}
+#footer p a {
+	padding:0 .75em}
+
+#footer h4 {
+	margin:0 0 1em;
+	font:bold 1em/1.222 Verdana,sans-serif;
+	color:#544a41}
+#footer h4 a {
+	color:#544a41}
+
+#footer li {
+	margin:0 0 .4em;
+	line-height:1.222}
+
+/* ---- breadcrumb ---- */
+ul#breadcrumb {
+	margin:0;
+	padding:1em 0;
+	width:100%;
+	border-bottom:1px solid #cdc7bf;
+	color:#544a41}
+ul#breadcrumb li {
+	display:inline;
+	margin:0 0 0 18px;
+	font-weight:bold;
+	text-transform:uppercase}
+ul#breadcrumb ul,
+ul#breadcrumb ul li {
+	display:inline;
+	margin:0 0 0 .333em;
+	padding:0;
+	font-weight:normal;
+	text-transform:none}
+ul#breadcrumb li a {
+	margin:0 .25em 0 0;
+	color:#544a41}
+
+/* ---- footer_contextual footer_categorical, footer_global --- */
+#footer_contextual,
+#footer_categorical,
+#footer_global {
+	clear:both;
+	padding:1.2em 0 .5em 18px;
+	border-bottom:1px solid #cdc7bf;
+	font-size:.9em;
+	overflow:hidden}
+#footer_global {
+	padding:1.2em 0 3em 18px;
+	border-color:#bbb6ae}
+#footer_contextual .inner_wrapper,
+#footer_categorical .inner_wrapper,
+#footer_global .inner_wrapper {
+	width:945px;
+	overflow:hidden}
+#footer_contextual .inner_wrapper ul,
+#footer_categorical .inner_wrapper div,
+#footer_global .inner_wrapper div {
+	display:inline;
+	float:left;
+	margin:0 4px 0 0;
+	width:163px}
+#footer_contextual h4 {
+	width:100%}
+#footer_contextual .inner_wrapper ul {
+	margin-bottom:1em}
+	
+	
+	
+.spiffy{display:block}
+.spiffy *{
+  display:block;
+  height:1px;
+  overflow:hidden;
+  font-size:.01em;
+  background:
+		
+				<small class="metadata">
+						<span class="category">Filed under: <?php the_category(', ') ?> 
+							<?php if(!is_single()) echo "|"; ?> 
+							<?php edit_post_link('Edit', '', ' | '); ?> 
+							<?php comments_popup_link('Comment (0)', ' Comment (1)', 'Comments (%)'); ?>
+						</span>
+						<?php if ( function_exists('wp_tag_cloud') ) : ?>
+						<?php the_tags('<span class="tags">Article tags: ', ', ' , '</span>'); ?>
+						<?php endif; ?>
+				</small>
+				 </div></div>#435680}
+.spiffy1{
+  margin-left:3px;
+  margin-right:3px;
+  padding-left:1px;
+  padding-right:1px;
+  border-left:1px solid #212121;
+  border-right:1px solid #212121;
+  background:#212121}
+.spiffy2{
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:1px;
+  padding-left:1px;
+  border-left:1px solid #212121;
+  border-right:1px solid #212121;
+  background:#212121}
+.spiffy3{
+  margin-left:1px;
+  margin-right:1px;
+  border-left:1px solid #212121;
+  border-right:1px solid #212121;}
+.spiffy4{
+  border-left:1px solid #212121;
+  border-right:1px solid #212121}
+.spiffy5{
+  border-left:1px solid #212121;
+  border-right:1px solid #212121}
+.spiffyfg{
+  background:#212121}
+
+
+
+
+
+
+
+
+
+
+
+

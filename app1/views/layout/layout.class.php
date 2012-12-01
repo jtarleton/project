@@ -21,16 +21,25 @@ class Layout
 	} 
 
 
-	public function rndr($tpl) 
+	public function render($template, $templateOnly=false)
 	{
+	
+		//session_start(); 
 		
-		ob_start();
-		?>
-		<html>
-		<head></head><body> 
-		<?php echo $tpl; ?>
-		</body>
-		</html>
-		<?php 	echo ob_get_contents();
+		if (!$templateOnly)
+		{
+			eval('?>' . file_get_contents(HEAD) ); 
+			//echo '<!-- End Head -->';
+		}	
+	
+		eval('?>'.$template); 
+	
+		if (!$templateOnly)
+		{
+			//echo '<!-- Begin Foot -->';
+			eval('?>'.file_get_contents('/var/project/app1/views/layout/_side.php')); 
+			eval('?>'.file_get_contents(FOOT)); 
+		}
+	
 	}
 }
