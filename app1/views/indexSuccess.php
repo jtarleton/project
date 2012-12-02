@@ -7,26 +7,57 @@ global $p;
 
 <div id="content">
 
+
+
+
+
+<?php 
+try {
+$constring = 'mongodb://'.PVTCONFIG_MONGOHOST.':'.PVTCONFIG_MONGOPORT;
+$options = array('connect'=>true,
+				'timeout'=>10000,
+				'username'=>PVTCONFIG_MONGOUSER,
+				'password'=>PVTCONFIG_MONGOPASS,
+				'db'=>PVTCONFIG_MONGODBNAME);
+
+
+$mongo_server= new Mongo($constring, $options);
+
+$mongo = $mongo_server->selectDB( sprintf('%s', PVTCONFIG_MONGODBNAME) );
+MongoCursor::$timeout = 3;
+
+
+} catch(MongoConnectionException $me) {
+
+echo $me->getMessage().'<br />';
+}
+
+
+$posts =(is_object(@$mongo)) ? @$mongo->wp_post->find()->limit(10) : array();
+
+
+foreach ($posts as $p):
+
+?>
+
+
+
+
 <div class="post">
-<h2>The Sonoran Desert</h2>
+	<h2><?php echo $p['post_title']; ?></h2>
 
-<div class="contenttext">
+	<div class="contenttext">
 
-					
-
-<p>The Sonoran Desert is the only place in the world where the famous Saguaro cactus (<i>Carnegiea gigantea</i>) grows in the wild.</p>
-
-<p><img style="width:400px; height:300px;" src="http://www.crystalbit.com/images/Sonoran-Desert-at-sunset.jpg"></img></p>
-
-				
-<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
-<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
-</p>
-</div>
+		<?php echo $p['post_content']; ?>
+	
+		<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
+			<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
+		</p>
+	</div>
 </div>
 
 
-
+<?php endforeach; ?>
 
 
 

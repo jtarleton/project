@@ -1,7 +1,7 @@
 <div id="content">
 <h2>Log In</h2>
 
-<?php if(!$_SESSION['isAuth2']): ?>
+<?php if(!@$_SESSION['isAuth2']): ?>
 <form method="post" action="<?php echo BASEHREF; ?>index.php?p=authcallback">
 	<div>
 	<label>User Name</label><br />
@@ -17,7 +17,7 @@
 	<input type="submit" value="Log In"/>
 	</div>
 </form>
-<?php else: ?> <?php echo $_SESSION['username']; ?> is already logged in.
+<?php else: ?> <?php echo @$_SESSION['username']; ?> is already logged in.
 <?php endif; ?>
 
 </div>
