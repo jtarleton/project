@@ -1,5 +1,5 @@
 <div id="content">
-
+<h2>Log In</h2>
 
 <?php if(!$_SESSION['isAuth2']): ?>
 <form method="post" action="<?php echo BASEHREF; ?>index.php?p=authcallback">
