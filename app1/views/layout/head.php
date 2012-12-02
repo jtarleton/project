@@ -37,9 +37,9 @@
 
 
 
-<?php if(!($_SESSION['isAuth2'])) : ?>
+<?php if(!(@$_SESSION['isAuth2'])) : ?>
 <li class="page_item"><a href="<?php echo BASEHREF; ?>?p=login">Log In</a></li>
-<?php elseif($_SESSION['isAuth2']): ?>
+<?php elseif(@$_SESSION['isAuth2']): ?>
 <li class="page_item"><a href="<?php echo BASEHREF; ?>?p=logout">Log Out <?php echo $_SESSION['username']; ?></a></li>
 <?php else: die('An unexpected error has occurred.'); endif; ?>
 
@@ -69,11 +69,11 @@
 		<div id="extras">
 
 
-			<?php if($_SESSION['isAuth2']) : ?>
+			<?php if(@$_SESSION['isAuth2']) : ?>
 
 <h2>Session Variables</h2>
 			<ul>
-<?php foreach ($_SESSION as $k=>$v): ?> <li><?php echo $k .' : '. $v; ?> </li><?php endforeach; ?>
+<?php foreach (@$_SESSION as $k=>$v): ?> <li><?php echo $k .' : '. $v; ?> </li><?php endforeach; ?>
 </ul>
 
 <?php endif; ?>
