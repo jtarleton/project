@@ -7,6 +7,33 @@ global $p;
 
 <div id="content">
 
+<div class="post">
+<h2>The Sonoran Desert</h2>
+
+<div class="contenttext">
+
+					
+
+<p>The Sonoran Desert is the only place in the world where the famous Saguaro cactus (<i>Carnegiea gigantea</i>) grows in the wild.</p>
+
+<p><img style="width:400px; height:300px;" src="http://www.crystalbit.com/images/Sonoran-Desert-at-sunset.jpg"></img></p>
+
+				
+<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
+<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
+</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
 <?php $ct = 0; 
 
 foreach (array() as $p): ?>
