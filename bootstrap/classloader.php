@@ -5,7 +5,7 @@
 
 // session_start();
 date_default_timezone_set('America/New_York');
-
+require_once '/var/privateconfig.inc.php';
 define('DOCROOT', '/var/project/');
 
 //CONFIG

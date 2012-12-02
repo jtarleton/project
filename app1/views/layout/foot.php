@@ -33,7 +33,7 @@
 			<a href="<?php //bloginfo('rss2_url'); ?>">Entries (RSS)</a> - 
 			<a href="<?php //bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a> - 
 			<?php //wp_loginout(); ?></span>
-			<br />Powered by <a href="http://wordpress.org/">Osiris</a> - 
+			<br />Powered by <?php echo link_to('Project','https://github.com/jtarleton/project'); ?> - 
 			<a href="http://andreasviklund.com/wordpress-themes/">Theme design</a> by 
 			<a href="http://andreasviklund.com/" title="">Andreas Viklund</a> &amp; 
 			<a href="http://jasoncole.ca">Jason Cole</a>
