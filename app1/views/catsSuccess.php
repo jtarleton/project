@@ -1,1 +1,1 @@
-<div id="content">Category Index</div>
+<div id="content"><h2>Category Index</h2></div>

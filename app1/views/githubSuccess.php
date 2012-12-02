@@ -1,4 +1,4 @@
-<div id="content">Git Feed
+<div id="content"><h2>Git Feed</h2>
 
 
 <ul>

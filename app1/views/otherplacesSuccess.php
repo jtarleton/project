@@ -1,5 +1,5 @@
 <div id="content">
-Other Places
+<h2>Other Places</h2>
 <ul>
 <li class="page_item"><a href="http://www.bing.com">Bing</a></li>
 
