@@ -12,7 +12,7 @@ class ActionController
 
 
 
-public function __construct($p){
+	public function __construct($p){
 		//session_start();
 		//test ORM initialization and db connectivity		
 		global $colors;
@@ -49,7 +49,7 @@ public function __construct($p){
 
 
 
-private function initOutlet($createProxies=true){
+	private function initOutlet($createProxies=true){
 		//session_start();
 		//if(class_exists('Outlet')){		
 		//Outlet::init(require(OUTLET_CONFIG_PATH));
@@ -62,10 +62,11 @@ private function initOutlet($createProxies=true){
 		//}
 	}
 
-private function setP($p){ 
+	private function setP($p){ 
 		//session_start();
 		$this->p=$p; 
 	}
+	
 	static public function getInstance($p)
 	{
 		if (!isset(self::$instance))
@@ -81,7 +82,8 @@ private function setP($p){
 		Layout::getInstance()->rndr('yo'); //file_get_contents( sprintf('/var/project/app1/views/%sSuccess.php', $p)) );
 	}
 
-private function getP(){ 
+
+	private function getP(){ 
 		//session_start();
 		return $this->p;
 	}
@@ -120,6 +122,87 @@ private function getP(){
 		
 		
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	static private function passAuth($email, $pass)
+	{
+		if(!defined('PVTCONFIG_SU') || !defined('PVTCONFIG_SUPASS') ) die('Constant missing.');
+		if($email== PVTCONFIG_SU && $pass==PVTCONFIG_SUPASS)
+		{
+			$_SESSION['isAuth2'] = true;
+			return true;
+		}
+		
+		return false;
+	}
+	
+	
+	private function executeLogout()
+	{ 
+		$_SESSION['isAuth2'] = false; 
+		header('Location: http://www.crystalbit.com/');
+		exit(0);
+	}
+	private function executeAuthcallback()
+	{
+
+		$clean = array();
+		foreach($_POST as $k=>$v)
+		{
+			$clean[$k] = strip_tags($v);
+		}
+		$_SESSION['isAuth2'] = false; 
+		$_SESSION['fdsdsfds'] = 'asddadsa';
+		$_SESSION['username'] = $clean['username'];
+
+		if(self::passAuth($clean['username'], $clean['pass']))
+		{
+			 
+			$_SESSION['isAuth2'] = true; 
+			$_SESSION['fdsdsfds'] = 'asddadsa'; 
+
+			session_write_close(); 
+
+			header('Location: http://www.crystalbit.com'); 
+			exit(0);
+			
+		}
+		else
+		{
+			//unset($_SESSION['isAuth']); 
+			//$_SESSION = array();
+			header('Location: http://www.crystalbit.com/index.php?p=login'); exit(0);
+		}
+		
+	}
+
+
+
+
+
+
+
+
+
 	
 
 }
