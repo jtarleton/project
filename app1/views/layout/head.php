@@ -71,7 +71,10 @@
 
 
 			<?php if(@$_SESSION['isAuth2']) : ?>
-
+<h2>Admin</h2>
+<ul>
+<li><a href="<?php echo BASEHREF; ?>admin.php?p=index">Admin</a>
+</ul>
 <h2>Session Variables</h2>
 			<ul>
 <?php foreach (@$_SESSION as $k=>$v): ?> <li><?php echo $k .' : '. $v; ?> </li><?php endforeach; ?>

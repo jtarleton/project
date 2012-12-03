@@ -13,3 +13,19 @@
 </head>
 <body>
 <div id="wrap">Starting layout...
+
+
+
+
+  <?php if(@$_SESSION['isAuth2']) : ?>
+<h2>Admin</h2>
+<ul>
+<li><a href="<?php echo BASEHREF; ?>index.php?p=index" target="_BLANK">View Site</a>
+</ul>
+<h2>Session Variables</h2>
+                        <ul>
+<?php foreach (@$_SESSION as $k=>$v): ?> <li><?php echo $k .' : '. $v; ?> </li><?php endforeach; ?>
+</ul>
+
+<?php endif; ?>
+
