@@ -49,7 +49,8 @@
 <li class="page_item"><a href="<?php echo BASEHREF; ?>?p=cats">Category Index</a></li>
 <li class="page_item"><a href="<?php echo BASEHREF; ?>?p=tags">Tag Index</a></li>
 <li class="page_item"><a href="<?php echo BASEHREF; ?>?p=about">About</a></li>
-<li class="page_item"><a href="<?php echo BASEHREF; ?>?p=github">Git Feed</a></li>
+<li class="page_item"><a href="<?php echo BASEHREF; ?>?p=github">Change Log</a></li>
+<li class="page_item"><a href="https://gist.github.com/jtarleton">My Gists</a></li>
 
 
 
@@ -80,10 +81,10 @@
 
 
 			<?php //include (TEMPLATEPATH . '/searchform.php'); ?>
-			<h2>Categories</h2>
+			<h2 class="page_item">Categories</h2>
 			<ul>
 		
-				<li>Category 1</li>
+				<li>Programming</li>
 			</ul>
 		
 			<h2>Tags</h2>
@@ -105,14 +106,14 @@
 
 foreach (date_sun_info(time(), 40.760179, -73.914168) as $key => $val) 
 {
-    ?><li><?php echo str_replace('_',' ',$key) .': '. date("g:ia", $val); ?></li><?php 
+    ?><li><?php echo ucfirst(str_replace('_',' ',$key) .': '. date("g:ia", $val)); ?></li><?php 
 }
 ?>
 
                 </ul>
                 <h2>Today</h2>
-    			<ul><li><?php echo date('l'); ?></li>
-    				<li><?php echo date('F j\<\s\u\p\>S\<\/\s\u\p\>, Y'); ?></li>
+    			<ul>
+    				<li><?php echo date('l F j\<\s\u\p\>S\<\/\s\u\p\>, Y'); ?></li>
     					<li><?php echo date(' g:ia'); ?></li></ul>
 
 </div>

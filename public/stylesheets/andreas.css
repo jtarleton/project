@@ -36,7 +36,7 @@ a img {border:0;}
 #leftside ul.linklist, #extras ul.linklist {font-size:1em;}
 #leftside ul.linklist ul, #extras ul.linklist ul {margin:0 0 20px;}
 #leftside ul.linklist ul li a, #extras ul.linklist ul li a {font-weight:bold;}
-#leftside h2, #leftside ul.linklist li h2, #leftside h3, #extras h2, #extras ul.linklist li h2, #extras h3, table#wp-calendar caption {background-color:inherit; color:#505050; font-size:1.3em; font-weight:normal; text-align:left; margin:0 0 6px;}
+#leftside h2, #leftside ul.linklist li h2, #leftside h3, #extras h2, #extras ul.linklist li h2, #extras h3, table#wp-calendar caption {background-color:inherit; color:#505050; font-size:1.3em; font-weight:bold; text-align:left; margin:0 0 6px;}
 #leftside label, #extras label {display:none;}
 
 /* Main menu */
