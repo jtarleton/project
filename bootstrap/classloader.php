@@ -34,6 +34,7 @@ foreach (glob(DOCROOT.'app1/models/*.php') as $filename)
 }
 
 require_once(DOCROOT.'app1/views/layout/layout.class.php');
+require_once(DOCROOT.'app1/views/layout2/layout2.class.php');
 //VIEW
 //foreach (glob(DOCROOT.'app1/views/layout/*.php') as $filename)
 //{

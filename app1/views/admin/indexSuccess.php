@@ -1,0 +1,3 @@
+<div>I AM THE ADMIN TEMPLATE</div>
+
+
