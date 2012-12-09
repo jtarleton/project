@@ -99,8 +99,9 @@ class ActionController2
 		//session_start();
 		$this->preexecute();
 		
-		
-		if(file_exists(DOCROOT."/app1/views/{$this->getP()}Success.php")) 
+	
+	
+		if(file_exists(DOCROOT."/app1/views/admin/{$this->getP()}Success.php")) 
 		{ 
 			return file_get_contents(DOCROOT."/app1/views/admin/{$this->getP()}Success.php"); 
 			exit(0);

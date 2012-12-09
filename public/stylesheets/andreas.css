@@ -599,6 +599,22 @@ input[type="submit"].btn.btn-mini {
   *padding-bottom: 1px;
 }
 
+#pagMenu a:link { border: 2px dotted transparent; padding:5px; }
+#pagMenu a:visited { border: 2px dotted transparent; padding:5px; }
+
+#pagMenu a:hover { border: 2px solid #c9c9c9; background:#FAFAFA;  padding:5px; }
+
+#pagMenu a:active { border: 2px dotted transparent; padding:5px; }
+
+
+
+
+
+a.curPage:link { border: 0px dotted gray; color:magenta; padding:5px; }
+a.curPage:visited { border: 0px dotted gray; color:magenta; padding:5px;  }
+a.curPage:hover { border: 1px solid magenta; color:magenta;  padding:5px; }
+a.curPage:active { border: 0px dotted gray; color:magenta; padding:5px; }
+
 
 
 

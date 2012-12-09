@@ -22,10 +22,10 @@
         <h1><a href="#"><span>Foo</span></a></h1> 
         <!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
         <ul id="mainNav">
-                <li><a href="" class="active">POSTS</a></li> <!-- Use the "active" class for the active menu item  -->
-                <li><a href="">COMMENTS</a></li>
-		<li><a href="">SETTINGS</a></li>
-                <li class="logout"><a href="">LOGOUT</a></li>
+                <li><a href="admin.php?p=index" class="active">POSTS</a></li> <!-- Use the "active" class for the active menu item  -->
+                <li><a href="admin.php?p=comments">COMMENTS</a></li>
+		<li><a href="admin.php?p=settings">SETTINGS</a></li>
+                <li class="logout"><a href="index.php?p=logout">LOGOUT</a></li>
         </ul>
         <!-- // #end mainNav -->
 
@@ -53,54 +53,9 @@
                 <!-- // #sidebar -->
                 
                 <!-- h2 stays for breadcrumbs -->
-                <h2><a href="">Post Index</a> <!--&raquo; <span class="active">Posts Index</span> --></h2>
+                <h2><a href="admin.php?p=<?php echo (isset( $_GET['p']) ) ? $_GET['p'] : 'index'; ?>.'"'><?php echo ucfirst($_GET['p']); ?> </a> <!--&raquo; <span class="active">Posts Index</span> --></h2>
                 
                 <div id="main">
 			<!-- <h3>Blog Posts</h3> -->
                     	<div style="overflow:auto; height:800px;"> 
 
-
-
-
-
-		<?php if(@$_SESSION['isAuth2']) : ?>
-<h2>Admin</h2>
-<ul>
-
-<li><a href="<?php echo BASEHREF; ?>index.php?p=index">View Site</a>
-
-
-<li><a href="<?php echo BASEHREF; ?>index.php?p=index" target="_BLANK">View Site In New Tab</a>
-</ul>
-<h2>Session Variables</h2>
-                        <ul>
-<?php foreach (@$_SESSION as $k=>$v): ?> <li><?php echo $k .' : '. $v; ?> </li><?php endforeach; ?>
-</ul>
-
-<?php endif; ?>
-
-
-
-
-
-<?php /* 
-
-<div id="wrap">Starting layout...
-
-
-
-
-  <?php if(@$_SESSION['isAuth2']) : ?>
-<h2>Admin</h2>
-<ul>
-<li><a href="<?php echo BASEHREF; ?>index.php?p=index" target="_BLANK">View Site</a>
-</ul>
-<h2>Session Variables</h2>
-                        <ul>
-<?php foreach (@$_SESSION as $k=>$v): ?> <li><?php echo $k .' : '. $v; ?> </li><?php endforeach; ?>
-</ul>
-
-<?php endif; ?>
-
-
-*/

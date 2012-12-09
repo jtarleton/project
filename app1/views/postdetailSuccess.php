@@ -36,34 +36,34 @@ global $wpNext;
 
 <h2>
 
-<?php echo (is_object($postdetail)) ? $postdetail->getpost_title() : $postdetail; ?></h2>
+<?php
+
+
+
+
+
+$post = WpPost::retrieveByPK( $_GET['pid'] );
+
+
+ echo (!empty($post)) ? $post['post_title'] : null; ?></h2>
 	<!-- <div style="line-height:22px;"><img src="http://www.jamestarleton.com/images/phpelephant.jpg" style="float:left; margin:0;" />-->
 <?php
-	echo (is_object($postdetail)) ? $postdetail->getpost_content() : $postdetail;
+	echo (!empty($post)) ? $post['post_content']: null;
 	?>
 
 
 
 	<p class="postinfo" style="font-weight:normal; margin-bottom:0;">
-	by <?php
+	on <?php echo (!empty($post)) ? date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t G:ia', strtotime(date('m/D/Y') )) : null;
+	?>   
 
-	if (is_object($postdetail)) 
-	{
-		switch($postdetail->getpost_author()){
-			case 1:
-				echo 'James';
-				break;
-			case 2:
-				default:
-				break;
-		}
-	}
 
-	?>
-	on <?php
-	echo (is_object($postdetail)) ? date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t G:ia',strtotime($postdetail->getpost_date())) : $postdetail;
-	?>   <a href="http://www.jamestarleton.com/adm/pdetail.php?id=<?php echo $postdetail->ID; ?>">E</a>
 
+<?php if( $_SESSION['isAuth2']==1) : ?>
+
+<a href="admin.php?p=edit&pid=<?php echo $post['_id']; ?>">E</a>
+
+<?php endif; ?>
 
 
 
@@ -215,7 +215,7 @@ line-height:18px;
 type="text" id="textcaptcha_ans" name="textcaptcha_ans"></input>
 			</div>
 			<input type="hidden" name="pid" id="pid" 
-			value="<?php echo $postdetail->getID(); ?>">
+			value="<?php echo $post['_id']; ?>">
 			</input>
 		<div style="text-align:left;padding:10px;">
 			<button type="button" class="btn btn-primary" id="submitBtn">Submit</button> 
@@ -229,7 +229,7 @@ type="text" id="textcaptcha_ans" name="textcaptcha_ans"></input>
 
 	</fieldset>
 	</p>
-	<div id="comments"></div>
+	<div id="commensts"></div>
 
 
 

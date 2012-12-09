@@ -13,6 +13,23 @@ global $p;
 <?php 
 
 
+
+
+
+
+$s = isset($_GET['s'] ) ? $_GET['s']  : 1;
+
+	   echo paginated_links( WpPost::retrieveAll()->count(), 1000 , $s  );
+
+
+
+
+
+
+
+
+
+
 	 $s = ( isset($_GET['s'])  ) ? $_GET['s'] : 1 ; 
 $r=0;
 foreach (WpPost::retrieveAll( $s, 1000) as $p):  $r++;  ?>
@@ -20,11 +37,11 @@ foreach (WpPost::retrieveAll( $s, 1000) as $p):  $r++;  ?>
 <?php
 if(1): ?>
 <div class="post">
-	<h2><?php echo $p['post_title']; ?></h2>
+	<h2> <?php echo link_to($p['post_title'], 'index.php?p=postdetail&pid=' . $p['_id']) ; ?></h2>
 
 	<div class="contenttext <?php //echo zebraClass($r); ?>">
 
-		<?php echo $p['post_content']; ?>
+		<?php echo substr( strip_tags( $p['post_content'] ), 0, 10); ?>
 	
 		<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
 			<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
@@ -73,4 +90,6 @@ if(1): ?>
 				</div> 
 
 			</p>
+</div>
+
 </div>

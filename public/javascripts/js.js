@@ -45,9 +45,15 @@ function postMe(commenttext){
 	});
 }
 jQuery(document).ready(function(){
+
+
+
 	var host=window.location.host;
+
 	var pid=jQuery('#pid').val();
+
 	var dataString = 'p=commentpost&pid='+pid;
+
 	jQuery.ajax({
 		url: "http://"+host+"/",
 		type: "GET",
@@ -63,6 +69,7 @@ jQuery(document).ready(function(){
 			console.log(msg);		
 		}
 	});
+
 	jQuery('#submitBtn').click(function(){
 		var commenttext=jQuery('#commenttext').val();
 		jQuery('#commenttext').val('');
@@ -70,6 +77,7 @@ jQuery(document).ready(function(){
 		postMe(commenttext); return false;
 		
 	});
+
 });
 
 /* 

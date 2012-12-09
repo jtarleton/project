@@ -7,16 +7,16 @@ function link_to($display='Click Me' , $href='#', array $opts=array(
 'title'=>null
 ))
 {
-	foreach($opts as $opt=>&$value)
-		${$opt} = ( !isset($value) ) ? '' : $value;
+	foreach($opts as $opt=>$value)
+		$$opt = ( !isset($value) ) ? ' ' : @$value;
 	
 	return sprintf('<a class="%s" id="%s" href="%s" target="%s" title="%s">%s</a>', 
-		$class,
-		$id,
-		$href,
-		$target,
-		$title,
-		$display );	
+		@$class,
+		@$id,
+		@$href,
+		@$target,
+		@$title,
+		@$display );	
 }
 
 function form_tag($action='', $method='POST', array $opts=array())
@@ -34,38 +34,51 @@ function zebraClass($r)
 }
 
 
-function paginated_links( $totalRecs , $pageSize = 1000) 
+function paginated_links( $totalRecs , $pageSize = 1000, $k=8) 
 {
 
 
+        $numPages = $totalRecs / $pageSize ;
 
-	$numPages = $totalRecs / $pageSize ;
+        $numPages = intval( $numPages );
 
-	$numPages = intval( $numPages );
+        $append = ( ( $totalRecs % $pageSize) == 0) ? 0 : 1 ;
 
-	$append = ( ( $totalRecs % $pageSize) == 0) ? 0 : 1 ;
-
-	$tot = $numPages + $append;
-
-	$menu = '';
-	for( $j=1; $j<$tot; $j++ )  $menu.=link_to(' '.$j.' ' ,'index.php?p=index&s=' . $j);
+        $tot = $numPages + $append;
 
 
-	return sprintf('%s 
+	$range = range( 1, $tot) ;
+
+
+
+	$offs = ($k >= 4) ? $k-4 : 0;
+
+
+	$menu='';
+
+
+	foreach( array_slice(   $range , $offs, 8 )  as $v  ) {
+
+
+		$klass = ( $v == $k  ) ? 'curPage' : null;
+
+		$menu.= '<td>'.link_to(" $v ", sprintf('index.php?p=index&s=%s', $v) , array('class'=>$klass)  ).'</td>';
+	}
+	return '<table id="pagMenu" style="margin-bottom:20px; table-layout:fixed; width:100%;"><tr>'.sprintf('<td>%s</td> 
 
 	%s 
 		
-	%s
+	<td>%s</td>
 	' ,
 
-	link_to('Newest', 'index.php?p=index&s=1'), 
+	link_to('&lt;', 'index.php?p=index&s=1'), 
 
-	' '.$menu.' ',
+	''.$menu.'',
 
-	link_to('Oldest', 'index.php?p=index&s='.$tot  )  
+	link_to('&gt;', 'index.php?p=index&s='.$tot  )  
 
 
-	);
+	) . '</tr></table>';
 
 
 }
