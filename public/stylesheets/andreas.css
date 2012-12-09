@@ -135,7 +135,15 @@ img.alignnone,.alignnone {float:none;margin:0;}
 
 
 
+.even
+{ 
+	background-color: #F0F0F0; 
+}
 
+.odd 
+{ 
+	background-color: lightgray; 
+}
 
 
 

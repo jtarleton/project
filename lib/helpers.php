@@ -26,3 +26,46 @@ function form_tag($action='', $method='POST', array $opts=array())
 	
 	return sprintf('<form action="%s" method="%s" class="%s" id="%s">', $action, $method, $opts['class'], $opts['id']);	
 }
+
+
+function zebraClass($r)
+{
+	return (($r % 2) ==0) ? 'even' : 'odd';
+}
+
+
+function paginated_links( $totalRecs , $pageSize = 1000) 
+{
+
+
+
+	$numPages = $totalRecs / $pageSize ;
+
+	$numPages = intval( $numPages );
+
+	$append = ( ( $totalRecs % $pageSize) == 0) ? 0 : 1 ;
+
+	$tot = $numPages + $append;
+
+	$menu = '';
+	for( $j=1; $j<$tot; $j++ )  $menu.=link_to(' '.$j.' ' ,'index.php?p=index&s=' . $j);
+
+
+	return sprintf('%s 
+
+	%s 
+		
+	%s
+	' ,
+
+	link_to('Newest', 'index.php?p=index&s=1'), 
+
+	' '.$menu.' ',
+
+	link_to('Oldest', 'index.php?p=index&s='.$tot  )  
+
+
+	);
+
+
+}

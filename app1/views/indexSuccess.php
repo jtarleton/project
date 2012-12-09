@@ -10,43 +10,19 @@ global $p;
 
 
 
-
 <?php 
-try {
-$constring = 'mongodb://'.PVTCONFIG_MONGOHOST.':'.PVTCONFIG_MONGOPORT;
-$options = array('connect'=>true,
-				'timeout'=>10000,
-				'username'=>PVTCONFIG_MONGOUSER,
-				'password'=>PVTCONFIG_MONGOPASS,
-				'db'=>PVTCONFIG_MONGODBNAME);
 
 
-$mongo_server= new Mongo($constring, $options);
+	 $s = ( isset($_GET['s'])  ) ? $_GET['s'] : 1 ; 
+$r=0;
+foreach (WpPost::retrieveAll( $s, 1000) as $p):  $r++;  ?>
 
-$mongo = $mongo_server->selectDB( sprintf('%s', PVTCONFIG_MONGODBNAME) );
-MongoCursor::$timeout = 3;
-
-
-} catch(MongoConnectionException $me) {
-
-echo $me->getMessage().'<br />';
-}
-
-
-$posts =(is_object(@$mongo)) ? @$mongo->wp_post->find()->limit(10) : array();
-
-
-foreach ($posts as $p):
-
-?>
-
-
-
-
+<?php
+if(1): ?>
 <div class="post">
 	<h2><?php echo $p['post_title']; ?></h2>
 
-	<div class="contenttext">
+	<div class="contenttext <?php //echo zebraClass($r); ?>">
 
 		<?php echo $p['post_content']; ?>
 	
@@ -56,6 +32,7 @@ foreach ($posts as $p):
 	</div>
 </div>
 
+<?php endif; ?>
 
 <?php endforeach; ?>
 
@@ -64,122 +41,6 @@ foreach ($posts as $p):
 
 
 
-
-<?php $ct = 0; 
-
-foreach (array() as $p): ?>
-
-				<?php
-				//$simplexml=simplexml_load_string(  
-				//eval(>'.file_get_contents($path)); ?>
-
-
-			<div class="post">
-
-				<h2>
-
-					<?php echo $p->getpost_title(); ?>	
-					
-
-				</h2>
-
-				<div class="contenttext">
-
-					<p>
-
-						<?php
-
-
-
-						//echo '<p style="color:#666666;font-size:10px;"><i>'.date('\b\y \J\a\m\e\s \o\n F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', strtotime($p->getpost_date())).'</i></p>';
-						?>
-
-						<!--<ul class="thumbnails"> -->
-
-						<?php if($ct==0): ?>
-						
-							<a href="#" class="thumbnail">
-							<img src="http://www.jamestarleton.com/images/PHP-Elephant.jpg" alt="" />
-							</a>
-						
-						<?php endif; ?>
-
-
-						<?php  				
-						//echo '<li class="span2"><p>'.
-						echo $p->getpost_excerpt(); ?>
-
-					</p>
-
-
-					<p>
-
-						<?php 
-						
-							echo sprintf('<a href="postdetail&name=%s">[%s]</a><br />', $p->getpost_name(), 'More &raquo;'); 
-						
-						?>
-
-					</p>
-
-					<!-- </ul> -->
-					<?php $ct++; ?>
-
-					
-					
-					
-
-				
-					<p class="postinfo" style="font-weight:normal; font-style:normal;">
-
-					
-by <?php
-
-	if (is_object($p)) 
-	{
-		switch($p->getpost_author()){
-			case 1:
-				echo 'James';
-				break;
-			case 2:
-				default:
-				break;
-		}
-	}
-
-	?>
-	on <?php
-	echo (is_object($p)) ? date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t G:ia',strtotime($p->getpost_date())) : $p;
-	?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-						
-							
-								<strong>Tags: </strong>
-						
-							
-
-						<strong>Comments:</strong>
-						</p>
-				</div>
-
-			</div>
-			
-				<?php
-endforeach; ?>
-</div>
 <div class="navigation">
 
 			<p>
@@ -187,12 +48,16 @@ endforeach; ?>
 				<span class="nextlink"><?php //previous_posts_link('Next entries &raquo;') ?></span>
 			
 
+				<div class="pagination">
+
+					
+
+					<?php echo paginated_links( WpPost::retrieveAll()->count()  );
 
 
+?>
 
-
-
-				<!---<div class="pagination">
+					<?php if (0): ?>
 					<ul>
 					<li><a href="#">Prev</a></li>
 					<li class="active">
@@ -203,14 +68,9 @@ endforeach; ?>
 					<li><a href="#">4</a></li>
 					<li><a href="#">Next</a></li>
 					</ul>
-				</div> -->
+
+					<?php endif; ?>
+				</div> 
 
 			</p>
-
-
-
-
-
-
-
-		</div>
+</div>
