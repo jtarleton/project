@@ -22,6 +22,23 @@ class WpPost extends BaseObject
 	}
 
 
+
+
+	static public function retrieveByPK( $pk) 
+	{
+
+
+		$self = self::getInstance();
+                $post = ( isset( $pk) ) ? $self->db->test->wp_post->findOne() : null;
+	
+
+		if(!isset( $post ) ) throw new Exception('Post not found'. $pk);
+
+		return (array ) $post;
+
+
+	}
+
 	static public function retrieveAll( $s = false, $limit = 10)
 	{
 
@@ -31,11 +48,10 @@ class WpPost extends BaseObject
 		$offset = ($s - 1 )* $limit;
 
 		$self = self::getInstance();
-		$posts = ($s) ? 
+		//$posts = ($s) ? 
 
-			$self->db->test->wp_post->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit ):
-
-			 $self->db->test->wp_post->find();
+		$posts =	$self->db->test->wp_post->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+			 //$self->db->test->wp_post->find();
 		
 		return $posts;
 
