@@ -24,12 +24,12 @@ class WpPost extends BaseObject
 
 
 
-	static public function retrieveByPK( $pk) 
+	static public function retrieveByPK( $pid) 
 	{
 
 
 		$self = self::getInstance();
-                $post = ( isset( $pk) ) ? $self->db->test->wp_post->findOne() : null;
+                $post = ( isset( $pid) ) ? $self->db->test->wp_post->findOne(array('_id'=>(int)$pid) ) : null;
 	
 
 		if(!isset( $post ) ) throw new Exception('Post not found'. $pk);

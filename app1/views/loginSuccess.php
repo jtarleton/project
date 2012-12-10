@@ -62,12 +62,12 @@ padding-bottom:20px;
 <?php if(!@$_SESSION['isAuth2']): ?>
 <form method="post" action="<?php echo BASEHREF; ?>index.php?p=authcallback">
 	<label>User Name</label><br />
-	<input class="txt" type="text" value="" id="username" name="username" class=""/>
+	<input style="width:25%" class="txt" type="text" value="" id="username" name="username" class=""/>
 
 	<label>Password</label><br />
-	<input class="txt" type="password" id="pass" name="pass" class=""/><br />
+	<input style="width:25%;" class="txt" type="password" id="pass" name="pass" class=""/><br />
 
-	<input type="submit" class="btn submit" style="width:25%;" value="Log In"/>
+	<input type="submit" class="btn btn-primary" style="width:20%;" value="Log In"/>
 </form>
 <?php else: ?> <?php echo @$_SESSION['username']; ?> is already logged in.
 <?php endif; ?>
