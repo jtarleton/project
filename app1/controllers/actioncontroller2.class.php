@@ -121,7 +121,44 @@ class ActionController2
 
 
 
+	public function executeEditp( )
+	{	
 
+		$post = $_POST;
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+		foreach($post as $k=>$v )
+		$$k=$v;
+
+		$mongo=MongoFactory::MongoCreate();
+		$updates = array(
+			'post_title'=>$post_title,
+			'post_content'=>$post_content
+		);
+
+
+
+
+
+
+
+
+		$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
+		header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$pid );
+
+	}
 
 
 

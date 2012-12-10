@@ -4,17 +4,17 @@
 
 <?php 
 
-$post = WpPost::retrieveByPK($_GET['p']);
+$post = WpPost::retrieveByPK($_GET['pid']);
 
 
 
 ?>
 
-<form action="admin.php?p=editp&pid="<?php echo intval( $_GET['p']); ?>">
+<form action="admin.php?p=editp" method="POST">
 
 
 <label>Post Title</label>
-<input type="text" value="<?php echo $post['post_title']; ?>"></input>
+<input type="text" name="post_title" value="<?php echo $post['post_title']; ?>"></input>
 
 
 
@@ -25,11 +25,13 @@ $post = WpPost::retrieveByPK($_GET['p']);
 
 
 
-<textarea rows="35" cols="60"><?php echo trim(htmlentities($post['post_content'])) ; ?></textarea>
+<textarea rows="35" name="post_content" cols="60"><?php echo trim(htmlentities($post['post_content'])) ; ?></textarea>
 
 
 <br />
 
+
+<input type="hidden" value="<?php echo $_GET['pid']; ?>" name="pid"/>
 <input type="submit" class="btn" value="Edit Post"></input>
 
 </form>
