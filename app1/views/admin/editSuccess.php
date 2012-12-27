@@ -22,11 +22,13 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 
 
 
-
-
-
 <textarea rows="35" name="post_content" cols="60"><?php echo trim(htmlentities($post['post_content'])) ; ?></textarea>
 
+
+<select name="post_status">
+<option value="publish" <?php echo( @$post['post_status'] == 'publish' ) ? 'selected="selected"' : null; ?>">Published</option>
+<option value="draft" <?php echo( @$post['post_status'] == 'draft' ) ? 'selected="selected"' : null; ?>">Draft</option>
+</select>
 
 <br />
 

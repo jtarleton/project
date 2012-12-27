@@ -121,39 +121,32 @@ class ActionController2
 
 
 
+	public function executeCreatep( )
+	{
+		$clean = array();
+		foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
+
+		$p = WpPost::createNew($clean);
+		if($p) header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$p->getId() );
+
+	
+	}
+
 	public function executeEditp( )
 	{	
 
 		$post = $_POST;
 	
-
-
-
-
-
-
-
-
-
-
-
-
-
+		//TODO .... put in model
 		foreach($post as $k=>$v )
 		$$k=$v;
 
 		$mongo=MongoFactory::MongoCreate();
 		$updates = array(
 			'post_title'=>$post_title,
-			'post_content'=>$post_content
+			'post_content'=>$post_content,
+			'post_status'=>$post_status
 		);
-
-
-
-
-
-
-
 
 		$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 		header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$pid );
@@ -164,7 +157,14 @@ class ActionController2
 
 
 
-
+	public function executeDelp() 
+	{
+	
+	$id = (int)$_GET['pid'];
+	$ok = WpPost::deleteByPK($id);
+	if($ok > 0) 
+		header('Location: http://www.crystalbit.com/admin.php?p=index&s=1');
+	}
 
 
 

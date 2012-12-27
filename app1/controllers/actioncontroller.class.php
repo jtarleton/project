@@ -4,20 +4,15 @@
  */
 class ActionController
 {
-	static private $instance; private $p, $outlet;
+	static private $instance; 
+	private $p, $outlet;
 
-
-
-
-
-
-
-	public function __construct($p){
+	public function __construct($p)
+	{
 		//session_start();
 		//test ORM initialization and db connectivity		
 		global $colors;
 		global $posts;
-		global $facebook; 
 		global $me; 
 		global $session; 
 		global $loginUrl;  	
@@ -27,26 +22,10 @@ class ActionController
 		global $status_text;
 		global $content;
 		global $connection;
-		global $access_token;
 		global $json;
 		$this->initOutlet(); 
-		$this->setP($p); }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		$this->setP($p); 
+	}
 
 
 	private function initOutlet($createProxies=true){
@@ -123,26 +102,6 @@ class ActionController
 		
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	static private function passAuth($email, $pass)
 	{
 		if(!defined('PVTCONFIG_SU') || !defined('PVTCONFIG_SUPASS') ) die('Constant missing.');
@@ -154,7 +113,6 @@ class ActionController
 		
 		return false;
 	}
-	
 	
 	private function executeLogout()
 	{ 
@@ -194,15 +152,4 @@ class ActionController
 		}
 		
 	}
-
-
-
-
-
-
-
-
-
-	
-
 }

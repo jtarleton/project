@@ -38,6 +38,13 @@
 			<a href="http://andreasviklund.com/" title="">Andreas Viklund</a> &amp; 
 			<a href="http://jasoncole.ca">Jason Cole</a>
 		</p>
+
+
+		<p>
+			<br />
+			<img src="http://www.crystalbit.com/images/mongodb.png" style="border:0;"></img>
+		</p>
+
 	</div>
 
 </div>

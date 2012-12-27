@@ -40,8 +40,8 @@ global $wpNext;
 
 
 
-
-
+if(!class_exists('WpPost'))
+require_once('/var/project/app1/models/WpPost.class.php');
 $post = WpPost::retrieveByPK( $_GET['pid'] );
 
 
@@ -59,7 +59,7 @@ $post = WpPost::retrieveByPK( $_GET['pid'] );
 
 
 
-<?php if( $_SESSION['isAuth2']==1) : ?>
+<?php if( @$_SESSION['isAuth2']==1) : ?>
 
 <a href="admin.php?p=edit&pid=<?php echo $post['_id']; ?>">E</a>
 

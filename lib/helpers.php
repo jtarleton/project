@@ -9,14 +9,8 @@ function link_to($display='Click Me' , $href='#', array $opts=array(
 {
 	foreach($opts as $opt=>$value)
 		$$opt = ( !isset($value) ) ? ' ' : @$value;
-	
-	return sprintf('<a class="%s" id="%s" href="%s" target="%s" title="%s">%s</a>', 
-		@$class,
-		@$id,
-		@$href,
-		@$target,
-		@$title,
-		@$display );	
+
+	return "<a href=\"$href\">$display</a>";
 }
 
 function form_tag($action='', $method='POST', array $opts=array())
@@ -34,7 +28,7 @@ function zebraClass($r)
 }
 
 
-function paginated_links( $totalRecs , $pageSize = 1000, $k=8) 
+function paginated_links( $totalRecs , $pageSize, $k, $controller = 'index') 
 {
 
 
@@ -51,18 +45,18 @@ function paginated_links( $totalRecs , $pageSize = 1000, $k=8)
 
 
 
-	$offs = ($k >= 4) ? $k-4 : 0;
+	$offs = ($k >= 3) ? $k-3 : 0;
 
 
 	$menu='';
 
 
-	foreach( array_slice(   $range , $offs, 8 )  as $v  ) {
+	foreach( array_slice(   $range , $offs, 6)  as $v  ) {
 
 
 		$klass = ( $v == $k  ) ? 'curPage' : null;
 
-		$menu.= '<td>'.link_to(" $v ", sprintf('index.php?p=index&s=%s', $v) , array('class'=>$klass)  ).'</td>';
+		$menu.= '<td>'.link_to(" $v ", sprintf($controller.'.php?p=index&s=%s', $v) , array('class'=>$klass)  ).'</td>';
 	}
 	return '<table id="pagMenu" style="margin-bottom:20px; table-layout:fixed; width:100%;"><tr>'.sprintf('<td>%s</td> 
 
@@ -71,11 +65,11 @@ function paginated_links( $totalRecs , $pageSize = 1000, $k=8)
 	<td>%s</td>
 	' ,
 
-	link_to('&lt;', 'index.php?p=index&s=1'), 
+	link_to('&lt;', $controller.'.php?p=index&s=1'), 
 
 	''.$menu.'',
 
-	link_to('&gt;', 'index.php?p=index&s='.$tot  )  
+	link_to('&gt;', $controller.'.php?p=index&s='.$tot  )  
 
 
 	) . '</tr></table>';

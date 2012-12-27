@@ -1,9 +1,16 @@
-<div> POSTS INDEX
+<div> Posts
 
 
 
 
 
+
+
+<?php
+
+echo paginated_links( WpPost::retrieveAll()->count(), 10 , @$_GET['s'], 'admin');
+
+?>
 
 
 
@@ -17,15 +24,24 @@
 
 <?php 
 
-foreach( WpPost::retrieveAll(1)  as $post) :
+foreach( WpPost::retrieveAll( @$_GET['s'], 5)  as $post) :
 
 ?>
 
-<tr><td>
+<tr>
+
+<td style="background:<?php echo ($post['post_status'] != 'publish') ? 'salmon' : 'lime'; ?>">
+<?php echo $post['post_status'] ;
+?>
+</td>
+
+<td>
 <?php 
 
 
-echo link_to( $post['post_title'] , 'admin.php?p=edit&pid='. $post['_id'] ); 
+echo link_to( $post['post_title'] , 'http://www.crystalbit.com/admin.php?p=edit&pid='. $post['_id'] ); 
+?></td><td><?php 
+echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delp&pid='. $post['_id']  );
 
 ?>
 </td></tr>
