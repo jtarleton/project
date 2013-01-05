@@ -24,7 +24,13 @@
         <ul id="mainNav">
                 <li><a href="admin.php?p=index" class="active">POSTS</a></li> <!-- Use the "active" class for the active menu item  -->
                 <li><a href="admin.php?p=comments">COMMENTS</a></li>
-		<li><a href="admin.php?p=settings">SETTINGS</a></li>
+		<li><a href="admin.php?p=links">LINKS</a></li>
+		
+		<li><a href="admin.php?p=categories">CATEGORIES</a></li>
+                <li><a href="admin.php?p=tags">TAGS</a></li>
+
+                <li><a href="admin.php?p=settings">SETTINGS</a></li>
+		
                 <li class="logout"><a href="index.php?p=logout">LOGOUT</a></li>
         </ul>
         <!-- // #end mainNav -->

@@ -1,7 +1,24 @@
+
+
+var totalItems= 2;
+
+function random()
+{
+    return Math.floor(Math.random()*totalItems+1);
+	//return a number between 1 - 10
+}
+
+
+
 var xy = navigator.appVersion;
 xz = xy.substring(0,4);
 document.write('<!--<div style="color:#FFF;">Your Resolution: ',screen.width,' x ',screen.height,'</div>-->');
 function initialize() {
+
+
+
+
+
 
 
 
@@ -77,6 +94,40 @@ jQuery(document).ready(function(){
 		postMe(commenttext); return false;
 		
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        jQuery('#clickme').unbind('click');
+	
+	jQuery('#clickme').bind('click', function(){
+
+		var q = random();
+
+		jQuery('.imgframe').hide();
+
+		jQuery('.imgframe').css('background-image', "url('mainpic"+ q +".jpg')" );
+
+		//jQuery('.imgframe').fadeIn('slow');
+
+	});
+
+
 
 });
 
