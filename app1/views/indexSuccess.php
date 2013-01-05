@@ -35,16 +35,40 @@ background-image: url('images/mainpic2.jpg');
 
 #imgframe1 
 {
+
+
+width:100%;
+height:177px;
+margin:0;
+padding:0;
+
+
 background-image: url('images/mainpic1.jpg');
 }
 
 #imgframe2
 {
+
+
+width:100%;
+height:177px;
+margin:0;
+padding:0;
+
+
 background-image: url('images/mainpic2.jpg');
 }
 
 #imgframe3 
 {
+
+width:100%;
+height:177px;
+margin:0;
+padding:0;
+
+
+
 background-image: url('images/mainpic3.jpg');
 }
 
@@ -112,12 +136,13 @@ global $p;
 
 
 
-
+<!-- 
 
 
 
 <div id="widget" style="margin-bottom:20px;">
 <div class="imgframe" id=""></div>
+
 <h2>Early, by Chicane</h2>
 <div id="blurb">
 
@@ -135,6 +160,9 @@ Lorem ipsum doloar sit amet blah foo bar bam. Bah Blah blah bloo blaa bla.
 </div>
 
 
+<button id="clickme">CLICKME</button>
+
+
 <div style="clear:both;"></div>
 
 
@@ -150,7 +178,7 @@ Lorem ipsum doloar sit amet blah foo bar bam. Bah Blah blah bloo blaa bla.
 
 </div>
 
-
+-->
 
 
 
@@ -196,6 +224,8 @@ if(1): ?>
 	<div class="contenttext <?php //echo zebraClass($r); ?>">
 
 		<?php echo substr( strip_tags( $p['post_content'] ), 0, 100); ?>
+
+		<p><?php echo link_to('Read &gt;', 'index.php?p=postdetail&pid=' . $p['_id']); ?></p>
 	
 		<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
 			<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
@@ -253,7 +283,7 @@ jQuery(document).ready(function(){
 jQuery('#clickme').bind('click', function(){
 var q = random();
 
-jQuery('.imgframe').hide();
+jQuery('.imgframe').fadeOut();
 
 jQuery('.imgframe').css('background-image', "url('images/mainpic"+ q +".jpg')" );
 

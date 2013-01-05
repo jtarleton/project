@@ -50,7 +50,7 @@ ul.page ul ul {width:163px;}
 ul.page ul ul a {width:150px;}
 
 /* Content */
-#content {line-height:1.6em; margin:0 205px 5px; padding:0;}
+#content {line-height:1.6em; margin:0 205px 5px 0px; padding:0;}
 #contentwide {line-height:1.6em; margin:0 0 5px 200px; padding:0;}
 #content h2,#contentwide h2 {font-size:1.6em; margin:0 0 10px;}
 #content h3,#contentwide h3 {font-size:1.4em; margin:0 0 8px;}
