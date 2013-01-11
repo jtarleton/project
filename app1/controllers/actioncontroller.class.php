@@ -113,6 +113,41 @@ class ActionController
 		
 		return false;
 	}
+
+	private function executeCommentpost()
+	{
+	
+		if(isset($_GET['pid']))
+			$pid = intval($_GET['pid']);
+
+		global $comments; 
+
+		if(isset($_POST)) 
+
+		{
+
+		if(@$_POST['textcaptcha_ans'] == 'REP') 
+		{
+
+			$data = $_POST;
+
+			$data['pid'] = intval(@$_POST['pid']);
+
+	
+			$data['ip'] = $_SERVER['REMOTE_ADDR'];
+			$data['ts'] = time();
+			
+
+			WpComment::createNew(@$data);
+			//die('INSERT COMMENT!');
+
+			$pid = $_POST['pid'];
+		} 
+
+		}
+
+		$comments = WpComment::retrieveByPid(@$pid);
+	}
 	
 	private function executeLogout()
 	{ 

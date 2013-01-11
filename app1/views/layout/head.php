@@ -10,20 +10,37 @@
 <link rel="next" href="<?php echo BASEHREF; ?>" />
 <meta name="description" content="<?php echo SITE_DESC;  ?>" />
 <meta name="keywords" content="<?php echo SITE_KEYWORDS;  ?>" />
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/andreas.css" />
+-->
+
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/bs.css" />
+
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/andreas.css" />
+
 <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="" />
 <link rel="alternate" type="text/xml" title="RSS .92" href="" />
 <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="" />
 <link rel="pingback" href="" />
 <script type="text/javascript" src="<?php echo JQUERY; ?>"></script>
 <script type="text/javascript" src="<?php echo JSLIB; ?>"></script>
+<script type="text/javascript" src="<?php echo JSLIB2; ?>"></script>
 </head>
 <body>
 <div id="wrap">
-	<div id="header">
-		<h1><?php echo link_to(SITE_TITLE, BASEHREF); ?></a></h1>
-		<p><strong>version 1.0</strong></p>
-	</div>
+	<div style="padding-top:5px">
+
+
+
+<!-- 
+
+echo link_to(SITE_TITLE, BASEHREF);
+-->
+
+<?php require_once('_topnav.php'); ?>
+
+</div>
+		<?php //echo link_to(SITE_TITLE, BASEHREF); ?>
 
 <?php  $chars = range('b', 'd'); array_push($chars , 'g'); shuffle($chars); ?>
 	<img width="980" height="226" id="frontphoto" src="<?php echo sprintf('%simages/front-%s.jpg',BASEHREF, current($chars)); ?>" alt="" />

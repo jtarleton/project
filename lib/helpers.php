@@ -1,16 +1,17 @@
 <?php
 
 function link_to($display='Click Me' , $href='#', array $opts=array(
-'class'=>null,
+'class'=>'and',
 'id'=>null,
 'target'=>null,
 'title'=>null
 ))
 {
+	$stropts = '';
 	foreach($opts as $opt=>$value)
-		$$opt = ( !isset($value) ) ? ' ' : @$value;
+		if( isset($value) ) $stropts.=" $opt=\"$value\" ";
 
-	return "<a href=\"$href\">$display</a>";
+	return "<a $stropts href=\"$href\">$display</a>";
 }
 
 function form_tag($action='', $method='POST', array $opts=array())
@@ -48,6 +49,11 @@ function paginated_links( $totalRecs , $pageSize, $k, $controller = 'index')
 	$offs = ($k >= 3) ? $k-3 : 0;
 
 
+
+
+
+
+
 	$menu='';
 
 
@@ -56,13 +62,13 @@ function paginated_links( $totalRecs , $pageSize, $k, $controller = 'index')
 
 		$klass = ( $v == $k  ) ? 'curPage' : null;
 
-		$menu.= '<td>'.link_to(" $v ", sprintf($controller.'.php?p=index&s=%s', $v) , array('class'=>$klass)  ).'</td>';
+		$menu.= '<li>'.link_to(" $v ", sprintf($controller.'.php?p=index&s=%s', $v) , array('class'=>$klass)  ).'</li>';
 	}
-	return '<table id="pagMenu" style="margin-bottom:20px; table-layout:fixed; width:100%;"><tr>'.sprintf('<td>%s</td> 
+	return '<div class="pagination pagination-centered"><ul id="pagMenmu">'.sprintf('<li>%s</li> 
 
 	%s 
 		
-	<td>%s</td>
+	<li>%s</li>
 	' ,
 
 	link_to('&lt;', $controller.'.php?p=index&s=1'), 
@@ -72,7 +78,31 @@ function paginated_links( $totalRecs , $pageSize, $k, $controller = 'index')
 	link_to('&gt;', $controller.'.php?p=index&s='.$tot  )  
 
 
-	) . '</tr></table>';
+	) . '</ul></div>';
 
 
 }
+
+
+
+
+function tokenTruncate($string, $your_desired_width) {
+  $parts = preg_split('/([\s\n\r]+)/', $string, null, PREG_SPLIT_DELIM_CAPTURE);
+  $parts_count = count($parts);
+
+  $length = 0;
+  $last_part = 0;
+  for (; $last_part < $parts_count; ++$last_part) {
+    $length += strlen($parts[$last_part]);
+    if ($length > $your_desired_width) { break; }
+  }
+
+  return implode(array_slice($parts, 0, $last_part));
+}
+
+
+
+
+
+
+

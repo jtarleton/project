@@ -222,10 +222,12 @@ if(1): ?>
 	<h2> <?php echo link_to($p['post_title'], 'index.php?p=postdetail&pid=' . $p['_id']) ; ?></h2>
 
 	<div class="contenttext <?php //echo zebraClass($r); ?>">
+<p>
+		<?php 
 
-		<?php echo substr( strip_tags( $p['post_content'] ), 0, 100); ?>
-
-		<p><?php echo link_to('Read &gt;', 'index.php?p=postdetail&pid=' . $p['_id']); ?></p>
+$string = tokenTruncate($p['post_content'], 500);
+echo strip_tags( $string);
+		?><span>...</span></p><p><?php echo link_to('Read &gt;', 'index.php?p=postdetail&pid=' . $p['_id']); ?></p>
 	
 		<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
 			<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
