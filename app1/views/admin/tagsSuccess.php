@@ -14,9 +14,8 @@ foreach( WpTerm::retrieveAll( @$_GET['s'], 5)  as $post) :
 ?>
 
 <tr>
-
-<td style="background:<?php echo ($post['post_status'] != 'publish') ? 'salmon' : 'lime'; ?>">
-<?php echo $post['post_status'] ;
+<td>
+<?php echo $post['_id'] ;
 ?>
 </td>
 
@@ -24,7 +23,7 @@ foreach( WpTerm::retrieveAll( @$_GET['s'], 5)  as $post) :
 <?php 
 
 
-echo link_to( $post['post_title'] , 'http://www.crystalbit.com/admin.php?p=edit&pid='. $post['_id'] ); 
+echo link_to( $post['_id'] , 'http://www.crystalbit.com/admin.php?p=edit&pid='. $post['_id'] ); 
 ?></td><td><?php 
 echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delp&pid='. $post['_id']  );
 

@@ -17,6 +17,7 @@ define('HEAD', DOCROOT.'app1/views/layout/head.php');
 define('FOOT', DOCROOT.'app1/views/layout/foot.php');
 define('HELPERS', DOCROOT.'app1/views/helpers.php');
 define('JSLIB', BASEHREF.'javascripts/js.js');
+define('JSLIB2', BASEHREF.'javascripts/js2.js');
 define('GMAPURL', 'http://maps.google.com/maps/api/js?sensor=false');
 define('CSSMAIN', BASEHREF.'stylesheets/styles.css');
 define('JQUERY', BASEHREF.'javascripts/jquery-latest.min.js');

@@ -22,14 +22,17 @@ class WpComment extends BaseObject
 
 	public function load($id)
 	{
+
+		//		if( ! ($id instanceof MongoId))  {
+		//	$id = new MongoId($id);
+			//$id = $id->{$id};
+		//}
 		$doc = self::retrieveByPK($id);
 
 		
 
 		$this->data['_id'] = (int)$doc['_id'];
-		$this->data['post_title'] = $doc['post_title'];
-		$this->data['post_content'] = $doc['post_content'];
-		$this->data['post_slug'] = $doc['post_slug'];
+		$this->data['comment_text'] = $doc['commenttext'];
 
 	}
 
@@ -121,7 +124,43 @@ class WpComment extends BaseObject
 
 
 
-	static public function retrieveByPK( $pid) 
+	static public function retrieveByPid( $pid)
+        {
+	
+
+		
+		 $self = self::getInstance();
+                $docs = ( isset( $pid) ) ? $self->db->test->wp_comment->find(array('pid'=>(int)$pid ) ) : array();
+
+		$comments = array();
+		foreach($docs as $doc)
+		{
+			$comments[ $doc['_id'] ] = new self($doc['_id']);
+		}
+
+		try 
+		{
+                
+			if(!isset( $pid ) ) throw new Exception('PID missing');
+		}
+		catch (Exception $e) 
+		{
+			echo $e->getMessage();
+			return array();
+		}
+
+                return (array) $comments;
+
+
+
+
+
+
+
+	}
+
+
+	static public function retrieveByPK($pid) 
 	{
 
 

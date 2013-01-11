@@ -8,7 +8,7 @@ foreach($comments as $comment):
 
 $rowColor=($rowCt%2 > 0) ?'ghostwhite' :'#E5E5E5';
 
-$dt=$comment->getcomment_date();
+$dt=null; //$comment->getcomment_date();
 
 //print_r(date_parse($dt));
 
@@ -29,15 +29,15 @@ $dt=date("D Y M j G:i:s T");
 
 
 <?php
-echo "[$rowCt]"; 
+echo $rowCt.'. '; 
 
-echo "Submitted $dt by <a href=\"#\" id=\"currentLoggedUser\">anonymous</a>:";  
+echo "Submitted $dt by " . link_to('anon', 'http://#', array('class'=>'and','id'=>'currentLoggedUser'));  
 			
 			?>
 			
 			<br />
 			
-			<?php echo $comment->getcomment_content().'<br />'; ?>
+			<?php echo $comment->data['comment_text']; //echo $comment->getcomment_content().'<br />'; ?>
 			
 	<br />
 	
