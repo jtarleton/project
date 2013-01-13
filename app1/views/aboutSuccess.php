@@ -1,12 +1,11 @@
 <div id="content"><h2>About</h2>
 
 <p>
-
-Crystal Bit is my personal home page and original web application, written in PHP 5.4, based on the<a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC architecture</a>, and driven by the <a href="http://www.mongodb.org">MongoDB</a> database.
+Welcome. Crystal Bit is my personal home page and original web application, written in PHP 5.4, based on the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC architecture</a>, and driven by the <a href="http://www.mongodb.org">MongoDB</a> database.
 
 </p>
 <p>
-You'll notice this site does not use a certain <a href="http://www.wordpress.org">popular blog application</a>, nor does it use any of the 
+You may notice this site does not use a certain <a href="http://www.wordpress.org">popular blog application</a>, nor does it use any of the 
 many excellent <a href="http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks#PHP_2">PHP frameworks</a> out there; rather, it is a framework of my own design.
 </p>
 
@@ -15,12 +14,11 @@ many excellent <a href="http://en.wikipedia.org/wiki/Comparison_of_web_applicati
 </p> -->
 
 <p>
-If you code, feel 
-free to <a href="https://github.com/jtarleton/project/fork">fork</a> this project on github.
+If you code, you are welcome to <a href="https://github.com/jtarleton/project/fork">fork</a> this project on github.
 </p>
 
 <p>
--James
+- James
 </p>
 
 

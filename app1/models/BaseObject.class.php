@@ -3,7 +3,8 @@
 
 class BaseObject extends AbstractBaseObject
 {
-	
+
+	public $db;	
 
 	public function __construct()
 	{

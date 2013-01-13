@@ -15,7 +15,7 @@ $dt=null; //$comment->getcomment_date();
 $dt=date("D Y M j G:i:s T"); 
 
 ?>
-<div style="width:100%; height:39px;overflow:hidden;background:<?php echo $rowColor; ?>">
+<div style="width:100%; height:49px;overflow:hidden; padding:5px; background:<?php echo $rowColor; ?>">
 
 <!-- 
 <h3 id="topicTitleOfResponse" style="margin:0;padding:0;" class="header">Title</h3> -->

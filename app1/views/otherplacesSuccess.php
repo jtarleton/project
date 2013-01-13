@@ -72,7 +72,7 @@ ksort($links);
 <ul>
 
 <?php foreach( $links as $text=>$uri ): ?>
-	<li class="page_item"><a href="<?php echo $uri; ?>"><?php echo $text; ?></a></li>
+	<li class="page_item"><?php echo link_to($text,$uri); ?></li>
 <?php endforeach; ?>
 
 </ul>
