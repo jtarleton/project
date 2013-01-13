@@ -1,15 +1,15 @@
  <div class="navbar" style="margin-bottom:5px;">
-              <div class="navbar-inner">
+              <div class="navbar-inner" style="padding-left:0;margin-left:0;margin-right:0;padding-right:0;">
                 <div class="container">
                   <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <!-- <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                  </a>
-                  <a class="brand" href="<?php echo BASEHREF; ?>">Crystal Bit</a>
+                    <span class="icon-bar"></span> -->
+                  </a><!-- class="brand" href="<?php echo BASEHREF; ?>">Crystal Bit</a></div> --> 
                   <div class="nav-collapse collapse navbar-responsive-collapse">
-                    <ul class="nav">
-                      <li class="active"><a href="#">Home</a></li>
+                    <ul class="nav" style="margin-left:0; padding-left:0;">
+                      <li><a href="<?php echo BASEHREF; ?>">Crystal Bit</a>   </li>
+			<li class="active"><a href="#">Home</a></li>
                       <li><a href="#">Link</a></li>
                       <li><a href="#">Link</a></li>
                       <li class="dropdown">
@@ -28,7 +28,7 @@
                     <form class="navbar-search pull-left" action="">
                       <input type="text" class="search-query span2" placeholder="Search">
                     </form>
-                    <ul class="nav pull-right">
+                    <ul class="nav pull-right" style="padding-right:0;margin-right:0;">
                       <li><a href="?p=login">Login</a></li>
                       <li class="divider-vertical"></li>
                       <li class="dropdown">
