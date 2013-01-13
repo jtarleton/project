@@ -9,13 +9,13 @@
                   <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav" style="margin-left:0; padding-left:0;">
                       <li><a href="<?php echo BASEHREF; ?>">Crystal Bit</a>   </li>
-			<li class="active"><a href="#">Home</a></li>
-                      <li><a href="#">Link</a></li>
-                      <li><a href="#">Link</a></li>
+			<li class="active"><a href="?p=index">Home</a></li>
+                      <li><a href="?p=otherplaces">Links</a></li>
+                      <li><a href="?p=github">Site Updates</a></li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Site Info<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
+                          <li><a href="?p=about">About</a></li>
                           <li><a href="#">Another action</a></li>
                           <li><a href="#">Something else here</a></li>
                           <li class="divider"></li>
@@ -32,10 +32,9 @@
                       <li><a href="?p=login">Login</a></li>
                       <li class="divider-vertical"></li>
                       <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
+                          <li><a href="?p=jamessstuff">James's Stuff</a></li>
                           <li><a href="#">Something else here</a></li>
                           <li class="divider"></li>
                           <li><a href="#">Separated link</a></li>
