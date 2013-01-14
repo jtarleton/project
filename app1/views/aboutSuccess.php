@@ -1,20 +1,16 @@
 <div id="content"><h2>About</h2>
 
 <p>
-Welcome. Crystal Bit is my personal home page and original web application, written in PHP 5.4, based on the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">MVC architecture</a>, and driven by the <a href="http://www.mongodb.org">MongoDB</a> database.
+Welcome. Crystal Bit is my personal home page and original web application, written in PHP 5.4, based on the <?php echo link_to('MVC architechture', 'http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller'); ?>, and driven by the <?php echo link_to('MongoDB', 'http://www.mongodb.org'); ?> database.
 
 </p>
 <p>
-You may notice this site does not use a certain <a href="http://www.wordpress.org">popular blog application</a>, nor does it use any of the 
-many excellent <a href="http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks#PHP_2">PHP frameworks</a> out there; rather, it is a framework of my own design.
+You may notice this site does not use a certain <?php echo link_to('popular blog application', "http://www.wordpress.org"); ?>, nor does it use any of the 
+many excellent <?php echo link_to('PHP frameworks', 'http://en.wikipedia.org/wiki/Comparison_of_web_application_frameworks#PHP_2'); ?> out there; rather, it is a framework of my own design.
 </p>
 
-<!-- <p>
-<iframe width="560" height="315" src="http://www.youtube.com/embed/NrVCjnRdB_k" frameborder="0" allowfullscreen></iframe>
-</p> -->
-
 <p>
-If you code, you are welcome to <a href="https://github.com/jtarleton/project/fork">fork</a> this project on github.
+If you code, you are welcome to <?php echo link_to('fork','https://github.com/jtarleton/project'); ?> this project on Github.
 </p>
 
 <p>
