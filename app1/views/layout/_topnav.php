@@ -35,7 +35,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li><a href="?p=jamessstuff">James's Stuff</a></li>
-                          <li><a href="#">Something else here</a></li>
+                          <li><a href="?p=upcomingevents">Upcoming Events</a></li>
                           <li class="divider"></li>
                           <li><a href="#">Separated link</a></li>
                         </ul>

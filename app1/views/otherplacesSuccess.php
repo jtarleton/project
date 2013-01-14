@@ -5,6 +5,8 @@
 
 
 $links = array(
+
+'DailyMile'=>'http://www.dailymile.com',
 'Queens Mount Sinai Hospital'=>'http://www.mshq.org/patient-and-visitor-info',
 'ServerGrove'=>'http://www.servergrove.com',
 'Linode'=>'http://www.linode.com/',
