@@ -1,6 +1,6 @@
- <div class="navbar" style="margin-bottom:5px;">
+ <div class="navbar" id="bsnav">
               <div class="navbar-inner" style="padding-left:0;margin-left:0;margin-right:0;padding-right:0;">
-                <div class="container">
+                <!--<div class="container"> -->
                   <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                     <!-- <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -25,9 +25,9 @@
                         </ul>
                       </li>
                     </ul>
-                    <form class="navbar-search pull-left" action="">
+                    <!-- <form class="navbar-search pull-left" action="">
                       <input type="text" class="search-query span2" placeholder="Search">
-                    </form>
+                    </form> -->
                     <ul class="nav pull-right" style="padding-right:0;margin-right:0;">
                       <li><a href="?p=login">Login</a></li>
                       <li class="divider-vertical"></li>
@@ -42,6 +42,6 @@
                       </li>
                     </ul>
                   </div><!-- /.nav-collapse -->
-                </div>
-              </div><!-- /navbar-inner -->
+              
+		</div><!-- /navbar-inner -->
             </div><!-- /navbar -->

@@ -14,6 +14,8 @@ define('FBSECRET','76859808e286a5c25dfdea3451ee9218');
 define('FLICKRFEED', 'http://api.flickr.com/services/feeds/photoset.gne?set=72157605872998812&nsid=27461998@N02&lang=en-us');
 define('NEWSFEED', 'http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml');
 define('HEAD', DOCROOT.'app1/views/layout/head.php');
+define('LEFT', DOCROOT.'app1/views/layout/left.php');
+define('RIGHT', DOCROOT.'app1/views/layout/right.php');
 define('FOOT', DOCROOT.'app1/views/layout/foot.php');
 define('HELPERS', DOCROOT.'app1/views/helpers.php');
 define('JSLIB', BASEHREF.'javascripts/js.js');
