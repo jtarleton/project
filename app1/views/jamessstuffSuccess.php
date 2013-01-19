@@ -1,3 +1,6 @@
+<?php if(! @$_SESSION['isAuth2'] ): ?>
+<div id="content">You are not authorized to access this page.</div>
+<?php else: ?>
 <div id="content"><h2>James's Stuff</h2>
 
 <p>
@@ -19,3 +22,5 @@ endforeach;
 
 </p>
 </div>
+
+<?php endif; ?>

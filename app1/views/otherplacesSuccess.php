@@ -4,8 +4,17 @@
 <?php
 
 
-$links = array(
+$links = (@$_SESSION['isAuth2']) ? array(
 
+'MSNBC'=>'http://tv.msnbc.com',
+'Fox News'=>'http://www.foxnews.com',
+'CNN'=>'http://www.cnn.com',
+'Stuff White People Like'=>'http://www.stuffwhitepeoplelike.com',
+'The Onion'=>'http://www.theonion.com',
+'Zend'=>'http://www.zend.com',
+'MongoDB'=>'http://www.mongodb.org/',
+'MySQL'=>'http://www.mysql.com',
+'PHP'=>'http://www.php.net',
 'DailyMile'=>'http://www.dailymile.com',
 'Queens Mount Sinai Hospital'=>'http://www.mshq.org/patient-and-visitor-info',
 'ServerGrove'=>'http://www.servergrove.com',
@@ -65,7 +74,7 @@ $links = array(
 'JFK Airport'=>'http://www.panynj.gov/airports/jfk.html'
 
 
-);
+) : array('Accuweather'=>'http://www.accuweather.com');
 
 ksort($links);
 

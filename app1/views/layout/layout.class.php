@@ -28,7 +28,9 @@ class Layout
 		
 		if (!$templateOnly)
 		{
-			eval('?>' . file_get_contents(HEAD) ); 
+			eval('?>' . file_get_contents(HEAD) );
+			eval('?>' . file_get_contents(LEFT) ); 
+			eval('?>'.file_get_contents(RIGHT));
 			//echo '<!-- End Head -->';
 		}	
 	
@@ -37,7 +39,8 @@ class Layout
 		if (!$templateOnly)
 		{
 			//echo '<!-- Begin Foot -->';
-			eval('?>'.file_get_contents('/var/project/app1/views/layout/_side.php')); 
+			/* eval('?>'.file_get_contents(RIGHT));
+			*/
 			eval('?>'.file_get_contents(FOOT)); 
 		}
 	
