@@ -20,16 +20,41 @@ class WpPost extends BaseObject
 	}
 
 
+	/* public function getId() {
+
+		return $this->data['id'];
+	} */
+
 	public function load($id)
 	{
-		$doc = self::retrieveByPK($id);
 
 		
 
-		$this->data['_id'] = (int)$doc['_id'];
-		$this->data['post_title'] = $doc['post_title'];
-		$this->data['post_content'] = $doc['post_content'];
-		$this->data['post_slug'] = $doc['post_slug'];
+
+
+
+                $doc = ( isset( $id) ) ? $this->db->test->wp_post->findOne(array('_id'=>(int)$id ) ) : null;
+        
+
+                
+		 if(!isset( $doc ) ) throw new Exception('Post not found for id '. $id);
+               
+
+
+
+
+
+		
+
+
+
+
+		$this->data['_id'] = (int)@$doc['_id'];
+		$this->data['post_title'] = @$doc['post_title'];
+		$this->data['post_content'] = @$doc['post_content'];
+		$this->data['post_slug'] = @$doc['post_slug'];
+		$this->data['post_status'] = @$doc['post_status'];
+
 
 	}
 
@@ -88,6 +113,13 @@ class WpPost extends BaseObject
 		return $id;
 	
 	}
+	
+	public function getAttribute($prop)
+	{
+
+		return @$this->data[$prop];
+	}
+
 	public function getAttributes(){
 		return $this->data;
 	}
@@ -123,15 +155,15 @@ class WpPost extends BaseObject
 
 	static public function retrieveByPK( $pid) 
 	{
-
+		/* 
 
 		$self = self::getInstance();
                 $post = ( isset( $pid) ) ? $self->db->test->wp_post->findOne(array('_id'=>(int)$pid ) ) : null;
 	
 
 		if(!isset( $post ) ) throw new Exception('Post not found for id '. $pid);
-
-		return (array) $post;
+		*/
+		return new self( $pid ) ;
 
 
 	}
@@ -151,7 +183,12 @@ class WpPost extends BaseObject
                 $posts =        $self->db->test->wp_post->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
                          //$self->db->test->wp_post->find();
 
-                return $posts;
+		$objs = array();
+		foreach($posts as $post)
+		{
+			$objs[ $post['_id'] ] = new self( $post['_id'] );
+		}
+                return $objs;
 
 
 
@@ -178,12 +215,19 @@ class WpPost extends BaseObject
 		$posts =	$self->db->test->wp_post->find(array('post_status'=>'publish'))->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
 			 //$self->db->test->wp_post->find();
 		
-		return $posts;
 
-		foreach($posts as $post)
-		{
 
-		}
+			     $objs = array();
+                foreach($posts as $post)
+                {
+
+                        $objs[ $post['_id'] ] = new self( $post['_id'] );
+                }
+                return $objs;
+
+
+
+
 	}
 
 

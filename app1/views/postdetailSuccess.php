@@ -45,10 +45,10 @@ require_once('/var/project/app1/models/WpPost.class.php');
 $post = WpPost::retrieveByPK( $_GET['pid'] );
 
 
- echo (!empty($post)) ? $post['post_title'] : null; ?></h2>
+ echo (!empty($post)) ? $post->getAttribute('post_title') : null; ?></h2>
 	<!-- <div style="line-height:22px;"><img src="http://www.jamestarleton.com/images/phpelephant.jpg" style="float:left; margin:0;" />-->
 <?php
-	echo (!empty($post)) ? $post['post_content']: null;
+	echo (!empty($post)) ? $post->getAttribute('post_content'): null;
 	?>
 
 
@@ -61,7 +61,7 @@ $post = WpPost::retrieveByPK( $_GET['pid'] );
 
 <?php if( @$_SESSION['isAuth2']==1) : ?>
 
-<a href="admin.php?p=edit&pid=<?php echo $post['_id']; ?>">E</a>
+<a href="admin.php?p=edit&pid=<?php echo $post->getId(); ?>">E</a>
 
 <?php endif; ?>
 
@@ -103,7 +103,7 @@ background:transparent;">Comment</label>
 			<input type="text" style="padding:3px; border:0; line-height:14px; background-color:#F0F0F0; color:#333; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans"></input></td></tr></table>
 		</td></tr></table>
 
-		<input type="hidden" name="pid" id="pid" value="<?php echo $post['_id']; ?>"></input>
+		<input type="hidden" name="pid" id="pid" value="<?php echo $post->getId(); ?>"></input>
 
 
 

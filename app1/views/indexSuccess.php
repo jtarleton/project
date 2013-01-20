@@ -213,7 +213,25 @@ $s = isset($_GET['s'] ) ? $_GET['s']  : 1;
 
 
 	 $s = ( isset($_GET['s'])  ) ? $_GET['s'] : 1 ; 
+
+
+
+
 $r=0;
+
+$new = array();
+foreach( WpPost::retrieveLive( $s ) as $p ) {
+
+$new[] = $p;
+}
+$new[] = new stdClass;
+$new[] = new stdClass;
+
+ObjectPresenter::prin($new); 
+
+
+
+/* 
 foreach (WpPost::retrieveLive( $s ) as $p):  $r++;  ?>
 
 <?php
@@ -240,32 +258,14 @@ echo strip_tags( $string);
 <?php endforeach; ?>
 
 
+*/
 
 
 
 
-<?php					           
-
-echo paginated_links( WpPost::retrieveAll()->count(), 5 , $s  );
+echo paginated_links( count( 102 ), 5 , $s  );
 
 ?>
-
-
-					<?php if (0): ?>
-					<ul>
-					<li><a href="#">Prev</a></li>
-					<li class="active">
-					<a href="#">1</a>
-					</li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">Next</a></li>
-					</ul>
-
-					<?php endif; ?>
-
-
 </div>
 
 

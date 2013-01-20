@@ -30,6 +30,10 @@
                 <li><a href="admin.php?p=tags">TAGS</a></li>
 
                 <li><a href="admin.php?p=settings">SETTINGS</a></li>
+
+		 <li><a href="admin.php?p=dailymile">DAILYMILE</a></li>
+
+
 		
                 <li class="logout"><a href="index.php?p=logout">LOGOUT</a></li>
         </ul>
