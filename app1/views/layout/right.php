@@ -2,7 +2,7 @@
 		<?php if(@$_SESSION['isAuth2']) : ?>
                 <h2>Admin</h2>
                         <ul>
-                        <li><a href="<?php echo BASEHREF; ?>admin.php?p=index">Admin</a>
+                        <li><a href="<?php echo BASEHREF; ?>admin.php?p=index">Admin</a></li>
                         </ul>
 
                         <h2>Session Variables</h2>

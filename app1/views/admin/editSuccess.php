@@ -14,7 +14,7 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 
 
 <label>Post Title</label>
-<input type="text" name="post_title" value="<?php echo $post['post_title']; ?>"></input>
+<input type="text" name="post_title" value="<?php echo $post->getAttribute('post_title'); ?>"></input>
 
 
 
@@ -22,12 +22,12 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 
 
 
-<textarea rows="35" name="post_content" cols="60"><?php echo trim(htmlentities($post['post_content'])) ; ?></textarea>
+<textarea rows="35" name="post_content" cols="60"><?php echo trim(htmlentities($post->getAttribute('post_content'))) ; ?></textarea>
 
 
 <select name="post_status">
-<option value="publish" <?php echo( @$post['post_status'] == 'publish' ) ? 'selected="selected"' : null; ?>">Published</option>
-<option value="draft" <?php echo( @$post['post_status'] == 'draft' ) ? 'selected="selected"' : null; ?>">Draft</option>
+<option value="publish" <?php echo( @$post->getAttribute('post_status') == 'publish' ) ? 'selected="selected"' : null; ?>">Published</option>
+<option value="draft" <?php echo( @$post->getAttribute('post_status') == 'draft' ) ? 'selected="selected"' : null; ?>">Draft</option>
 </select>
 
 <br />

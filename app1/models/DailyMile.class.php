@@ -132,7 +132,7 @@ class DailyMileClient
 
 
 <?php 
-
+/* 
 $userid = strip_tags(@$_GET['userid']);
 
 ?>
@@ -189,4 +189,4 @@ if(!empty( $rows  )):
 </table>
 </div>
 </body>
-</html>
+</html> */
