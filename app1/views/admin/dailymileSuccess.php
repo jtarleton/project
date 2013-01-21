@@ -1,15 +1,5 @@
-<div>Daily Mile
-
-
-
-
-
-
-
-
-
+<div>
 <div style="overflow:auto;">
-
 <table style="border-collapse:collapse;table-layout:auto;">
 
 <?php

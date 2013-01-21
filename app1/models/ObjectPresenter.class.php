@@ -75,7 +75,19 @@ echo strip_tags( $string);
                 ?><span>...</span></p><p><?php echo link_to('Read &gt;', 'index.php?p=postdetail&pid=' . $p->getId()); ?></p>
 
                 <p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
-                        <strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
+                        <strong>Tags: 
+
+
+
+
+
+<?php 
+$names = array();
+foreach( $p->getTags() as $termObj ) $names[]=$termObj->getAttribute('name');
+echo implode(', ',$names);
+?>
+
+</strong> | <strong>Comments: 0</strong>
                 </p>
         </div>
 </div>
