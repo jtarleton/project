@@ -152,7 +152,7 @@ class WpTerm extends BaseObject
 
 
 
-	static public function retrieveAll($s = 0, $limit=2)
+	static public function retrieveAll($term_group='tag', $s = 0, $limit=2)
 	{
 
 
@@ -163,13 +163,16 @@ class WpTerm extends BaseObject
                 //$posts = ($s) ? 
 
 		
-                $docs =        $self->db->test->wp_term->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+                $docs =        $self->db->test->wp_term->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
                          //$self->db->test->wp_term->find();
 
 		$objs = array();
 		foreach($docs as $doc){
-
-			$objs[$doc['_id']] = new self($doc['_id']);
+			$id = (string)$doc['_id'];
+			//die(var_dump($id));
+			//$id = $id;
+			
+			$objs[$id] = new self($id);
 		}
 
                 return $objs;
