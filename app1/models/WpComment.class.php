@@ -23,13 +23,22 @@ class WpComment extends BaseObject
 	public function load($id)
 	{
 
-		//		if( ! ($id instanceof MongoId))  {
-		//	$id = new MongoId($id);
-			//$id = $id->{$id};
-		//}
-		$doc = self::retrieveByPK($id);
+	
 
-		
+		                $db = $this->db;
+
+                $doc= ( isset( $id) ) ? $db->test->wp_comment->findOne(array('_id'=>$id ) ) : null;
+
+
+                if(!isset( $doc ) ) throw new Exception('Term not found for id '. $id);
+
+
+
+
+
+
+
+	
 
 		$this->data['_id'] = (int)$doc['_id'];
 		$this->data['comment_text'] = $doc['commenttext'];
@@ -91,6 +100,13 @@ class WpComment extends BaseObject
 		return $id;
 	
 	}
+
+	public function getAttribute($prop)
+	{
+
+		return $this->data[$prop];
+	}
+
 	public function getAttributes(){
 		return $this->data;
 	}
@@ -160,20 +176,15 @@ class WpComment extends BaseObject
 	}
 
 
-	static public function retrieveByPK($pid) 
-	{
+
+	  static public function retrieveByPK( $id)
+        {
 
 
-		$self = self::getInstance();
-                $post = ( isset( $pid) ) ? $self->db->test->wp_comment->findOne(array('_id'=>(int)$pid ) ) : null;
-	
-
-		if(!isset( $post ) ) throw new Exception('Post not found for id '. $pid);
-
-		return (array) $post;
+                return new self($id);
 
 
-	}
+        }
 
 
 

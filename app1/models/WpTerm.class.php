@@ -22,14 +22,22 @@ class WpTerm extends BaseObject
 
 	public function load($id)
 	{
-		$doc = self::retrieveByPK($id);
 
-		
+		$db = $this->db;		
 
-		$this->data['_id'] = (int)$doc['_id'];
-		$this->data['post_title'] = $doc['post_title'];
-		$this->data['post_content'] = $doc['post_content'];
-		$this->data['post_slug'] = $doc['post_slug'];
+		$doc= ( isset( $id) ) ? $db->test->wp_term->findOne(array('_id'=>new MongoId($id) ) ) : null;
+
+
+                if(!isset( $doc ) ) throw new Exception('Term not found for id '. $id);
+
+
+
+
+
+		$this->data['_id'] = $doc['_id'];
+		$this->data['name'] = $doc['name'];
+		$this->data['slug'] = $doc['slug'];
+		$this->data['term_group'] = $doc['term_group'];
 
 	}
 
@@ -88,6 +96,18 @@ class WpTerm extends BaseObject
 		return $id;
 	
 	}
+
+
+
+
+	public function getAttribute($prop ) 
+	{
+
+
+		return $this->data[$prop];
+	}
+
+
 	public function getAttributes(){
 		return $this->data;
 	}
@@ -121,17 +141,11 @@ class WpTerm extends BaseObject
 
 
 
-	static public function retrieveByPK( $pid) 
+	static public function retrieveByPK( $id) 
 	{
 
 
-		$self = self::getInstance();
-                $post = ( isset( $pid) ) ? $self->db->test->wp_term->findOne(array('_id'=>(int)$pid ) ) : null;
-	
-
-		if(!isset( $post ) ) throw new Exception('Post not found for id '. $pid);
-
-		return (array) $post;
+		return new self($id);
 
 
 	}
@@ -148,10 +162,17 @@ class WpTerm extends BaseObject
                 $self = self::getInstance();
                 //$posts = ($s) ? 
 
-                $posts =        $self->db->test->wp_term->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+		
+                $docs =        $self->db->test->wp_term->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
                          //$self->db->test->wp_term->find();
 
-                return $posts;
+		$objs = array();
+		foreach($docs as $doc){
+
+			$objs[$doc['_id']] = new self($doc['_id']);
+		}
+
+                return $objs;
 
 
 
@@ -175,15 +196,19 @@ class WpTerm extends BaseObject
 		$self = self::getInstance();
 		//$posts = ($s) ? 
 
-		$posts =	$self->db->test->wp_term->find(array('post_status'=>'publish'))->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+		$terms =	$self->db->test->wp_term->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
 			 //$self->db->test->wp_term->find();
 		
-		return $posts;
-
-		foreach($posts as $post)
+		
+		$objs = array();
+		foreach($terms as $term)
 		{
+			$objs[ $term['_id'] ] = new self($term['_id']);
 
 		}
+	
+		return $objs;
+
 	}
 
 

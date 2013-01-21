@@ -152,6 +152,18 @@ class WpPost extends BaseObject
 
 
 
+	public function getTags()
+	{
+
+		return array(new WpTerm('50fc8bbc9c76846836000000'), new WpTerm('50fc8c5e9c76846836000001'), new WpTerm('50fc75349c7684f23c000000'));
+
+	}
+
+
+
+
+
+
 
 	static public function retrieveByPK( $pid) 
 	{

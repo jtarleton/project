@@ -31,11 +31,37 @@
 
                 <li><a href="admin.php?p=settings">SETTINGS</a></li>
 
-		 <li><a href="admin.php?p=dailymile">DAILYMILE</a></li>
+		 <li><a href="admin.php?p=dailymile">DM</a></li>
+
+                 <li><a href="admin.php?p=wines">WINES</a></li>
+		
+		  <li><a href="admin.php?p=sessions">SESSIONS</a></li>
 
 
 		
                 <li class="logout"><a href="index.php?p=logout">LOGOUT</a></li>
+
+
+	<!--
+
+
+
+
+	FILES
+CALENDAR_EVENTS
+IPHONE_CONTACTS
+WISH_LIST
+QUEUED_EMAILS
+PLACES_IVE_BEEN
+QUOTES
+WINES
+PLAYLISTS
+SESSIONS
+
+
+
+ -->
+
         </ul>
         <!-- // #end mainNav -->
 
