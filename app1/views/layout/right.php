@@ -14,12 +14,25 @@
 
                 <?php endif; ?>
                 <h2 class="page_item">Categories</h2>
-                        <ul>
-                                <li>Programming</li>
+        
+
+
+                <ul>
+
+
+			   <?php foreach(WpTerm::retrieveAll('category') as $termObj): ?>
+                                <li><?php echo $termObj->getAttribute('name'); ?></li>
+                                <?php endforeach; ?>
+
+
+			
                         </ul>
                 <h2>Tags</h2>
-                        <ul class="avmenu">
-                                <li>PHP</li>
+                        <ul> <!--  class="avmenu"> -->
+                                
+				<?php foreach(WpTerm::retrieveAll() as $termObj): ?>
+				<li><?php echo $termObj->getAttribute('name'); ?></li>
+				<?php endforeach; ?>
                         </ul>
                         <h2>Sun Info</h2>
                         <ul> 
