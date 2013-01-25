@@ -6,6 +6,7 @@
 
 $links = (@$_SESSION['isAuth2']) ? array(
 
+'Python Standard Library'=>'http://docs.python.org/2/library/',
 'MSNBC'=>'http://tv.msnbc.com',
 'Fox News'=>'http://www.foxnews.com',
 'CNN'=>'http://www.cnn.com',
