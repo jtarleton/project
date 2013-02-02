@@ -121,37 +121,141 @@ class ActionController2
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	public function executeCreatethelink( )
+        {
+                $clean = array();
+                foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
+                $p = WpLink::createNew($clean);
+                if($p) header('Location: http://www.crystalbit.com/index.php?p=index'); }
+        public function executeEditli( )
+        {       $post = $_POST; //TODO .... put in model
+                foreach($post as $k=>$v ) $$k=$v;
+                $mongo=MongoFactory::MongoCreate();
+                $updates = array(
+                        'text'=>$text,
+                        'url'=>$url,
+                );
+$mongo->test->wp_link->update(array('_id'=>new MongoId($linkid) ), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=index');}
+
+
+
+function executeCreatet( )
+        {
+                $clean = array();
+                foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
+                $p = WpTerm::createNewTag($clean);
+                if($p) header('Location: http://www.crystalbit.com/index.php?p=index'); }
+        public function executeEditthetag( )
+        {       $post = $_POST; //TODO .... put in model
+                foreach($post as $k=>$v ) $$k=$v;
+                $mongo=MongoFactory::MongoCreate();
+                $updates = array(
+                        'name'=>$name,
+			'slug'=>$slug
+                );
+$mongo->test->wp_term->update(array('_id'=>new MongoId($tagid) ), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=index');}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function executeCreatec( )
+        {
+                $clean = array();
+                foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
+                $p = WpTerm::createNewCat($clean);
+                if($p) header('Location: http://www.crystalbit.com/index.php?p=index'); }
+        public function executeEditthecat( )
+        {       $post = $_POST; //TODO .... put in model
+                foreach($post as $k=>$v ) $$k=$v;
+                $mongo=MongoFactory::MongoCreate();
+                $updates = array(
+                        'name'=>$name,
+                );
+$mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=index');}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public function executeCreatep( )
 	{
 		$clean = array();
 		foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
-
 		$p = WpPost::createNew($clean);
-		if($p) header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$p->getId() );
-
-	
-	}
-
+		if($p) header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$p->getId() );	}
 	public function executeEditp( )
-	{	
-
-		$post = $_POST;
-	
-		//TODO .... put in model
-		foreach($post as $k=>$v )
-		$$k=$v;
-
+	{	$post = $_POST; //TODO .... put in model
+		foreach($post as $k=>$v ) $$k=$v;
 		$mongo=MongoFactory::MongoCreate();
 		$updates = array(
 			'post_title'=>$post_title,
 			'post_content'=>$post_content,
 			'post_status'=>$post_status
 		);
-
-		$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
-		header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$pid );
-
-	}
+$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$pid );}
 
 
 
