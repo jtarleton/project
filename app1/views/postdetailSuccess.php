@@ -1,4 +1,11 @@
 <?php  
+
+if(!class_exists('WpPost'))
+require_once('/var/project/app1/models/WpPost.class.php');
+$post = WpPost::retrievePost( $_GET['pid'] );
+
+
+
 global $postdetail; 
 global $comments;
 global $wpPrevious;
@@ -34,17 +41,10 @@ global $wpNext;
 
 <?php //echo $wpNext; ?>
 
+<?php if(!$post) die('Not found.'); ?>
 <h2>
 
 <?php
-
-
-
-if(!class_exists('WpPost'))
-require_once('/var/project/app1/models/WpPost.class.php');
-$post = WpPost::retrieveByPK( $_GET['pid'] );
-
-
  echo (!empty($post)) ? $post->getAttribute('post_title') : null; ?></h2>
 	<!-- <div style="line-height:22px;"><img src="http://www.jamestarleton.com/images/phpelephant.jpg" style="float:left; margin:0;" />-->
 <?php

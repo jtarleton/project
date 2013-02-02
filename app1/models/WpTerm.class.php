@@ -92,7 +92,7 @@ class WpTerm extends BaseObject
 	public function getId() 
 	{
 		$attrs = $this->getAttributes();
-		$id = (int)$attrs['_id'];
+		$id = $attrs['_id'];
 		return $id;
 	
 	}

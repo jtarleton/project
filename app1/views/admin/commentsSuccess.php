@@ -1,7 +1,7 @@
 <div> Comments
 <?php
 
-echo paginated_links( WpTerm::retrieveAll()->count(), 10 , @$_GET['s'], 'admin');
+echo paginated_links( count(WpComment::retrieveAll()), 10 , @$_GET['s'], 'admin');
 
 ?>
 
@@ -9,13 +9,14 @@ echo paginated_links( WpTerm::retrieveAll()->count(), 10 , @$_GET['s'], 'admin')
 
 <?php 
 
-foreach( WpComment::retrieveAll( @$_GET['s'], 5)  as $post) :
+foreach( WpComment::retrieveAll(0, 99999) as $comment): 
+//@$_GET['s'], 5)  as $comment) :
 
 ?>
 
 <tr>
 <td>
-<?php echo $post['_id'] ;
+<?php echo $comment->getId() ;
 ?>
 </td>
 
@@ -23,9 +24,9 @@ foreach( WpComment::retrieveAll( @$_GET['s'], 5)  as $post) :
 <?php 
 
 
-echo link_to( $post['_id'] , 'http://www.crystalbit.com/admin.php?p=edit&pid='. $post['_id'] ); 
+echo link_to( $comment->getAttribute('comment_text') , 'http://www.crystalbit.com/admin.php?p=editcomm&commid='. $comment->getId() ); 
 ?></td><td><?php 
-echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delp&pid='. $post['_id']  );
+echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delcomm&commid='. $comment->getId()  );
 
 ?>
 </td></tr>

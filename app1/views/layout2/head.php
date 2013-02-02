@@ -26,7 +26,7 @@
                 <li><a href="admin.php?p=comments">COMMENTS</a></li>
 		<li><a href="admin.php?p=links">LINKS</a></li>
 		
-		<li><a href="admin.php?p=categories">CATEGORIES</a></li>
+		<li><a href="admin.php?p=categories">CATS</a></li>
                 <li><a href="admin.php?p=tags">TAGS</a></li>
 
                 <li><a href="admin.php?p=settings">SETTINGS</a></li>

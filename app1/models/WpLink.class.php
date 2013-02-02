@@ -22,14 +22,28 @@ class WpLink extends BaseObject
 
 	public function load($id)
 	{
-		$doc = self::retrieveByPK($id);
+
+
+
+
+
+		     $db = $this->db;
+
+                $doc= ( isset( $id) ) ? $db->test->wp_link->findOne(array('_id'=>new MongoId($id) ) ) : null;
+
+
+                if(!isset( $doc ) ) throw new Exception('Link not found for id '. $id);
+
+
+
+
+
 
 		
 
-		$this->data['_id'] = (int)$doc['_id'];
-		$this->data['post_title'] = $doc['post_title'];
-		$this->data['post_content'] = $doc['post_content'];
-		$this->data['post_slug'] = $doc['post_slug'];
+		$this->data['_id'] = $doc['_id'];
+		$this->data['text'] = $doc['text'];
+		$this->data['url'] = $doc['url'];
 
 	}
 
@@ -84,10 +98,16 @@ class WpLink extends BaseObject
 	public function getId() 
 	{
 		$attrs = $this->getAttributes();
-		$id = (int)$attrs['_id'];
+		$id = $attrs['_id'];
 		return $id;
 	
 	}
+
+	public function getAttribute($attr){
+
+		return $this->data[$attr];
+	}
+
 	public function getAttributes(){
 		return $this->data;
 	}
@@ -123,17 +143,7 @@ class WpLink extends BaseObject
 
 	static public function retrieveByPK( $pid) 
 	{
-
-
-		$self = self::getInstance();
-                $post = ( isset( $pid) ) ? $self->db->test->wp_link->findOne(array('_id'=>(int)$pid ) ) : null;
-	
-
-		if(!isset( $post ) ) throw new Exception('Post not found for id '. $pid);
-
-		return (array) $post;
-
-
+		return new self($pid);
 	}
 
 
@@ -151,7 +161,16 @@ class WpLink extends BaseObject
                 $posts =        $self->db->test->wp_link->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
                          //$self->db->test->wp_link->find();
 
-                return $posts;
+		$objs = array();
+		foreach($posts as $post)
+		{
+			$id = $post['_id'];
+			$id =  $id->{'$id'};
+
+			$objs[ $id ] = new self($id);
+		}
+
+                return $objs;
 
 
 

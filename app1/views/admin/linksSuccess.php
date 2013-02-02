@@ -8,7 +8,7 @@
 
 <?php
 
-echo paginated_links( WpLink::retrieveAll()->count(), 10 , @$_GET['s'], 'admin');
+echo paginated_links( count(WpLink::retrieveAll()), 10 , @$_GET['s'], 'admin');
 
 ?>
 
@@ -38,7 +38,7 @@ foreach( WpLink::retrieveAll( @$_GET['s'], 5)  as $post) :
 
 <tr>
 <td>
-<?php echo $post['_id'] ;
+<?php echo $post->getId();
 ?>
 </td>
 
@@ -46,9 +46,9 @@ foreach( WpLink::retrieveAll( @$_GET['s'], 5)  as $post) :
 <?php
 
 
-echo link_to( $post['_id'] , 'http://www.crystalbit.com/admin.php?p=edit&pid='. $post['_id'] );
+echo link_to( $post->getAttribute('text') , 'http://www.crystalbit.com/admin.php?p=editl&linkid='. $post->getId() );
 ?></td><td><?php
-echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delp&pid='. $post['_id']  );
+echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $post->getId()  );
 
 ?>
 </td></tr>
