@@ -153,6 +153,22 @@ ksort($l);
 	</li>
 	<?php endforeach; ?>
 
+
+
+
+
+
+	<?php foreach(WpLink::retrieveAll(0, 99999) as $linkObj): ?>
+
+	<li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?>
+
+<?php endforeach; ?></li> 
+
+
+
+
+
+
 </ul>
 
 </div>

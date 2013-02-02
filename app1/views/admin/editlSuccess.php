@@ -14,7 +14,7 @@ $post = WpLink::retrieveByPK($_GET['linkid']);
 
 
 <label>Link Text</label>
-<input type="text" name="post_title" value="<?php //echo $post->getAttribute('text'); ?>"></input>
+<input type="text" name="text" value="<?php echo $post->getAttribute('text'); ?>"></input>
 
 
 
@@ -22,7 +22,7 @@ $post = WpLink::retrieveByPK($_GET['linkid']);
 
 
 
-<textarea rows="35" name="post_content" cols="60"><?php echo trim(htmlentities($post->getAttribute('url'))) ; ?></textarea>
+<textarea rows="35" name="url" cols="60"><?php echo trim(htmlentities($post->getAttribute('url'))) ; ?></textarea>
 
 <?php if(0): ?>
 <select name="post_status">

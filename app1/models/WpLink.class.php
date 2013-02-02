@@ -83,9 +83,9 @@ class WpLink extends BaseObject
 	{
 
 		$obj = new self;
-		$id = self::getAutoInc();
+		//$id = self::getAutoInc();
 		
-		$postdata['_id'] = (int) $id;
+		//$postdata['_id'] = (int) $id;
 
 
 

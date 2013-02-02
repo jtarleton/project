@@ -29,7 +29,7 @@ $post = WpTerm::retrieveByPK($_GET['tagid']);
 
 <?php endif; ?>
 <input type="hidden" value="<?php echo $_GET['tagid']; ?>" name="tagid"/>
-<input type="submit" class="btn" value="Edit Post"></input>
+<input type="submit" class="btn" value="Edit Tag"></input>
 
 </form>
 

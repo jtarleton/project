@@ -75,19 +75,40 @@ class WpTerm extends BaseObject
 
 	static public function createNew($postdata)
 	{
-
 		$obj = new self;
-		$id = self::getAutoInc();
-		
+		$id = self::getAutoInc();	
 		$postdata['_id'] = (int) $id;
-
-
-
 		$obj->setAttributes($postdata);
 		$obj->save();
 		return $obj;
-		
 	}
+
+	
+  static public function createNewTag($postdata)
+        {
+                $obj = new self;
+                //$id = self::getAutoInc();
+                //$postdata['_id'] = (int) $id;
+		$postdata['term_group'] = 'tag';
+                $obj->setAttributes($postdata);
+                $obj->save();
+                return $obj;
+        }
+
+
+	  static public function createNewCat($postdata)
+        {
+                $obj = new self;
+                $postdata['term_group'] = 'category';
+		//$id = self::getAutoInc();
+                //$postdata['_id'] = (int) $id;
+                $obj->setAttributes($postdata);
+                $obj->save();
+                return $obj;
+        }
+	
+
+
 
 	public function getId() 
 	{
