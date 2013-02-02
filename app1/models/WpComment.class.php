@@ -198,10 +198,16 @@ class WpComment extends BaseObject
                 $self = self::getInstance();
                 //$posts = ($s) ? 
 
-                $posts =        $self->db->test->wp_comment->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+                $comms =        $self->db->test->wp_comment->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
                          //$self->db->test->wp_comment->find();
 
-                return $posts;
+
+		$objs=array();
+		foreach($comms as $com) 
+		{
+		$objs[$com['_id']] = new self($com['_id'] );
+		}
+                return $objs;
 
 
 

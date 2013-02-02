@@ -13,8 +13,7 @@ class WpPost extends BaseObject
 
 		if(isset($id))
 		{
-		
-			$this->load($id);
+			$this->load($id); 
 		}
 
 	}
@@ -37,7 +36,7 @@ class WpPost extends BaseObject
         
 
                 
-		 if(!isset( $doc ) ) throw new Exception('Post not found for id '. $id);
+		 if(!isset( $doc ) ) return; // new Exception('Post not found for id '. $id);
                
 
 
@@ -163,6 +162,45 @@ class WpPost extends BaseObject
 
 
 
+	static public function retrievePost($pid) 
+	{
+		
+
+
+
+
+
+
+
+
+
+		$i =  self::getInstance();
+
+
+
+                $post = ( isset( $pid) ) ? $i->db->test->wp_post->findOne(array('_id'=>(int)$pid, 'post_status'=>'publish' ) ) : null;
+        
+
+                if(!isset( $post ) ) return false; //throw new Exception('Post not found for id '. $pid);
+                try { 
+		$ret = new self( $post['_id'] ) ;
+		return $ret;
+		} catch(Exception $e)
+		{
+		echo 'Not found.';
+		return false;
+		}
+
+
+
+
+
+
+
+
+
+
+	}
 
 
 	static public function retrieveByPK( $pid) 
