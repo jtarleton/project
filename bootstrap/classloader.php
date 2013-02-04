@@ -35,6 +35,21 @@ foreach (glob(DOCROOT.'lib/*.php') as $filename)
     require_once($filename);
 }
 
+$jpgraph = array(); //LIB
+foreach (glob(DOCROOT.'lib/jpgraph/src/*.php') as $filename)
+{
+    $jpgraph[] = $filename;
+}
+
+sort($jpgraph);
+
+foreach ($jpgraph as $filename)
+{
+    //require_once($filename);
+}
+
+
+
 
 //MODEL
 foreach (glob(DOCROOT.'app1/models/*.php') as $filename)
