@@ -187,4 +187,42 @@ class ActionController
 		}
 		
 	}
+
+
+	public function executeDailymilejson()
+	{
+
+
+		//$objs = DailyMile::getAll()
+
+
+		$output = array();
+		$cols = array('_id'=>'_id','date'=>'date',
+'activity_type'=>'activity_type',
+'distance'=>'distance',
+'time'=>'time',
+'felt'=>'felt'
+);
+
+		$i= 0; 
+		foreach(DailyMile::retrieveAll(0, 999999) as $row)
+		{
+			foreach($cols as $col=>$attr)
+			{
+				if($attr == 'distance')
+				 $val =  round( ( (int)$row->getAttribute('distance')  * 0.000621371192) , 2) ;  
+				else 
+				$val  = $row->getAttribute($attr);
+
+				 $output['aaData'][$i][$col] = $val; //row->getAttribute($attr); 
+			}
+		$i++;
+		}
+		header('Content-Type: application/json');
+		//header('Content-Type: text/plain');
+		echo trim(json_encode($output));
+		exit(0);
+	}
+
+
 }

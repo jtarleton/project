@@ -1,192 +1,240 @@
 <?php 
 
-class Utils 
+class DailyMile extends BaseObject
 {
-	private function __construct()
-	{
-	}
-	
-	static public function zebra($g)
-	{
-		return ($g % 2 !=0) ? 'odd' : 'even';
-	}
+	public $data;
 
-	static public function printEntry(array $row, $g) 
-	{ 
-		?>
-		<tr class="<?php echo self::zebra($g); ?>">
-
-<td><?php echo $row['id']; ?></td>
-
-<td><a href="<?php echo $row['url']; ?>">Link</a></td>
-
-<td><?php echo date('m/d/Y', strtotime($row['at'])); ?></td>
-
-<td><?php echo @$row['message']; ?></td>
-
-<td><?php echo implode(' ', $row['comments']); ?></td>
-
-<td><?php echo implode(' ', $row['likes']); ?></td>
-
-<td><?php echo $row['location']['name']; ?></td>
-
-<td><?php echo $row['user']['username']; ?></td>
-
-<td><?php echo $row['user']['display_name']; ?></td>
-
-<td><?php echo sprintf('<img src=""></img>',$row['user']['photo_url']); ?></td>
-
-<td><a href="<?php echo $row['user']['url']; ?>">User Link</a></td>
-
-<td><?php echo @$row['workout']['activity_type']; ?></td>
-
-<td><?php echo sprintf('%s %s', @$row['workout']['distance']['value'], @$row['workout']['distance']['units']); ?></td>
-
-<td><?php echo @$row['workout']['felt']; ?></td>
-
-		</tr> 
-		<?php
-	}
-}
-
-/**
-* DailyMileEntry
-* 
-*	A DailyMileEntry object represents an entry retrieved from the DailyMile API. 
-*
-*/
-class DailyMileEntry 
-{
-	/**
-	* __construct 
-	*/
-	public function __construct()
+	public function __construct($id= null)
 	{
 
-	/* 
+		parent::__construct();
 
-		TO DO...when James is really bored.
-
-	*/
-
-	}
-
-	
-
-}
-
-
-/**
-* DailyMileClient
-*
-* 	A DailyMileClient object represents a means for interacting with the DailyMile API.
-*
-*/
-class DailyMileClient 
-{
-
-	static private $_singleton;
-
-	/**
-	* Allow only a single instance, for now.
-	*/
-	private function __construct()
-	{ 
-	}
-	
-	/**
-	* getInstance
-	*/
-	static public function getInstance()
-	{
-		if(!isset(self::$_singleton)) 
+		if(isset($id))
 		{
-			self::$_singleton = new self;	
+		
+			$this->load($id);
 		}
-		return self::$_singleton;	
+
 	}
 
-	/**
-	* getRecentEntries
-	*/
-	public function getRecentEntries($userid)
+
+	public function load($id)
 	{
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		curl_setopt($ch, CURLOPT_URL, sprintf('http://api.dailymile.com/people/%s/entries.json', $userid));
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-		$out = curl_exec($ch);
-		return json_decode(utf8_encode($out), true);
+                $db = $this->db;
+                $doc= ( isset( $id) ) ? $db->test->dailymileentry->findOne(array('_id'=>new MongoId($id) ) ) : null;
+                if(!isset( $doc ) ) throw new Exception('dm entry not found for id '. $id);
+		$this->data['_id'] = @$doc['_id']->{'$id'};
+		$this->data['date'] = date('Y-m-d',@$doc['date']->sec);
+$this->data['activity_type'] = @$doc['activity_type'];
+$this->data['distance'] = @$doc['distance'];
+$this->data['time'] = @$doc['time'];
+		$this->data['felt'] = @$doc['felt'];
+
+
+
+
+
+
+
+	}
+
+	static public function getAutoInc() 
+	{
+	
+		$obj = MongoFactory::MongoCreate();
+		$docs = $obj->test->dailymileentry->find();
+		$ids = array();
+		foreach($docs as $doc){
+			$ids[] = (int)$doc['_id'];
+		}
+		$inc = max($ids) + 1;
+		return $inc;
+	}
+
+	static public function deleteByPK($id) 
+	{
+		$obj = new self($id);
+		$n = $obj->delete();
+		if($n > 0) {
+			return $n;
+		} else {
+			throw new Exception('Error deleting record by id '. $id );
+		}
+	}
+
+	public function delete() 
+	{
+		
+		$ret =$this->db->test->dailymileentry->remove(array('_id' => $this->getId()), array('safe'=>true, "justOne" => true));
+		return $ret['n'];
+
+	}
+
+	static public function createNew($postdata)
+	{
+
+		$obj = new self;
+		$id = self::getAutoInc();
+		
+		$postdata['_id'] = (int) $id;
+
+
+
+		$obj->setAttributes($postdata);
+		$obj->save();
+		return $obj;
+		
+	}
+
+	public function getId() 
+	{
+		$attrs = $this->getAttributes();
+		$id = $attrs['_id'];
+		return $id;
+	
+	}
+
+	public function getAttribute($prop)
+	{
+
+		return $this->data[$prop];
+	}
+
+	public function getAttributes(){
+		return $this->data;
+	}
+	public function save()
+	{
+		$doc = array();
+		foreach($this->getAttributes() as  $k=>$v){
+			$doc[$k] = $v;
+		}
+		$this->db->test->dailymileentry->insert($doc);
+	
+	}
+
+	public function setAttributes($data) 
+	{
+		foreach( $data as $k=>$v) $this->data[$k] = $v;
+	}
+
+
+	static public function getInstance() {
+
+		return new self;
+	}
+
+	public function test()
+	{
+
+		echo get_class( $this->db);
 	}
 
 
 
-	/* 
 
-		TO DO...when James is really bored.
+	static public function retrieveByPid( $pid)
+        {
+	
 
-	*/
+		
+		 $self = self::getInstance();
+                $docs = ( isset( $pid) ) ? $self->db->test->dailymileentry->find(array('pid'=>(int)$pid ) ) : array();
+
+		$comments = array();
+		foreach($docs as $doc)
+		{
+			$comments[ $doc['_id'] ] = new self($doc['_id']);
+		}
+
+		try 
+		{
+                
+			if(!isset( $pid ) ) throw new Exception('PID missing');
+		}
+		catch (Exception $e) 
+		{
+			echo $e->getMessage();
+			return array();
+		}
+
+                return (array) $comments;
+
+
+
+
+
+
+
+	}
+
+
+
+	  static public function retrieveByPK( $id)
+        {
+
+
+                return new self($id);
+
+
+        }
+
+
+
+	static public function retrieveAll($s = 0, $limit=10)
+	{
+
+
+
+               $offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
+
+                $self = self::getInstance();
+                //$posts = ($s) ? 
+
+                $comms =        $self->db->test->dailymileentry->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+                         //$self->db->test->wp_comment->find();
+
+
+		$objs=array();
+		foreach($comms as $com) 
+		{
+		$id = $com['_id']->{'$id'};
+		$objs[$id ] = new self($id );
+		}
+                return $objs;
+
+
+
+
+
+
+
+
+
+	}
+
+
+	static public function retrieveLive( $s = 0, $limit = 2)
+	{
+
+		 
+		
+
+		$offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
+
+		$self = self::getInstance();
+		//$posts = ($s) ? 
+
+		$posts =	$self->db->test->dailymileentry->find(array('entry_status'=>'publish'))->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+			 //$self->db->test->wp_comment->find();
+		
+		return $posts;
+
+		foreach($posts as $post)
+		{
+
+		}
+	}
+
 
 }
-?>
-
-
-<?php 
-/* 
-$userid = strip_tags(@$_GET['userid']);
-
-?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
- 
-<title>Daily Mile Client</title>
-<style type="text/css">
-* { margin:0; padding:0}
-body{
-font-size:11px;
-font-family: Verdana, Tahoma, sans-serif;
-}
-td { padding:15px; }
-.odd { background-color:#F0F0F0; }
-</style>
-</head>
-<body>
-<div>
-<form action="DailyMile.class.php" method="GET">
-
-	<label for="userid">Daily Mile User</label>
-
-	<input id="userid" name="userid" type="text"></input>
-
-	<input type="submit" value="Go"></input>
-
-</form>
-<div>
-<div>
-<table style="border-collapse:collapse;table-layout:fixed; width:100%">
-
-<?php
-
-$rows =  DailyMileClient::getInstance()->getRecentEntries($userid);
-$g=0;
-if(!empty( $rows  )):
-
-	foreach( $rows as $arr)
-
-		foreach($arr as $r):
-
-			Utils::printEntry($r, $g); $g++; 
-
-				endforeach; ?>
-
-<?php else: ?>
-
-			<tr><td>Nada</td></tr>
-<?php endif; ?>
-
-</table>
-</div>
-</body>
-</html> */

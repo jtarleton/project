@@ -329,3 +329,83 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  jQuery(document).ready(function(){
+ 
+
+
+
+                 jQuery('#example').dataTable({ 
+                        "aaSorting": [[ 1, "desc" ]],
+                        //"sScrollY"        : "420px",
+                        "bProcessing": false,
+                        "sAjaxSource"     : "http://www.crystalbit.com/index.php?p=dailymilejson",
+                         "bScrollAutoCss"  : false,
+                           // "bScrollCollapse" : true,
+                        //"bDeferRender"    : true,
+                        "bStateSave"      : false,
+                        "aoColumns"       : [
+                                { "mDataProp" : "_id" },
+                                { "mDataProp" : "date" },
+                                { "mDataProp" : "activity_type" },
+                                { "mDataProp" : "distance" },
+                                { "mDataProp" : "time" },
+                                { "mDataProp" : "felt" },
+                            ],
+
+                });
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
