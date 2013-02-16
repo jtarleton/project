@@ -1,11 +1,8 @@
-
-
-                <div id="leftside">
-
-                                <h2 class="hide">Main menu:</h2>
-                                <ul class="page">
-                                        <?php $highlight = "page_item current_page_item"; ?>
-                                        <li class="<?php echo $highlight; ?>"><a href="<?php echo BASEHREF; ?>">Home</a></li>
+<div id="leftside">
+	<h2 class="hide">Main menu:</h2>
+        	<ul class="page">
+                	<?php $highlight = "page_item current_page_item"; ?>
+                        <li class="<?php echo $highlight; ?>"><a href="<?php echo BASEHREF; ?>">Home</a></li>
 
 
 

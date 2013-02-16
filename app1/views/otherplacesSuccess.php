@@ -60,6 +60,7 @@ $l = (@$_SESSION['isAuth2']) ?
 	),
 	
 	'Health Care'=>array(
+		'Metlife'=>'https://mybenefits.metlife.com/',
 		'United Health Care Oxford'=>'https://www.oxhp.com/Member/MemberPortal/',
 		'Queens Mount Sinai Hospital'=>'http://www.mshq.org/patient-and-visitor-info'
 	),
@@ -104,7 +105,7 @@ $l = (@$_SESSION['isAuth2']) ?
 		'Village Chess Shop'=>'http://www.chess-shop.com/'
 	),
 	'Home Utilities'=>array(
-		'AT&amp;T Wireless'=>'http://www.att.com/',
+		'AT&amp;T Wireless'=>'http://www.att.com/mywireless ',
 		'Time Warner Cable'=>'https://myservices.timewarnercable.com/',
 		'Consolidated Edison'=>'http://www.coned.com'
 	),
