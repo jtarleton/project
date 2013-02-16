@@ -7,6 +7,8 @@
 			<li><a class="current" href="index.php?p=about">About</a></li>
 			<li><a href="index.php?p=github">Site Updates</a></li>
 			<li><a href="index.php?p=otherplaces">Other Places</a></li>
+
+			      <li><a href="index.php?p=dailymile">Daily Mile</a></li>
 			<li><a href="index.php?p=login">Login</a>
 				<!-- <ul>
 					<li><a href="#">Subpage 1</a></li>
