@@ -67,9 +67,33 @@ global $wpNext;
 
 
 
-<strong>Tags: </strong>
 						
 							
+
+
+
+
+
+
+ <strong>Tags: 
+
+
+
+
+
+<?php
+$names = array();
+foreach( $post->getTags() as $termObj ) $names[]=$termObj->getAttribute('name');
+echo implode(', ',$names);
+?>
+
+</strong>
+
+
+
+
+
+
 
 						<strong>Comments:</strong>
 
