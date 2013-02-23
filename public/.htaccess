@@ -1,0 +1,20 @@
+<Limit GET POST>
+order deny,allow
+deny from all
+deny from 68.
+deny from 141.
+deny from 208.
+deny from 50.
+deny from 198.
+deny from 69.
+deny from 94.
+deny from 180.
+deny from 79.
+deny from 178.
+deny from 208.
+deny from 66.
+deny from 208.
+deny from 157.
+allow from 198.
+allow from 64.
+</Limit>

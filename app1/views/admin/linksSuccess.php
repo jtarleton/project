@@ -24,7 +24,8 @@ echo paginated_links( count(WpLink::retrieveAll()), 10 , @$_GET['s'], 'admin');
 
 <?php 
 
-foreach( WpLink::retrieveAll( @$_GET['s'], 5)  as $post) :
+$l = ($_SESSION['isAuth2']) ? true : false;
+foreach( WpLink::retrieveAll( @$_GET['s'], 5, $l)  as $link) :
 
 ?>
 
@@ -38,7 +39,7 @@ foreach( WpLink::retrieveAll( @$_GET['s'], 5)  as $post) :
 
 <tr>
 <td>
-<?php echo $post->getId();
+<?php echo $link->getId();
 ?>
 </td>
 
@@ -46,9 +47,9 @@ foreach( WpLink::retrieveAll( @$_GET['s'], 5)  as $post) :
 <?php
 
 
-echo link_to( $post->getAttribute('text') , 'http://www.crystalbit.com/admin.php?p=editl&linkid='. $post->getId() );
+echo link_to( $link->getAttribute('text') , 'http://www.crystalbit.com/admin.php?p=editl&linkid='. $link->getId() );
 ?></td><td><?php
-echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $post->getId()  );
+echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $link->getId()  );
 
 ?>
 </td></tr>
@@ -69,5 +70,3 @@ echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete
 
 
 </div>
-
-

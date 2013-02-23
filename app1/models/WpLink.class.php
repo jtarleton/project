@@ -148,7 +148,7 @@ class WpLink extends BaseObject
 
 
 
-	static public function retrieveAll($s = 0, $limit=2)
+	static public function retrieveAll($s = 0, $limit=2, $loggedin= false)
 	{
 
 
@@ -158,7 +158,9 @@ class WpLink extends BaseObject
                 $self = self::getInstance();
                 //$posts = ($s) ? 
 
-                $posts =        $self->db->test->wp_link->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+
+		$crit = ($loggedin) ? array() : array('public'=>true);
+                $posts =        $self->db->test->wp_link->find($crit)->sort(array('text'=>1))->skip( $offset )->limit( $limit );
                          //$self->db->test->wp_link->find();
 
 		$objs = array();
