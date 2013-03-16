@@ -37,7 +37,7 @@
 </head>
 <body onLoad="initialize();"><div id="wrap"><?php //echo link_to(SITE_TITLE, BASEHREF); ?>
 	<div id="header"><?php //require_once('_topnav.php'); ?>
-		<h1><!-- style="z-index:99; padding-left:15px; padding-top:5px;">--><?php echo link_to('crystalbit','http://www.crystalbit.com'); ?></h1>
+		<h1><!-- style="z-index:99; padding-left:15px; padding-top:5px;">--><?php echo link_to('crystalbit',BASEHREF); ?></h1>
 		<p>version 1.0  <!-- <a href="index.html">3-col</a> &middot; <a href="index2.html">2-col a</a> &middot; <a href="index3.html">2-col b</a> &middot; <a href="print.html">Print</a> --></p>
 		<?php  $chars = range('b', 'd'); 
 		array_push($chars , 'g'); 

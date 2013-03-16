@@ -15,7 +15,7 @@
 
 		<p>
 			<br />
-			<img src="http://www.crystalbit.com/images/mongodb.png" style="border:0;"></img>
+			<img src="<?php echo BASEHREF; ?>/images/mongodb.png" style="border:0;"></img>
 		
 			<?php echo file_get_contents('/var/project/app1/views/layout/cronsig.php'); ?>
 		</p>

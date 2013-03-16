@@ -152,7 +152,7 @@ class ActionController
 	private function executeLogout()
 	{ 
 		$_SESSION['isAuth2'] = false; 
-		header('Location: http://www.crystalbit.com/');
+		header('Location: '.BASEHREF);
 		exit(0);
 	}
 	private function executeAuthcallback()
@@ -175,7 +175,7 @@ class ActionController
 
 			session_write_close(); 
 
-			header('Location: http://www.crystalbit.com'); 
+			header('Location: '.BASEHREF); 
 			exit(0);
 			
 		}
@@ -183,7 +183,7 @@ class ActionController
 		{
 			//unset($_SESSION['isAuth']); 
 			//$_SESSION = array();
-			header('Location: http://www.crystalbit.com/index.php?p=login'); exit(0);
+			header('Location: '.BASEHREF.'index.php?p=login'); exit(0);
 		}
 		
 	}

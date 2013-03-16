@@ -171,7 +171,7 @@ class ActionController2
                 $clean = array();
                 foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
                 $p = WpLink::createNew($clean);
-                if($p) header('Location: http://www.crystalbit.com/index.php?p=index'); }
+                if($p) header('Location: '.BASEHREF.'index.php?p=index'); }
         public function executeEditli( )
         {       $post = $_POST; //TODO .... put in model
                 foreach($post as $k=>$v ) $$k=$v;
@@ -180,7 +180,7 @@ class ActionController2
                         'text'=>$text,
                         'url'=>$url,
                 );
-$mongo->test->wp_link->update(array('_id'=>new MongoId($linkid) ), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=index');}
+$mongo->test->wp_link->update(array('_id'=>new MongoId($linkid) ), array('$set'=>$updates));header('Location: '.BASEHREF.'index.php?p=index');}
 
 
 
@@ -189,7 +189,7 @@ function executeCreatet( )
                 $clean = array();
                 foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
                 $p = WpTerm::createNewTag($clean);
-                if($p) header('Location: http://www.crystalbit.com/index.php?p=index'); }
+                if($p) header('Location: '.BASEHREF.'index.php?p=index'); }
         public function executeEditthetag( )
         {       $post = $_POST; //TODO .... put in model
                 foreach($post as $k=>$v ) $$k=$v;
@@ -198,7 +198,7 @@ function executeCreatet( )
                         'name'=>$name,
 			'slug'=>$slug
                 );
-$mongo->test->wp_term->update(array('_id'=>new MongoId($tagid) ), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=index');}
+$mongo->test->wp_term->update(array('_id'=>new MongoId($tagid) ), array('$set'=>$updates));header('Location: '.BASEHREF.'index.php?p=index');}
 
 
 
@@ -218,7 +218,7 @@ function executeCreatec( )
                 $clean = array();
                 foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
                 $p = WpTerm::createNewCat($clean);
-                if($p) header('Location: http://www.crystalbit.com/index.php?p=index'); }
+                if($p) header('Location: '.BASEHREF.'index.php?p=index'); }
         public function executeEditthecat( )
         {       $post = $_POST; //TODO .... put in model
                 foreach($post as $k=>$v ) $$k=$v;
@@ -226,7 +226,7 @@ function executeCreatec( )
                 $updates = array(
                         'name'=>$name,
                 );
-$mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=index');}
+$mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>$updates));header('Location: '.BASEHREF.'index.php?p=index');}
 
 
 
@@ -245,7 +245,7 @@ $mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>
 		$clean = array();
 		foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
 		$p = WpPost::createNew($clean);
-		if($p) header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$p->getId() );	}
+		if($p) header('Location: '.BASEHREF.'index.php?p=postdetail&pid=' .$p->getId() );	}
 	public function executeEditp( )
 	{	$post = $_POST; //TODO .... put in model
 		foreach($post as $k=>$v ) $$k=$v;
@@ -255,7 +255,7 @@ $mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>
 			'post_content'=>$post_content,
 			'post_status'=>$post_status
 		);
-$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));header('Location: http://www.crystalbit.com/index.php?p=postdetail&pid=' .$pid );}
+$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));header('Location: '.BASEHREF.'index.php?p=postdetail&pid=' .$pid );}
 
 
 
@@ -267,7 +267,7 @@ $mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 	$id = (int)$_GET['pid'];
 	$ok = WpPost::deleteByPK($id);
 	if($ok > 0) 
-		header('Location: http://www.crystalbit.com/admin.php?p=index&s=1');
+		header('Location: '.BASEHREF.'admin.php?p=index&s=1');
 	}
 
 
@@ -295,7 +295,7 @@ $mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 	private function executeLogout()
 	{ 
 		$_SESSION['isAuth2'] = false; 
-		header('Location: http://www.crystalbit.com/');
+		header('Location: '.BASEHREF.'');
 		exit(0);
 	}
 	private function executeAuthcallback()
@@ -318,7 +318,7 @@ $mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 
 			session_write_close(); 
 
-			header('Location: http://www.crystalbit.com'); 
+			header('Location: '.BASEHREF);
 			exit(0);
 			
 		}
@@ -326,7 +326,7 @@ $mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 		{
 			//unset($_SESSION['isAuth']); 
 			//$_SESSION = array();
-			header('Location: http://www.crystalbit.com/index.php?p=login'); exit(0);
+			header('Location: '.BASEHREF.'index.php?p=login'); exit(0);
 		}
 		
 	}

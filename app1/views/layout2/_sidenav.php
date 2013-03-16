@@ -2,22 +2,17 @@
 
 
 <ul class="sideNav">
-                        <li><a href="http://www.crystalbit.com/admin.php?p=index" class="active">Posts</a></li>
-			<li><a href="http://www.crystalbit.com/admin.php?p=create&pid=1">Create Post</a></li>
+                        <li><a href="<?php echo BASEHREF; ?>admin.php?p=index" class="active">Posts</a></li>
+			<li><a href="<?php echo BASEHREF; ?>admin.php?p=create&pid=1">Create Post</a></li>
 
 
 
 
-<li><a href="http://www.crystalbit.com/admin.php?p=createcat">Create Cat</a></li>
-<li><a href="http://www.crystalbit.com/admin.php?p=createtag">Create Tag</a></li>
+<li><a href="<?php echo BASEHREF; ?>admin.php?p=createcat">Create Cat</a></li>
+<li><a href="<?php echo BASEHREF; ?>admin.php?p=createtag">Create Tag</a></li>
 
 
-<li><a href="http://www.crystalbit.com/admin.php?p=createlink">Create Link</a></li>
-
-
-
-
-
+<li><a href="<?php echo BASEHREF; ?>admin.php?p=createlink">Create Link</a></li>
 
 
 
@@ -30,14 +25,19 @@
 
 
 
- <li><a href="http://www.crystalbit.com/admin.php?p=categories" class="active">Categories</a></li>
 
 
- <li><a href="http://www.crystalbit.com/admin.php?p=tags" class="active">Tags</a></li>
 
- <li><a href="http://www.crystalbit.com/admin.php?p=comments" class="active">Comments</a></li>
 
- <li><a href="http://www.crystalbit.com/admin.php?p=links">Links</a></li>
+
+ <li><a href="<?php echo BASEHREF; ?>admin.php?p=categories" class="active">Categories</a></li>
+
+
+ <li><a href="<?php echo BASEHREF; ?>admin.php?p=tags" class="active">Tags</a></li>
+
+ <li><a href="<?php echo BASEHREF; ?>admin.php?p=comments" class="active">Comments</a></li>
+
+ <li><a href="<?php echo BASEHREF; ?>admin.php?p=links">Links</a></li>
 
 
 

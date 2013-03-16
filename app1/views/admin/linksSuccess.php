@@ -47,7 +47,7 @@ foreach( WpLink::retrieveAll( @$_GET['s'], 5, $l)  as $link) :
 <?php
 
 
-echo link_to( $link->getAttribute('text') , 'http://www.crystalbit.com/admin.php?p=editl&linkid='. $link->getId() );
+echo link_to( $link->getAttribute('text') , BASEHREF.'admin.php?p=editl&linkid='. $link->getId() );
 ?></td><td><?php
 echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $link->getId()  );
 

@@ -363,7 +363,7 @@
                         "aaSorting": [[ 1, "desc" ]],
                         //"sScrollY"        : "420px",
                         "bProcessing": false,
-                        "sAjaxSource"     : "http://www.crystalbit.com/index.php?p=dailymilejson",
+                        "sAjaxSource"     : "./index.php?p=dailymilejson",
                          "bScrollAutoCss"  : false,
                            // "bScrollCollapse" : true,
                         //"bDeferRender"    : true,

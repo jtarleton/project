@@ -24,7 +24,7 @@ foreach( WpTerm::retrieveAll( 'tag',@$_GET['s'], 5)  as $tag) :
 <?php 
 
 
-echo link_to( $tag->getAttribute('name') , 'http://www.crystalbit.com/admin.php?p=edittag&tagid='. $tag->getId() ); 
+echo link_to( $tag->getAttribute('name') , BASEHREF.'admin.php?p=edittag&tagid='. $tag->getId() ); 
 ?></td><td><?php 
 echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=deltag&tagid='. $tag->getId()  );
 
