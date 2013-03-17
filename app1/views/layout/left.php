@@ -18,10 +18,32 @@
 		</ul>
 
 		<div class="announce">
-			<h2>Site Updates:</h2>
-			<p><strong>Jan. 19, 2013</strong><br />Revise HTML/CSS.</p>
-			<p class="textright"><a href="https://github.com/jtarleton/project/compare/61020c03e0...5f65699904">Read &raquo;</a></p>
-		</div>
+			<h2>Updates</h2>
+
+<?php $json=file_get_contents('/var/json/user_timeline.json');
+
+
+$arr = json_decode($json, true);
+
+
+$i=0;
+foreach($arr as $row):
+$i++;
+if($i>2) break;
+
+?>
+
+			<p><strong><?php echo date('m/d/Y H:i:s', strtotime($row['created_at'])) ?></strong><br /><?php 
+
+//echo link_to($row['text'], 'http://?id='$row['id']); 
+echo strstr ( $row['text'], 'http://t', true);
+
+?></p>
+			<p class="textright"><a href="#">Read &raquo;</a></p>
+<?php endforeach;	?>
+
+
+	</div>
 	</div>
 
 

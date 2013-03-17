@@ -33,7 +33,7 @@
 
 		  <li><a href="admin.php?p=sessions">SESSIONS</a></li>
 
-
+		<li><a href="admin.php?p=up">UP</a></li>
 		
                 <li class="logout"><a href="index.php?p=logout">LOGOUT</a></li>
 
