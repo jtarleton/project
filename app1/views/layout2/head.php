@@ -31,10 +31,6 @@
 
                 <li><a href="admin.php?p=settings">SETTINGS</a></li>
 
-		 <li><a href="admin.php?p=dailymile">DM</a></li>
-
-                 <li><a href="admin.php?p=wines">WINES</a></li>
-		
 		  <li><a href="admin.php?p=sessions">SESSIONS</a></li>
 
 

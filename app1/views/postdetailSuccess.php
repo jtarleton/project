@@ -63,6 +63,17 @@ global $wpNext;
 
 <a href="admin.php?p=edit&pid=<?php echo $post->getId(); ?>">E</a>
 
+
+
+    <a onclick='postToFeed(); return false;'>Post to Feed</a> </p>
+
+<div id='fb-root'></div>
+   <p id='msg'></p>
+
+
+
+
+
 <?php endif; ?>
 
 

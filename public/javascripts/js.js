@@ -358,6 +358,7 @@
  
 
 
+		jQuery('#example2').dataTable({ });
 
                  jQuery('#example').dataTable({ 
                         "aaSorting": [[ 1, "desc" ]],

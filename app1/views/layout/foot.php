@@ -1,11 +1,7 @@
 </div>
 <div id="footer">
 		<p>
-			<span class="credits">&copy; <?php echo date('Y'); ?> 
-			<a href="<?php //bloginfo('home'); ?>"><?php //bloginfo('name'); ?></a> - 
-			<a href="<?php //bloginfo('rss2_url'); ?>">Entries (RSS)</a> - 
-			<a href="<?php //bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a> - 
-			<?php //wp_loginout(); ?></span>
+			<span class="credits">&copy; <?php echo date('Y'); ?> James 
 			<br />Powered by <?php echo link_to('Project','https://github.com/jtarleton/project'); ?> - 
 			<a href="http://andreasviklund.com/wordpress-themes/">Theme design</a> by 
 			<a href="http://andreasviklund.com/" title="">Andreas Viklund</a> &amp; 
@@ -17,7 +13,7 @@
 			<br />
 			<img src="<?php echo BASEHREF; ?>/images/mongodb.png" style="border:0;"></img>
 		
-			<?php echo file_get_contents('/var/project/app1/views/layout/cronsig.php'); ?>
+			<!-- <?php echo file_get_contents('/var/project/app1/views/layout/cronsig.php'); ?> -->
 		</p>
 
 	</div>

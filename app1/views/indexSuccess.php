@@ -201,22 +201,6 @@ Lorem ipsum doloar sit amet blah foo bar bam. Bah Blah blah bloo blaa bla.
 
 $s = isset($_GET['s'] ) ? $_GET['s']  : 1;
 
-	//   echo paginated_links( WpPost::retrieveAll()->count(), 2 , $s  );
-
-
-
-
-
-
-
-
-
-
-	 $s = ( isset($_GET['s'])  ) ? $_GET['s'] : 1 ; 
-
-
-
-
 $r=0;
 
 $new = array();
@@ -262,8 +246,8 @@ echo strip_tags( $string);
 
 
 
-
-echo paginated_links( count( 102 ), 5 , $s  );
+//count(WpPost::retrieveLive( $s ))
+echo paginated_links( 12, 2, $s  );
 
 ?>
 </div>
