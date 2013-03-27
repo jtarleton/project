@@ -164,8 +164,20 @@ class ActionController
 		{
 			$clean[$k] = strip_tags($v);
 		}
-		$_SESSION['isAuth2'] = false; 
-		$_SESSION['fdsdsfds'] = 'asddadsa';
+		$_SESSION['isAuth2'] = false;
+
+		
+		if(intval(date('H')) >= 12) 
+		{
+			$_SESSION['msg'] = 'Good Afternoon, Professor Falken.';
+			if(intval(date('H')) >= 18 ) 
+				$_SESSION['msg'] = 'Good Evening, Professor Falken';
+		}
+		else 
+		{	
+			$_SESSION['msg'] = 'Good Morning, Professor Falken.';
+		}
+
 		$_SESSION['username'] = $clean['username'];
 
 		if(self::passAuth($clean['username'], $clean['pass']))

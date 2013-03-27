@@ -13,11 +13,13 @@ $l = (@$_SESSION['isAuth2']) ? true : false;
 ?>
 <ul>
 
-	<?php foreach(WpLink::retrieveAll(0, 99999, $l) as $linkObj): ?>
+	<?php foreach(WpLink::retrieveAll(0, 99999, $l) as $cat=>$rows):
+		?><li><?php echo $cat; ?><ul>
+		<?php foreach($rows as $linkObj): ?>
 
-	<li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?>
-
-<?php endforeach; ?></li> 
+	<li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?></li>
+<?php endforeach; ?></ul></li>
+<?php endforeach; ?>
 
 
 

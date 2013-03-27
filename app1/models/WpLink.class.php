@@ -168,8 +168,8 @@ class WpLink extends BaseObject
 		{
 			$id = $post['_id'];
 			$id =  $id->{'$id'};
-
-			$objs[ $id ] = new self($id);
+			$cat = @$post['cat'];
+			$objs[$cat][ $id ] = new self($id);
 		}
 
                 return $objs;

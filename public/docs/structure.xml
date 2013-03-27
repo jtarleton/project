@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="2.0.0a12" title="">
+  <file path="actioncontroller.class.php" hash="9ec16c9dac2fe516c6b11dd7a290c5be" package="Default">
+    <class final="false" abstract="false" namespace="global" line="5" package="Default">
+      <extends/>
+      <name>ActionController</name>
+      <full_name>\ActionController</full_name>
+      <docblock line="2">
+        <description>This is a DocBlock comment</description>
+        <long-description></long-description>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="7" namespace="global" package="Default">
+        <name>$instance</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$p</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="8" namespace="global" package="Default">
+        <name>$outlet</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="10" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="10">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="32" package="Default">
+        <name>initOutlet</name>
+        <full_name>initOutlet</full_name>
+        <argument line="32">
+          <name>$createProxies</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="45" package="Default">
+        <name>setP</name>
+        <full_name>setP</full_name>
+        <argument line="45">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="50" package="Default">
+        <name>getInstance</name>
+        <full_name>getInstance</full_name>
+        <argument line="50">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="60" package="Default">
+        <name>dispatch</name>
+        <full_name>dispatch</full_name>
+        <argument line="60">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="66" package="Default">
+        <name>getP</name>
+        <full_name>getP</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="71" package="Default">
+        <name>preexecute</name>
+        <full_name>preexecute</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="83" package="Default">
+        <name>execute</name>
+        <full_name>execute</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="global" line="106" package="Default">
+        <name>passAuth</name>
+        <full_name>passAuth</full_name>
+        <argument line="106">
+          <name>$email</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="106">
+          <name>$pass</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="118" package="Default">
+        <name>executeCommentpost</name>
+        <full_name>executeCommentpost</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="153" package="Default">
+        <name>executeLogout</name>
+        <full_name>executeLogout</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="159" package="Default">
+        <name>executeAuthcallback</name>
+        <full_name>executeAuthcallback</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="193" package="Default">
+        <name>executeDailymilejson</name>
+        <full_name>executeDailymilejson</full_name>
+      </method>
+    </class>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file actioncontroller.class.php</error>
+      <error line="7" code="50018">No DocBlock was found for property $instance</error>
+      <error line="8" code="50018">No DocBlock was found for property $p</error>
+      <error line="8" code="50018">No DocBlock was found for property $outlet</error>
+      <error line="10" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="32" code="50010">No DocBlock was found for method initOutlet()</error>
+      <error line="45" code="50010">No DocBlock was found for method setP()</error>
+      <error line="50" code="50010">No DocBlock was found for method getInstance()</error>
+      <error line="60" code="50010">No DocBlock was found for method dispatch()</error>
+      <error line="66" code="50010">No DocBlock was found for method getP()</error>
+      <error line="71" code="50010">No DocBlock was found for method preexecute()</error>
+      <error line="83" code="50010">No DocBlock was found for method execute()</error>
+      <error line="106" code="50010">No DocBlock was found for method passAuth()</error>
+      <error line="118" code="50010">No DocBlock was found for method executeCommentpost()</error>
+      <error line="153" code="50010">No DocBlock was found for method executeLogout()</error>
+      <error line="159" code="50010">No DocBlock was found for method executeAuthcallback()</error>
+      <error line="193" code="50010">No DocBlock was found for method executeDailymilejson()</error>
+    </parse_markers>
+  </file>
+  <file path="actioncontroller2.class.php" hash="98cace3b76835d04e8789fc5b1328eee" package="Default">
+    <class final="false" abstract="false" namespace="global" line="5" package="Default">
+      <extends/>
+      <name>ActionController2</name>
+      <full_name>\ActionController2</full_name>
+      <docblock line="2">
+        <description>This is a DocBlock comment</description>
+        <long-description></long-description>
+      </docblock>
+      <property final="false" static="true" visibility="private" line="7" namespace="global" package="Default">
+        <name>$instance</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$p</name>
+        <default></default>
+      </property>
+      <property final="false" static="false" visibility="private" line="7" namespace="global" package="Default">
+        <name>$outlet</name>
+        <default></default>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="15" package="Default">
+        <name>__construct</name>
+        <full_name>__construct</full_name>
+        <argument line="15">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="52" package="Default">
+        <name>initOutlet</name>
+        <full_name>initOutlet</full_name>
+        <argument line="52">
+          <name>$createProxies</name>
+          <default>true</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="65" package="Default">
+        <name>setP</name>
+        <full_name>setP</full_name>
+        <argument line="65">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="global" line="70" package="Default">
+        <name>getInstance</name>
+        <full_name>getInstance</full_name>
+        <argument line="70">
+          <name>$p</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="80" package="Default">
+        <name>getP</name>
+        <full_name>getP</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="85" package="Default">
+        <name>preexecute</name>
+        <full_name>preexecute</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="97" package="Default">
+        <name>execute</name>
+        <full_name>execute</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="169" package="Default">
+        <name>executeCreatethelink</name>
+        <full_name>executeCreatethelink</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="175" package="Default">
+        <name>executeEditli</name>
+        <full_name>executeEditli</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="187" package="Default">
+        <name>executeCreatet</name>
+        <full_name>executeCreatet</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="193" package="Default">
+        <name>executeEditthetag</name>
+        <full_name>executeEditthetag</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="216" package="Default">
+        <name>executeCreatec</name>
+        <full_name>executeCreatec</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="222" package="Default">
+        <name>executeEditthecat</name>
+        <full_name>executeEditthecat</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="243" package="Default">
+        <name>executeCreatep</name>
+        <full_name>executeCreatep</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="249" package="Default">
+        <name>executeEditp</name>
+        <full_name>executeEditp</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="global" line="264" package="Default">
+        <name>executeDelp</name>
+        <full_name>executeDelp</full_name>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="private" namespace="global" line="282" package="Default">
+        <name>passAuth</name>
+        <full_name>passAuth</full_name>
+        <argument line="282">
+          <name>$email</name>
+          <default></default>
+          <type/>
+        </argument>
+        <argument line="282">
+          <name>$pass</name>
+          <default></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="295" package="Default">
+        <name>executeLogout</name>
+        <full_name>executeLogout</full_name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="private" namespace="global" line="301" package="Default">
+        <name>executeAuthcallback</name>
+        <full_name>executeAuthcallback</full_name>
+      </method>
+    </class>
+    <markers>
+      <todo line="176">.... put in model</todo>
+      <todo line="194">.... put in model</todo>
+      <todo line="223">.... put in model</todo>
+      <todo line="250">.... put in model</todo>
+    </markers>
+    <parse_markers>
+      <error line="0" code="50007">No page-level DocBlock was found in file actioncontroller2.class.php</error>
+      <error line="7" code="50018">No DocBlock was found for property $instance</error>
+      <error line="7" code="50018">No DocBlock was found for property $p</error>
+      <error line="7" code="50018">No DocBlock was found for property $outlet</error>
+      <error line="15" code="50010">No DocBlock was found for method __construct()</error>
+      <error line="52" code="50010">No DocBlock was found for method initOutlet()</error>
+      <error line="65" code="50010">No DocBlock was found for method setP()</error>
+      <error line="70" code="50010">No DocBlock was found for method getInstance()</error>
+      <error line="80" code="50010">No DocBlock was found for method getP()</error>
+      <error line="85" code="50010">No DocBlock was found for method preexecute()</error>
+      <error line="97" code="50010">No DocBlock was found for method execute()</error>
+      <error line="169" code="50010">No DocBlock was found for method executeCreatethelink()</error>
+      <error line="175" code="50010">No DocBlock was found for method executeEditli()</error>
+      <error line="187" code="50010">No DocBlock was found for method executeCreatet()</error>
+      <error line="193" code="50010">No DocBlock was found for method executeEditthetag()</error>
+      <error line="216" code="50010">No DocBlock was found for method executeCreatec()</error>
+      <error line="222" code="50010">No DocBlock was found for method executeEditthecat()</error>
+      <error line="243" code="50010">No DocBlock was found for method executeCreatep()</error>
+      <error line="249" code="50010">No DocBlock was found for method executeEditp()</error>
+      <error line="264" code="50010">No DocBlock was found for method executeDelp()</error>
+      <error line="282" code="50010">No DocBlock was found for method passAuth()</error>
+      <error line="295" code="50010">No DocBlock was found for method executeLogout()</error>
+      <error line="301" code="50010">No DocBlock was found for method executeAuthcallback()</error>
+    </parse_markers>
+  </file>
+  <package name="Default" full_name="Default"/>
+  <namespace name="global" full_name="global"/>
+  <marker count="4">todo</marker>
+  <marker count="0">fixme</marker>
+  <deprecated count="0"/>
+</project>

@@ -12,6 +12,11 @@
 		<p>
 			<br />
 			<img src="<?php echo BASEHREF; ?>/images/mongodb.png" style="border:0;"></img>
+
+
+	<br />
+
+	<?php MysqliFactory::info(); ?>
 		
 			<!-- <?php echo file_get_contents('/var/project/app1/views/layout/cronsig.php'); ?> -->
 		</p>
