@@ -15,12 +15,28 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 <form action="admin.php?p=editp" method="POST">
 <p>
 <label>In Categories:</label>
-<textarea>flotsam, jetsam</textarea>
+
+<select name="cats[]" multiple="multiple">
+
+
+<?php
+ foreach( WpTerm::retrieveAll('category')  as $cat) : ?>
+<option value="<?php echo $cat->getId(); ?>"><?php echo $cat->getAttribute('name'); ?></option>
+<?php endforeach; ?>
+</select>
 </p>
 
 <p>
 <label>Tagged Under:</label>
-<textarea>PHP, MongoDB</textarea>
+<select name="tags[]" multiple="multiple">
+<?php 
+ foreach( WpTerm::retrieveAll('tag')  as $tag) : ?>
+<option value="<?php echo $tag->getId(); ?>"><?php echo $tag->getAttribute('name'); ?></option>
+<?php endforeach; ?>
+
+</select>
+
+
 </p>
 <label>Post Title</label>
 <input type="text" name="post_title" value="<?php echo $post->getAttribute('post_title'); ?>"></input>

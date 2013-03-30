@@ -19,41 +19,34 @@ echo paginated_links( count(WpLink::retrieveAll()), 10 , @$_GET['s'], 'admin');
 
 
 
-
-<table style="table-layout:fixed; width:100%;">
-
+<ul>
 <?php 
 
 $l = ($_SESSION['isAuth2']) ? true : false;
-foreach( WpLink::retrieveAll( @$_GET['s'], 5, $l)  as $link) :
+foreach( WpLink::retrieveAll( @$_GET['s'], 5, $l)  as $cat=>$rows) :
 
 ?>
 
 
 
+	 <li><?php echo $cat; ?><ul>
+                <?php foreach($rows as $linkObj): ?>
+
+        <li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?></li>
+<?php endforeach; ?></ul></li>
 
 
+<li>
+<?php echo $linkObj->getId(); ?>
+</li>
 
-
-
-
-<tr>
-<td>
-<?php echo $link->getId();
-?>
-</td>
-
-<td>
-<?php
-
-
-echo link_to( $link->getAttribute('text') , BASEHREF.'admin.php?p=editl&linkid='. $link->getId() );
-?></td><td><?php
-echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $link->getId()  );
-
-?>
-</td></tr>
-
+<li>
+<?php  
+echo link_to( $linkObj->getAttribute('text') , BASEHREF.'admin.php?p=editl&linkid='. $linkObj->getId() ); ?></li>
+<li>
+<?php 
+echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $linkObj->getId()  );
+?></li>
 
 
 
@@ -62,8 +55,7 @@ echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete
 
 <?php endforeach; ?>
 
-</table>
-
+</ul>
 
 
 

@@ -5,6 +5,9 @@
 
 		<ul class="avmenu">
 			<li><a class="current" href="index.php?p=about">About</a></li>
+			<li>
+				<?php echo link_to('Docs', BASEHREF.'/docs'); ?>
+			</li>
 			<li><a href="index.php?p=github">Site Updates</a></li>
 			<li><a href="index.php?p=otherplaces">Other Places</a></li>
 

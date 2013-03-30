@@ -65,7 +65,7 @@ global $wpNext;
 
 
 
-    <a onclick='postToFeed(); return false;'>Post to Feed</a> </p>
+    <a onclick="return postToFeed('<?php echo  $post->getAttribute('post_title'); ?>','Lorem ipsum dolor sit amet.<?php //echo $post->getAttribute('post_content'); ?>');">Post to Feed</a> </p>
 
 <div id='fb-root'></div>
    <p id='msg'></p>

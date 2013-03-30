@@ -3,7 +3,7 @@
 define('MAINTENANCE_MODE', false); 
 define('OUTLET_CONFIG_PATH', DOCROOT.'config/outlet-config.php');
 define('WEBROOT', DOCROOT.'public/');
-define('BASEHREF', 'http://69.162.170.182/'); 
+define('BASEHREF', 'http://www.crystalbit.com/'); 
 define('IMG', BASEHREF.'images/');
 define('SITE_TITLE', 'James\'s Home Page');
 define('SITE_DESC', 'James\'s Home Page');

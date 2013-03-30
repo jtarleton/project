@@ -118,26 +118,28 @@ jQuery(document).ready(function(){
 
 	});
 
+*/
 
 
-
-FB.init({appId: "", status: true, cookie: true});
-function postToFeed() {
+FB.init({appId: "434060650015939", status: true, cookie: true});
+function postToFeed(nm, desc) 
+{
 
         // calling the API ...
         var obj = {
           method: 'feed',
-          redirect_uri: 'http://69.162.170.182',
+          redirect_uri: 'http://www.crystalbit.com',
           link: 'https://developers.facebook.com/docs/reference/dialogs/',
           picture: 'http://fbrell.com/f8.jpg',
-          name: 'Facebook Dialogs',
+          name: nm,
           caption: 'Reference Documentation',
-          description: 'Using Dialogs to interact with users.'
+          description: desc
         };
 
         function callback(response) {
+		alert( "Post ID: " + response['post_id']  );
           document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
         }
 
         FB.ui(obj, callback);
-} */
+}
