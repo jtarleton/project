@@ -35,17 +35,18 @@ class MysqliFactory
             self::$mysqli_objects[0]['count'] = 1;
         }
 
-	$mysqli = new mysqli(PVTCONFIG_DBHOST, PVTCONFIG_DBUSER, PVTCONFIG_DBPASS, PVTCONFIG_DBNAME);
-if ($mysqli->connect_errno) {
-    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-}
+	try { //$mysqli = new mysqli(PVTCONFIG_DBHOST, PVTCONFIG_DBUSER, PVTCONFIG_DBPASS, PVTCONFIG_DBNAME);
+//	if ($mysqli->connect_errno) 
+//    echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+
+} catch(Exception $e) {}
 
 
         if( $cache )
-            self::$mysqli_objects[0]['dbh'] = $mysqli;
+            @self::$mysqli_objects[0]['dbh'] = $mysqli;
 
 
-        return $mysqli;
+        return @$mysqli;
     }
 
 
@@ -57,7 +58,7 @@ if ($mysqli->connect_errno) {
 
 		/* check connection */
 if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
+//    printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
 

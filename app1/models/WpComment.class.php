@@ -23,8 +23,11 @@ class WpComment extends BaseObject
 	public function load($id)
 	{
                 $db = $this->db;
-                $doc= ( isset( $id) ) ? $db->test->wp_comment->findOne(array('_id'=>$id ) ) : null;
-                if(!isset( $doc ) ) throw new Exception('Term not found for id '. $id);
+                $doc= ( isset( $id) ) ? $db->test->wp_comment->findOne(array('_id'=>(int)$id ) ) : null;
+                
+
+
+			if(!isset( $doc ) ) throw new Exception('Term not found for id '. $id);
 		$this->data['_id'] = (int)$doc['_id'];
 		$this->data['comment_text'] = $doc['commenttext'];
 	}

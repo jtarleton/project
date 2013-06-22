@@ -14,16 +14,19 @@ $post = WpLink::retrieveByPK($_GET['linkid']);
 
 
 <label>Link Text</label>
+<br />
 <input type="text" name="text" value="<?php echo $post->getAttribute('text'); ?>"></input>
 
 
 
+
+<br />
 <label>Link URL</label>
+<br/>
 
 
-
-<textarea rows="35" name="url" cols="60"><?php echo trim(htmlentities($post->getAttribute('url'))) ; ?></textarea>
-
+<textarea rows="5" name="url" cols="60"><?php echo trim(htmlentities($post->getAttribute('url'))) ; ?></textarea>
+<br />
 <?php if(0): ?>
 <select name="post_status">
 <option value="publish" <?php echo( @$post->getAttribute('post_status') == 'publish' ) ? 'selected="selected"' : null; ?>">Published</option>

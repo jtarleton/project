@@ -136,58 +136,6 @@ global $p;
 
 
 
-<!-- 
-
-
-
-<div id="widget" style="margin-bottom:20px;">
-<div class="imgframe" id=""></div>
-
-<h2>Early, by Chicane</h2>
-<div id="blurb">
-
-<div style="float:left; width:300px; margin:0; padding:0;">
-Lorem ipsum doloar sit amet blah foo bar bam. Bah Blah blah bloo blaa bla. 
-<span id="details">Details>></span>
-</div>
-
-<div style="float:right;">
-	<h4>Related Links</h4>
-	<ul id="lst" style="width:80px;">
-	<li>Foo</li>
-	<li>Bar</li>
-</ul>
-</div>
-
-
-<button id="clickme">CLICKME</button>
-
-
-<div style="clear:both;"></div>
-
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
--->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -215,38 +163,6 @@ ObjectPresenter::prin($new);
 
 
 
-/* 
-foreach (WpPost::retrieveLive( $s ) as $p):  $r++;  ?>
-
-<?php
-if(1): ?>
-<div class="post">
-	<h2> <?php echo link_to($p['post_title'], 'index.php?p=postdetail&pid=' . $p['_id']) ; ?></h2>
-
-	<div class="contenttext <?php //echo zebraClass($r); ?>">
-<p>
-		<?php 
-
-$string = tokenTruncate($p['post_content'], 500);
-echo strip_tags( $string);
-		?><span>...</span></p><p><?php echo link_to('Read &gt;', 'index.php?p=postdetail&pid=' . $p['_id']); ?></p>
-	
-		<p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
-			<strong>Tags: PHP</strong> | <strong>Comments: 0</strong>
-		</p>
-	</div>
-</div>
-
-<?php endif; ?>
-
-<?php endforeach; ?>
-
-
-*/
-
-
-
-//count(WpPost::retrieveLive( $s ))
 echo paginated_links( 12, 2, $s  );
 
 ?>

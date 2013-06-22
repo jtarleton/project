@@ -1,6 +1,13 @@
 <div>Posts
-<?php echo paginated_links( count(WpPost::retrieveAll()), 10 , @$_GET['s'], 'admin'); ?>
+<?php 
+
+$s = isset($_GET['s'] ) ? $_GET['s']  : 1;
+echo paginated_links( 12, 2, $s , 'admin');
+
+?>
 <table style="table-layout:fixed; width:100%;">
+
+
 
 <?php foreach( WpPost::retrieveAll( @$_GET['s'], 5)  as $post) : ?>
 <tr>

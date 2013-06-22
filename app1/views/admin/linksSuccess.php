@@ -32,25 +32,20 @@ foreach( WpLink::retrieveAll( @$_GET['s'], 5, $l)  as $cat=>$rows) :
 	 <li><?php echo $cat; ?><ul>
                 <?php foreach($rows as $linkObj): ?>
 
-        <li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?></li>
-<?php endforeach; ?></ul></li>
+        <li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?> 
+ | <?php echo $linkObj->getId(); ?>
 
-
-<li>
-<?php echo $linkObj->getId(); ?>
-</li>
-
-<li>
+| 
 <?php  
-echo link_to( $linkObj->getAttribute('text') , BASEHREF.'admin.php?p=editl&linkid='. $linkObj->getId() ); ?></li>
-<li>
+echo link_to( $linkObj->getAttribute('text') , BASEHREF.'admin.php?p=editl&linkid='. $linkObj->getId() ); ?>
+ | 
 <?php 
 echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=dell&linkid='. $linkObj->getId()  );
 ?></li>
 
 
 
-
+	<?php endforeach; ?>
 
 
 <?php endforeach; ?>

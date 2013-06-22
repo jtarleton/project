@@ -83,7 +83,7 @@ class MongoFactory
 	try
 	{
 
-       		$db = new Mongo( "mongodb://localhost:27017");
+       		$db = new MongoClient( "mongodb://localhost:27017");
 	} 
 	catch(MongoConnectionException $e ) 
 	{

@@ -10,7 +10,7 @@
 <input type="text" name="slug">
 </input>
 <br />
-<input class="btn-primary" type="submit" value="Create Category"></input>
+<input class="btn btn-primary" type="submit" value="Create Category"></input>
 </form>
 
 </div>

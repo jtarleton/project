@@ -10,37 +10,19 @@
 <meta name="keywords" content="<?php echo SITE_KEYWORDS;  ?>" />
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/bs.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/andreasnew.css" />
-<script type="text/javascript" src="<?php echo JQUERY; ?>"></script>
-<script type="text/javascript" src="<?php echo JSLIB; ?>"></script>
-<script type="text/javascript" src="<?php echo JSLIB2; ?>"></script>
-<script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/jquery.dataTables.js"></script>
-<script src='http://connect.facebook.net/en_US/all.js'></script>
 
-
-<!-- 
-
-
-   
-    <script type="text/javascript">
-      function initialize() {
-        var mapOptions = {
-          center: new google.maps.LatLng(-34.397, 150.644),
-          zoom: 8,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        };
-        var map = new google.maps.Map(document.getElementById("map_canvas"),
-            mapOptions);
-      }
-    </script>
-
--->
 
 </head>
-<body onLoad="initialize();">
+<body>
 <?php require('fb_js_sdk.php'); ?>
 
+<script type="text/javascript" src="<?php echo JQUERY; ?>"></script>
+<script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
 
+<script type="text/javascript" src="<?php echo JSLIB; ?>"></script>
+<script type="text/javascript" src="<?php echo JSLIB2; ?>"></script>
 
+<script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/jquery.dataTables.js"></script>
 
 
 

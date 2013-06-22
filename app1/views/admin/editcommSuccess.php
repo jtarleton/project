@@ -4,27 +4,26 @@
 
 <?php 
 
-$post = WpPost::retrieveByPK($_GET['pid']);
+$c = WpComment::retrieveByPK($_GET['commid']);
 
 
 
 ?>
 
-<form action="admin.php?p=editp" method="POST">
-
-
-<label>Post Title</label>
-<input type="text" name="post_title" value="<?php echo $post->getAttribute('post_title'); ?>"></input>
+<form action="admin.php?p=editthecomm" method="POST">
 
 
 
-<label>Post Content</label>
+
+<label>Comment</label> <br />
 
 
 
-<textarea rows="35" name="post_content" cols="60"><?php echo trim(htmlentities($post->getAttribute('post_content'))) ; ?></textarea>
+<textarea rows="35" name="commenttext" cols="60"><?php echo trim(htmlentities($c->getAttribute('comment_text'))) ; ?></textarea>
 
 
+
+<?php /* 
 <select name="post_status">
 <option value="publish" <?php echo( @$post->getAttribute('post_status') == 'publish' ) ? 'selected="selected"' : null; ?>">Published</option>
 <option value="draft" <?php echo( @$post->getAttribute('post_status') == 'draft' ) ? 'selected="selected"' : null; ?>">Draft</option>
@@ -32,9 +31,11 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 
 <br />
 
+*/
 
-<input type="hidden" value="<?php echo $_GET['pid']; ?>" name="pid"/>
-<input type="submit" class="btn" value="Edit Post"></input>
+?>
+<input type="hidden" value="<?php echo $_GET['commid']; ?>" name="commid"/>
+<input type="submit" class="btn" value="Edit Comment"></input>
 
 </form>
 

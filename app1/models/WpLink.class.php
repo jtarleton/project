@@ -24,7 +24,7 @@ class WpLink extends BaseObject
 	{
 
 
-
+			//die(var_dump( '51293e1d9c7684dd26000000' )); 
 
 
 		     $db = $this->db;

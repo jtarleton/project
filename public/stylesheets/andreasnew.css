@@ -84,6 +84,26 @@ p {margin:0 0 1.4em;}
 .clearing {clear:left; margin:0; padding:0; visibility:hidden;}
 .hide {display:none;}
 
+.btn{
+#border:1px solid #000;
+border-radius:3px;
+font-weight:bold;
+font-size:14px;
+padding:15px;
+color:white;
+background-color: #4D98C0 ;
+}
+.btn:hover{
+color:cyan;
+background-color: yellow ;
+}
+
+
+
+
+
+
+
 /*
  * Table
  *
