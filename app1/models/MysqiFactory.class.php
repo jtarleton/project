@@ -50,18 +50,17 @@ class MysqliFactory
     }
 
 
-
 	static public function info() {
 
 
-		$mysqli = self::MysqliCreate();
+		//$mysqli = self::MysqliCreate();
 
 		/* check connection */
-if (mysqli_connect_errno()) {
+//if (mysqli_connect_errno()) {
 //    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
+    //exit();
 }
-
+/* 
 $stats = $mysqli->stat();
 
 
@@ -75,10 +74,10 @@ echo 'Uptime '.sec2hms($up[1]) .'<br />';
 else {
 echo $stat.'<br />'; 
 }
+*/
 
 
 
-
-	}
+//	}
 }
-}
+

@@ -1,12 +1,10 @@
 <div id="content"><h2>About</h2>
 
 <p>
-Welcome. Crystal Bit is my personal home page and original web application, written in PHP 5.4, based on the <?php echo link_to('MVC architecture', 'http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller'); ?>, and driven by the <?php echo link_to('MongoDB', 'http://www.mongodb.org'); ?> database.
-
+Welcome. Crystal Bit is my personal home page and original web application.  Thank you for stopping by.
 </p>
 
 <p>
-If you code, you are welcome to <?php echo link_to('fork','https://github.com/jtarleton/project'); ?> this project on Github.
 </p>
 
 <p>

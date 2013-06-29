@@ -12,6 +12,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/andreasnew.css" />
 
 
+	
+
 </head>
 <body>
 <?php require('fb_js_sdk.php'); ?>
@@ -21,6 +23,8 @@
 
 <script type="text/javascript" src="<?php echo JSLIB; ?>"></script>
 <script type="text/javascript" src="<?php echo JSLIB2; ?>"></script>
+
+
 
 <script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/jquery.dataTables.js"></script>
 

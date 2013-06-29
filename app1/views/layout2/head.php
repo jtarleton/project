@@ -10,6 +10,15 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/admstyles/css/transdmin.css" />
 <script type="text/javascript" src="<?php echo JQUERY; ?>"></script>
 <script type="text/javascript" src="<?php echo JSLIB; ?>"></script>
+
+
+        <script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/niceditor.js"></script>
+<script type="text/javascript">
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+</script>
+
+
+
 </head>
 <body>
 

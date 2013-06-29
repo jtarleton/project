@@ -11,7 +11,6 @@
 			<li><a href="index.php?p=github">Site Updates</a></li>
 			<li><a href="index.php?p=otherplaces">Other Places</a></li>
 
-			      <li><a href="index.php?p=dailymile">Daily Mile</a></li>
 			<li><a href="index.php?p=login">Login</a>
 				<!-- <ul>
 					<li><a href="#">Subpage 1</a></li>
@@ -20,6 +19,8 @@
 			</li>
 		</ul>
 
+
+<?php /*
 		<div class="announce">
 			<h2>Updates</h2>
 
@@ -47,6 +48,6 @@ echo strstr ( $row['text'], 'http://t', true);
 
 
 	</div>
-	</div>
+	*/ ?></div>
 
 

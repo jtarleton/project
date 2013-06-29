@@ -125,7 +125,7 @@ border:0px solid #808080;
 <table style="table-layout:fixed;border:0; width:100%"><tr><td>
 <label for="commenttext" style="margin-bottom:20px;text-rendering: optimizelegibility; 
 background:transparent;">Comment</label>
-<textarea name="commenttext" id="commenttext" rows="4" cols="50" style="line-height:14px; text-rendering: optimizelegibility; border:0; font-family:Verdana, sans-serif; font-size:10px; padding:15px; color:gray; background-color:#F0F0F0;" autofocus="true">Add a comment</textarea>
+<textarea name="commenttext" id="commenttext" rows="4" cols="50" style="line-height:14px; text-rendering: optimizelegibility; border:0; font-family:Verdana, sans-serif; font-size:10px; padding:15px; color:gray; background-color:#cfcfcf;" autofocus="true">Add a comment</textarea>
 </td>
 
 <td>
@@ -135,7 +135,7 @@ background:transparent;">Comment</label>
 			<br />
 
 			<table style="width:100%; table-layout:fixed; border:0"><tr><td> <label>Your answer: </label></td><td>
-			<input type="text" style="padding:3px; border:0; line-height:14px; background-color:#F0F0F0; color:#333; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans"></input></td></tr></table>
+			<input type="text" style="padding:3px; border:0; line-height:14px; background-color:#cfcfcf; color:#333; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans"></input></td></tr></table>
 		</td></tr></table>
 
 		<input type="hidden" name="pid" id="pid" value="<?php echo $post->getId(); ?>"></input>
