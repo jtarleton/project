@@ -13,10 +13,55 @@ class ActionController2
 
 
 	public function __construct($p){
-	
-		$this->setP($p);
+		//session_start();
+		//test ORM initialization and db connectivity		
+		global $colors;
+		global $posts;
+		global $facebook; 
+		global $me; 
+		global $session; 
+		global $loginUrl;  	
+		global $logoutUrl; 
+		global $uid;
+		global $menu;
+		global $status_text;
+		global $content;
+		global $connection;
+		global $access_token;
+		global $json;
+		$this->initOutlet(); 
+		$this->setP($p); }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	private function initOutlet($createProxies=true){
+		//session_start();
+		//if(class_exists('Outlet')){		
+		//Outlet::init(require(OUTLET_CONFIG_PATH));
+		///} else {
+			//die('Missing Outlet class');		
+		//}
+		//$this->outlet=Outlet::getInstance($conf); 
+		//if($createProxies){
+			//$this->outlet->createProxies();
+		//}
 	}
+
 	private function setP($p){ 
 		//session_start();
 		$this->p=$p; 
@@ -39,6 +84,7 @@ class ActionController2
 
 	private function preexecute()
 	{	
+		//session_start();
 		$var='execute' . ucfirst($this->getP());
 		
 		if(method_exists($this, $var))
@@ -75,208 +121,140 @@ class ActionController2
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	public function executeCreatethelink( )
-        {
-                $clean = array();
-                foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
-                $p = WpLink::createNew($clean);
-                if($p) header('Location: '.BASEHREF.'index.php?p=index'); 
-	}
-      
-
- 	public function executeEditli( )
-        {       $post = $_POST; //TODO .... put in model
-                foreach($post as $k=>$v ) $$k=$v;
-                $mongo=MongoFactory::MongoCreate();
-                $updates = array(
-                        'text'=>$text,
-                        'url'=>$url,
-                );
-		$mongo->test->wp_link->update(array('_id'=>new MongoId($linkid) ), array('$set'=>$updates));
-		header('Location: '.BASEHREF.'index.php?p=index');
-	}
-
-
-
-	public function executeCreatet( )
-        {
-                $clean = array();
-                foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
-                $p = WpTerm::createNewTag($clean);
-                if($p) header('Location: '.BASEHREF.'index.php?p=index'); 
-	}
-        
-	public function executeEditthetag( )
-        {       $post = $_POST; //TODO .... put in model
-                foreach($post as $k=>$v ) $$k=$v;
-                $mongo=MongoFactory::MongoCreate();
-                $updates = array(
-                        'name'=>$name,
-			'slug'=>$slug
-                );
-		$mongo->test->wp_term->update(array('_id'=>new MongoId($tagid) ), array('$set'=>$updates));
-		header('Location: '.BASEHREF.'index.php?p=index');
-	}
-
-
-	public function executeCreatec( )
-        {
-                $clean = array();
-                foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
-                $p = WpTerm::createNewCat($clean);
-                if($p) header('Location: '.BASEHREF.'index.php?p=index'); }
-        
-
-	public function executeEditthecomm( )
-        {       $post = $_POST; //TODO .... put in model
-                foreach($post as $k=>$v ) $$k=$v;
-                $mongo=MongoFactory::MongoCreate();
-                $updates = array(
-                        'commenttext'=>$commenttext,
-                );
-		$mongo->test->wp_comment->update(array('_id'=>(int)$commid), array('$set'=>$updates));
-
-		header('Location: '.BASEHREF.'admin.php?p=comments');}
-
-
-
-
-
-
-public function executeEditthecat( )
-        {       $post = $_POST; //TODO .... put in model
-                foreach($post as $k=>$v ) $$k=$v;
-                $mongo=MongoFactory::MongoCreate();
-                $updates = array(
-                        'name'=>$name,
-                );
-$mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>$updates));header('Location: '.BASEHREF.'index.php?p=index');}
-
-
-
-
-
-
-
-
-
-
-
-
-
 	public function executeCreatep( )
 	{
 		$clean = array();
-		foreach($_POST as $k=>$v) $clean[$k] = strip_tags($v);
+		foreach($_POST as $k=>$v) $clean[$k] = $v;
+
 		$p = WpPost::createNew($clean);
-		if($p) header('Location: '.BASEHREF.'admin.php?p=edit&pid=' .$p->getId() );	}
+		if($p) header('Location: http://www.crystalbit.com/admin.php?p=edit&pid=' .$p->getId() );
+
+	
+	}
+
 	public function executeEditp( )
-	{	$post = $_POST; //TODO .... put in model
-		foreach($post as $k=>$v ) $$k=$v;
+	{	
+
+		$post = $_POST;
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+		foreach($post as $k=>$v )
+		$$k=$v;
+
 		$mongo=MongoFactory::MongoCreate();
 		$updates = array(
 			'post_title'=>$post_title,
 			'post_content'=>$post_content,
-			'post_status'=>$post_status
+			'post_status'=>$post_status,
+			'post_slug'=>str_replace(' ','-',$post_title)
 		);
-$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));header('Location: '.BASEHREF.'index.php?p=postdetail&pid=' .$pid );}
-
-
-
-
-
-	public function executeDeltag()
-        {
-                $tid = $_GET['tagid'];
-                $ok = WpTerm::deleteByPK($tid);
-                if($ok > 0)
-                        header('Location: '.BASEHREF.'admin.php?p=tags'); // admin.php?p=links
-
-        }
-
-	public function executeDelcat()
-        {
-                $cid = $_GET['catid'];
-                $ok = WpTerm::deleteByPK($cid);
-                if($ok > 0)
-                        header('Location: '.BASEHREF.'admin.php?p=categories'); // admin.php?p=links
-
-        }
-
-	public function executeDell()
-        { 
-		$id = $_GET['linkid'];
-        	$ok = WpLink::deleteByPK($id);
-        	if($ok > 0)
-                	header('Location: '.BASEHREF.'admin.php?p=links'); // admin.php?p=links
 		
+		$rels = WpTermRelationship::getAllByObjectId($pid);
+		
+		foreach($rels as $rel)
+		{
+			WpTermRelationship::deleteByPK($rel['_id']);
+		
+		}
+		/* 
+		foreach($tags as $term_id)
+		{
+			//get term tax id for termid
+			$term_taxonomy_id = null;
+		
+			$doc = array(
+				'object_id'=>$pid,
+				//'term_id'=>$term_id,
+				'term_taxonomy_id'=>null, //getTaxFromTermId$term_id
+			);
+			$mongo->test->wp_term_relationship->insert($doc);
+		}
+	*/
+	
+	
+		foreach($tags as $term_id)
+		{
+				
+				$tts=WpTermTaxonomy::retrieveByTermId($term_id);
+				
+				foreach($tts as $tt) 
+				{
+				
+				$doc = array(
+				'object_id'=>(int)$pid,
+				'term_taxonomy_id'=>$tt->getId()->{'$id'}//getTaxFromTermId$term_id
+				);
+				$mongo->test->wp_term_relationship->insert($doc);
+			}
+		}
+	
+	
+	
+		foreach($cats as $term_id)
+		{
+				
+				$tts=WpTermTaxonomy::retrieveByTermId($term_id);
+				
+				foreach($tts as $tt) 
+				{
+				
+				$doc = array(
+				'object_id'=>(int)$pid,
+				'term_taxonomy_id'=>$tt->getId()->{'$id'} //getTaxFromTermId$term_id
+				);
+				$mongo->test->wp_term_relationship->insert($doc);
+			}
+		}
+	
+	
+	
+	
+	/* 
+		foreach($tags as $term_id)
+		{
+			//get term tax id for termid
+			$term_taxonomy_id = null;
+		
+			$doc = array(
+				'object_id'=>$pid,
+				//'term_id'=>$term_id,
+				'term_taxonomy_id'=>null, //getTaxFromTermId$term_id
+			);
+			$mongo->test->wp_term_->insert($doc);
+		} */
+	
+	
+		$retval=$mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
+		
+	
+		
+		if($retval['ok'])
+		{
+			if($post_status=='publish')
+				header(sprintf('Location: http://www.crystalbit.com/index.php?p=%s&pid=%s','postdetail', $pid));
+			else
+				header(sprintf('Location: http://www.crystalbit.com/admin.php?p=%s','index')); //&pid=%s',$pid))
+		}
+
 	}
 
 
 
 
-	 public function executeDelcomm()
-        {
-                $id = $_GET['commid'];
-                $ok = WpComment::deleteByPK($id);
-                if($ok > 0)
-                        header('Location: '.BASEHREF.'admin.php?p=comments'); // admin.php?p=links
 
-        }
-	
-	public function executeDelp() 
-	{
-	
-	$id = $_GET['pid'];
-	$ok = WpPost::deleteByPK($id);
-	if($ok > 0) 
-		header('Location: '.BASEHREF.'admin.php?p=index&s=1');
-	}
+
 
 
 
@@ -303,7 +281,7 @@ $mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 	private function executeLogout()
 	{ 
 		$_SESSION['isAuth2'] = false; 
-		header('Location: '.BASEHREF.'');
+		header('Location: http://www.crystalbit.com/');
 		exit(0);
 	}
 	private function executeAuthcallback()
@@ -326,13 +304,15 @@ $mongo->test->wp_post->update(array('_id'=>(int)$pid), array('$set'=>$updates));
 
 			session_write_close(); 
 
-			header('Location: '.BASEHREF);
+			header('Location: http://www.crystalbit.com'); 
 			exit(0);
 			
 		}
 		else
 		{
-			header('Location: '.BASEHREF.'index.php?p=login'); exit(0);
+			//unset($_SESSION['isAuth']); 
+			//$_SESSION = array();
+			header('Location: http://www.crystalbit.com/index.php?p=login'); exit(0);
 		}
 		
 	}

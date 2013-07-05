@@ -16,8 +16,13 @@
 <script type="text/javascript">
         bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
 </script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
 
+	jQuery('#post_title').focus();
 
+});
+</script>
 
 </head>
 <body>

@@ -6,7 +6,7 @@ class WpTermRelationship extends BaseObject
 
 	public $data;
 
-	public function __construct($id= null)
+	public function __construct($id)
 	{
 
 		parent::__construct();
@@ -34,10 +34,10 @@ class WpTermRelationship extends BaseObject
 
 
 
-		$this->data['_id'] = $doc['_id'];
-		$this->data['object_id'] = $doc['object_id'];
-		$this->data['term_taxonomy_id'] = $doc['term_taxonomy_id'];
-		$this->data['term_order'] = $doc['term_order'];
+		$this->data['_id'] = @$doc['_id'];
+		$this->data['object_id'] = @$doc['object_id'];
+		$this->data['term_taxonomy_id'] = @$doc['term_taxonomy_id'];
+		$this->data['term_order'] = @$doc['term_order'];
 
 	}
 
@@ -54,25 +54,24 @@ class WpTermRelationship extends BaseObject
 		return $inc;
 	}
 
-
-
-
-
-
 	static public function getAllByObjectId($oid ) 
 	{
 		
-                $rels = array( 
-
-                        new WpTermRelationship('51215be29c7684993d000000')
-
-                ); 
+		$obj = MongoFactory::MongoCreate();
+		
+		$docs = $obj->test->wp_term_relationship->find(array('object_id'=>(int)$oid));
+		
+		$rels = array();
+		
+		foreach($docs as $doc) 
+		{
+			$id = $doc['_id']->{'$id'};
+			
+        		$rels[$id] =new self($id); 
+		}
+		
 		return $rels;
 	}
-
-
-
-
 
 	static public function deleteByPK($id) 
 	{
@@ -120,7 +119,7 @@ class WpTermRelationship extends BaseObject
 	{
 
 
-		return $this->data[$prop];
+		return @$this->data[$prop];
 	}
 
 
@@ -175,11 +174,11 @@ class WpTermRelationship extends BaseObject
 
                $offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-                $self = self::getInstance();
+                $self = MongoFactory::MongoCreate();
                 //$posts = ($s) ? 
 
 		
-                $docs =        $self->db->test->wp_term_relationship->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
+                $docs =        $self->test->wp_term_relationship->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
                          //$self->db->test->wp_term_relationship->find();
 
 		$objs = array();
@@ -212,10 +211,10 @@ class WpTermRelationship extends BaseObject
 
 		$offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-		$self = self::getInstance();
+		
 		//$posts = ($s) ? 
-
-		$terms =	$self->db->test->wp_term_relationship->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+		$db  = MongoFactory::MongoCreate();
+		$terms =	$db->test->wp_term_relationship->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
 			 //$self->db->test->wp_term_relationship->find();
 		
 		

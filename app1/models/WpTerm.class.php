@@ -6,7 +6,7 @@ class WpTerm extends BaseObject
 
 	public $data;
 
-	public function __construct($id= null)
+	public function __construct($id)
 	{
 
 		parent::__construct();
@@ -32,9 +32,9 @@ class WpTerm extends BaseObject
 
 
 
+		//die(var_dump($doc));
 
-
-		$this->data['_id'] = $doc['_id'];
+		$this->data['_id'] = $doc['_id']->{'$id'};
 		$this->data['name'] = $doc['name'];
 		$this->data['slug'] = $doc['slug'];
 		$this->data['term_group'] = $doc['term_group'];
@@ -148,9 +148,9 @@ class WpTerm extends BaseObject
 	}
 
 
-	static public function getInstance() {
+	static public function getInstance($id) {
 
-		return new self;
+		return new self($id);
 	}
 
 	public function test()
@@ -180,11 +180,11 @@ class WpTerm extends BaseObject
 
                $offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-                $self = self::getInstance();
+                $self =MongoFactory::MongoCreate();
                 //$posts = ($s) ? 
 
 		
-                $docs =        $self->db->test->wp_term->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
+                $docs =        $self->test->wp_term->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
                          //$self->db->test->wp_term->find();
 
 		$objs = array();
@@ -217,10 +217,9 @@ class WpTerm extends BaseObject
 
 		$offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-		$self = self::getInstance();
-		//$posts = ($s) ? 
+		$self 		=MongoFactory::MongoCreate();
 
-		$terms =	$self->db->test->wp_term->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+		$terms =	$self->test->wp_term->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
 			 //$self->db->test->wp_term->find();
 		
 		

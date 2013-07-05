@@ -138,9 +138,41 @@ class WpPost extends BaseObject
 	}
 
 
-	static public function getInstance() {
 
-		return new self;
+
+
+/* 	
+	public function getTags()
+	{
+		$tagObjects = array();
+		
+		$objs=WpTermRelationship::getAllByObjectId($this->getId());	
+		foreach($objs as $obj){
+			//if($obj->getAttribute('term_group')=='tag') {
+				//$tagObjects[ $obj->getAttribute('term_id') ]  = new WpTerm( $obj->getAttribute('term_id') ); //}
+				echo $obj->getAttribute('term_id');
+			
+		}
+	
+	//	var_dump(count($tagObjects));
+		return $tagObjects;	
+	}
+*/
+	public function getTagString() 
+	{
+		$tagnames = array();
+		//die(var_dump($this->getTags()));
+		foreach($this->getTags() as $tagObj){
+			$tagnames[] = $tagObj->getAttribute('name');
+		}
+	
+		//die(var_dump($tagnames[0]));
+		return implode(',', $tagnames);	
+	} 
+
+	static public function getInstance($id) {
+
+		return new self(@$id);
 	}
 
 	public function test()
@@ -150,14 +182,13 @@ class WpPost extends BaseObject
 	}
 
 
-
 	public function getTags()
 	{
 
 	
-		$rels = WpTermRelationship::getAllByObjectId(7);
+		$rels = WpTermRelationship::getAllByObjectId($this->getId());
 	
-		//WpTermRelationship::getAllByObjectId(7);
+		WpTermRelationship::getAllByObjectId($this->getId());
 
 		$term_taxonomy_objs = array();
 		foreach($rels as $rel) 
@@ -182,7 +213,6 @@ class WpPost extends BaseObject
 
 
 
-
 	static public function retrievePost($pid) 
 	{
 		
@@ -195,32 +225,23 @@ class WpPost extends BaseObject
 
 
 
-		$i =  self::getInstance();
-
-
-
-                $post = ( isset( $pid) ) ? $i->db->test->wp_post->findOne(array('_id'=>(int)$pid, 'post_status'=>'publish' ) ) : null;
-        
-
-                if(!isset( $post ) ) return false; //throw new Exception('Post not found for id '. $pid);
-                try { 
-		$ret = new self( $post['_id'] ) ;
-		return $ret;
-		} catch(Exception $e)
+		$i =  MongoFactory::MongoCreate();
+		
+		$post = ( isset( $pid) ) 
+			? $i->db->test->wp_post->findOne(array('_id'=>(int)$pid, 'post_status'=>'publish' ) ) 
+			: null;
+			
+		if(!isset( $post ) ) return false; //throw new Exception('Post not found for id '. $pid);
+        try 
+		{ 
+			$ret = new self( $post['_id'] ) ;
+			return $ret;
+		} 
+		catch(Exception $e)
 		{
-		echo 'Not found.';
-		return false;
+			echo 'Not found.';
+			return false;
 		}
-
-
-
-
-
-
-
-
-
-
 	}
 
 
@@ -248,10 +269,10 @@ class WpPost extends BaseObject
 
                $offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-                $self = self::getInstance();
+                $self = MongoFactory::MongoCreate();
                 //$posts = ($s) ? 
 
-                $posts =        $self->db->test->wp_post->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+                $posts =        $self->test->wp_post->find()->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
                          //$self->db->test->wp_post->find();
 
 		$objs = array();
@@ -280,10 +301,10 @@ class WpPost extends BaseObject
 
 		$offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-		$self = self::getInstance();
+		$db = MongoFactory::MongoCreate();
 		//$posts = ($s) ? 
 
-		$posts =	$self->db->test->wp_post->find(array('post_status'=>'publish'))->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+		$posts =	$db->test->wp_post->find(array('post_status'=>'publish'))->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
 			 //$self->db->test->wp_post->find();
 		
 

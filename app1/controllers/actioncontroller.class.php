@@ -127,7 +127,7 @@ class ActionController
 
 		{
 
-		if(@$_POST['textcaptcha_ans'] == 'REP') 
+		if(@$_POST['textcaptcha_ans'] == PVTCONFIG_CAPTCHA) 
 		{
 
 			$data = $_POST;

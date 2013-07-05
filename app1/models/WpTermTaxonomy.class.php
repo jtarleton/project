@@ -6,7 +6,7 @@ class WpTermTaxonomy extends BaseObject
 
 	public $data;
 
-	public function __construct($id= null)
+	public function __construct($id)
 	{
 
 		parent::__construct();
@@ -148,6 +148,22 @@ class WpTermTaxonomy extends BaseObject
 
 
 
+	static public function retrieveByTermId($termid) 
+	{
+		$db = MongoFactory::MongoCreate();
+		$docs = $db->test->wp_term_taxonomy->find( array()); //'term_id'=>$termid));
+		//die(var_dump($docs->count()));
+		$objs = array();
+		foreach($docs as $doc) 
+		{
+			$id =$doc['_id']->{'$id'};
+			$objs[$id]= new self($id);
+		}
+	
+		//die(var_dump($objs));
+		return $objs;
+	}
+
 	static public function retrieveAll($term_group='tag', $s = 0, $limit=2)
 	{
 
@@ -155,11 +171,11 @@ class WpTermTaxonomy extends BaseObject
 
                $offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-                $self = self::getInstance();
+                $self = MongoFactory::MongoCreate();
                 //$posts = ($s) ? 
 
 		
-                $docs =        $self->db->test->wp_term_taxonomy->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
+                $docs =        $self->test->wp_term_taxonomy->find(array('term_group'=>$term_group))->sort(array('_id'=>-1)); //->skip( $s )->limit( $limit );
                          //$self->db->test->wp_term_taxonomy->find();
 
 		$objs = array();
@@ -192,10 +208,10 @@ class WpTermTaxonomy extends BaseObject
 
 		$offset = (!empty ( $s ) )  ?  ($s - 1 )* $limit  : 0;
 
-		$self = self::getInstance();
+		$self = MongoFactory::MongoCreate();
 		//$posts = ($s) ? 
 
-		$terms =	$self->db->test->wp_term_taxonomy->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
+		$terms =	$self->test->wp_term_taxonomy->find(array())->sort(array('_id'=>-1))->skip( $offset )->limit( $limit );
 			 //$self->db->test->wp_term_taxonomy->find();
 		
 		
