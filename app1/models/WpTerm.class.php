@@ -6,7 +6,7 @@ class WpTerm extends BaseObject
 
 	public $data;
 
-	public function __construct($id)
+	public function __construct($id=null)
 	{
 
 		parent::__construct();
@@ -34,7 +34,7 @@ class WpTerm extends BaseObject
 
 		//die(var_dump($doc));
 
-		$this->data['_id'] = $doc['_id']->{'$id'};
+		$this->data['_id'] = $doc['_id']; //->{'$id'};
 		$this->data['name'] = $doc['name'];
 		$this->data['slug'] = $doc['slug'];
 		$this->data['term_group'] = $doc['term_group'];
@@ -43,15 +43,28 @@ class WpTerm extends BaseObject
 
 	static public function getAutoInc() 
 	{
-	
+		/*
 		$obj = MongoFactory::MongoCreate();
 		$docs = $obj->test->wp_term->find();
 		$ids = array();
 		foreach($docs as $doc){
 			$ids[] = (int)$doc['_id'];
-		}
-		$inc = max($ids) + 1;
+		} */
+		$inc = self::getLast() + 1; //max($ids) + 1;
 		return $inc;
+	}
+
+	static public function getLast() 
+	{
+	
+		$obj = MongoFactory::MongoCreate();
+		$docs = $obj->test->wp_term->find();
+		$ids = array();
+		foreach($docs as $doc){
+			$ids[] = $doc['_id'];
+		}
+		return max($ids);
+		
 	}
 
 	static public function deleteByPK($id) 
@@ -85,28 +98,71 @@ class WpTerm extends BaseObject
 
 	
   static public function createNewTag($postdata)
-        {
-                $obj = new self;
-                //$id = self::getAutoInc();
-                //$postdata['_id'] = (int) $id;
+	{
+	        $obj = new self;
+	        //$id = self::getAutoInc();
+	        //$postdata['_id'] = (int) $id;
 		$postdata['term_group'] = 'tag';
-                $obj->setAttributes($postdata);
-                $obj->save();
-                return $obj;
-        }
+	        $obj->setAttributes($postdata);
+	        $v=$obj->save();
+
+
+	       $newtt=array(
+	       	'term_id'=>$v->getId(),
+    'taxonomy'=>"tag",
+    'description'=>"posts about foo!",
+    'parent'=>2,
+    'count'=> 0,
+	       	);
+
+			WpTermTaxonomy::createNew($newtt);
+
+
+
+
+
+
+
+
+
+
+
+	        return $obj;
+	}
 
 
 	  static public function createNewCat($postdata)
-        {
-                $obj = new self;
-                $postdata['term_group'] = 'category';
-		//$id = self::getAutoInc();
-                //$postdata['_id'] = (int) $id;
-                $obj->setAttributes($postdata);
-                $obj->save();
-                return $obj;
-        }
-	
+	{
+	        $obj = new self;
+	        //$id = self::getAutoInc();
+	        //$postdata['_id'] = (int) $id;
+		$postdata['term_group'] = 'category';
+	        $obj->setAttributes($postdata);
+	        $v = $obj->save();
+
+
+	       $newtt=array(
+	       	'term_id'=>$v->getId(),
+    'taxonomy'=>"category",
+    'description'=>"posts filed under category foo!",
+    'parent'=>2,
+    'count'=> 0,
+	       	);
+
+			WpTermTaxonomy::createNew($newtt);
+
+
+
+
+
+
+
+
+
+
+
+	        return $obj;
+	}
 
 
 
@@ -138,7 +194,14 @@ class WpTerm extends BaseObject
 		foreach($this->getAttributes() as  $k=>$v){
 			$doc[$k] = $v;
 		}
-		$this->db->test->wp_term->insert($doc);
+		$result=$this->db->test->wp_term->insert($doc);
+
+		//return reloaded obj
+		if($result['ok']) {
+			$obj= new self(self::getLast()); 
+		}
+
+		return $obj;
 	
 	}
 

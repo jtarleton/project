@@ -27,7 +27,7 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 </p>
 
 <p>
-<label>Tagged Under:</label>
+<label>TaggedUnder:</label>
 <select name="tags[]" multiple="multiple">
 <?php 
  foreach( WpTerm::retrieveAll('tag')  as $tag) : ?>

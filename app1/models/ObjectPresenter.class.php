@@ -82,9 +82,7 @@ echo strip_tags( $string);
 
 
 <?php 
-$names = array();
-foreach( $p->getTags() as $termObj ) $names[]=$termObj->getAttribute('name');
-echo implode(', ',$names);
+echo $p->getTagString();
 ?>
 
 </strong> | <strong>Comments: 0</strong>

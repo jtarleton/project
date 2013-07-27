@@ -76,8 +76,8 @@ class WpTermTaxonomy extends BaseObject
 	static public function createNew($postdata)
 	{
 		$obj = new self;
-		$id = self::getAutoInc();	
-		$postdata['_id'] = (int) $id;
+		//$id = self::getAutoInc();	
+		//$postdata['_id'] = (int) $id;
 		$obj->setAttributes($postdata);
 		$obj->save();
 		return $obj;
@@ -107,6 +107,16 @@ class WpTermTaxonomy extends BaseObject
 	public function getAttributes(){
 		return $this->data;
 	}
+
+
+
+
+
+
+	/* 
+
+	SAVE
+	*/
 	public function save()
 	{
 		$doc = array();
@@ -151,8 +161,7 @@ class WpTermTaxonomy extends BaseObject
 	static public function retrieveByTermId($termid) 
 	{
 		$db = MongoFactory::MongoCreate();
-		$docs = $db->test->wp_term_taxonomy->find( array()); //'term_id'=>$termid));
-		//die(var_dump($docs->count()));
+		$docs = $db->test->wp_term_taxonomy->find( array('term_id'=>new MongoId($termid)));
 		$objs = array();
 		foreach($docs as $doc) 
 		{
