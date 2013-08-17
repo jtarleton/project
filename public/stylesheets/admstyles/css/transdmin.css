@@ -107,8 +107,8 @@ color:cyan;
 background-color: yellow ;
 }
 
-ol{ list-style:inside; list-style-type: decimal; }
-ul{ list-style: inside; list-style-type: circle; }
+ol{ list-style: none;  }
+ul{ list-style: none; }
 
 .nicEdit-main ol{ list-style:inside; list-style-type: decimal; }
 .nicEdit-main ul{ list-style: inside; list-style-type: circle; }

@@ -1,27 +1,32 @@
+
 </div>
-<div id="footer">
-		<p>
-			<span class="credits">&copy; <?php echo date('Y'); ?> James 
-			<br />Powered by <?php echo link_to('Project','https://github.com/jtarleton/project'); ?> - 
-			<a href="http://andreasviklund.com/wordpress-themes/">Theme design</a> by 
-			<a href="http://andreasviklund.com/" title="">Andreas Viklund</a> &amp; 
-			<a href="http://jasoncole.ca">Jason Cole</a>
-		</p>
 
 
-		<p>
-			<br />
-			<img src="<?php echo BASEHREF; ?>/images/mongodb.png" style="border:0;"></img>
 
+<footer role="contentinfo">
 
-	<br />
+    <p>
+<center>
+
+	&copy;2013 James<br />
+Coded in the U.S.A. using vi, Coda, and <a href="http://www.sublimetext.com/">SublimeText</a>
+<br />
+
+<a href="http://www.youtube.com/watch?v=62G_IruzCc4">We Will Not Tolerate Scum</a>
+<br />
+
+<img src="./images/html5.png" style="width:50px; height:50px;" />
+
+</center>
+</p>
+
+</footer>
 
 	<?php MysqliFactory::info(); ?>
 		
 			<!-- <?php echo file_get_contents('/var/project/app1/views/layout/cronsig.php'); ?> -->
-		</p>
 
-	</div>
 
 </body>
 </html>
+

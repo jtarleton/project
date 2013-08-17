@@ -1,5 +1,10 @@
-<div id="content"><h2>About</h2>
+<div class="main" role="main">
 
+<h2>About</h2>
+
+
+
+<div class="post"> <article class="entry">
 <p>
 Welcome. Crystal Bit is my personal home page and original web application.  Thank you for stopping by.
 </p>
@@ -44,4 +49,4 @@ echo str_replace('<h1>PHP Credits</h1>','<h2>PHP Credits</h2>',$bc);
 
 endif; 
 ?>
-</div>
+</div></div>

@@ -1,4 +1,7 @@
-<div id="content"  style="vertical-align:top"><table id="example" style="margin:0;">
+<div class="main" role="main">
+
+
+<table id="example" style="margin:0;">
                         <thead style="margin:0;">
                                 <tr><th>id</th><th>date</th>
 

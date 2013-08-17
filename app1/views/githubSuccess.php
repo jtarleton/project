@@ -1,4 +1,7 @@
-<div id="content"  style="vertical-align:top">
+<div class="main" role="main">
+
+
+
 <h2>Site Updates</h2>
 <table id="example2" style="margin:0;width:100%;">
                         <thead style="margin:0;">

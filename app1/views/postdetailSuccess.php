@@ -14,9 +14,7 @@ global $wpNext;
 ?>
 
 
-<div id="content" style="margin-bottom:20px;">
-
-
+<div class="main" role="main">
 
 
 
@@ -43,20 +41,29 @@ global $wpNext;
 <?php //echo $wpNext; ?>
 
 <?php if(!$post) die('Not found.'); ?>
-<h2>
 
-<?php
- echo (!empty($post)) ? $post->getAttribute('post_title') : null; ?></h2>
+
+
+<article class="entry %s"><header>
+    <h1>
+        <?php
+ echo (!empty($post)) ? $post->getAttribute('post_title') : null; ?></h1>
 	<!-- <div style="line-height:22px;"><img src="http://www.jamestarleton.com/images/phpelephant.jpg" style="float:left; margin:0;" />-->
+
+
+    </header><div class="post">
+
+
+
+  
+        <article><p>
 <?php
 	echo (!empty($post)) ? $post->getAttribute('post_content'): null;
 	?>
-
-
-
-	<p class="postinfo" style="font-weight:normal; margin-bottom:0;">
-	on <?php echo (!empty($post)) ? date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t G:ia', strtotime(date('m/D/Y') )) : null;
-	?>   
+</p>
+	 <footer>
+                <p>Posted by James on <time><?php echo (!empty($post)) ? date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t G:ia', strtotime(date('m/D/Y') )) : null;
+	?>  </time>
 
 
 
@@ -79,12 +86,10 @@ global $wpNext;
 
 
 
-						
-							
 
-
-
-
+	</p>
+               
+                <p>
 
 
  <strong>Tags: 
@@ -101,19 +106,37 @@ echo $post->getTagString()
 </strong>
 
 
+                </p>
+            </footer>
+        </article>
+    </div>
+</article>
+	  
 
 
 
 
 
-						<strong>Comments:</strong>
+
+						
+							
 
 
-</p>
 
 
 
-<p style="margin-top:0;">
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -124,18 +147,40 @@ border:0px solid #808080;
 "> -->
 <table style="table-layout:fixed;border:0; width:100%"><tr><td>
 <label for="commenttext" style="margin-bottom:20px;text-rendering: optimizelegibility; 
-background:transparent;">Comment</label>
-<textarea name="commenttext" id="commenttext" rows="4" cols="50" style="line-height:14px; text-rendering: optimizelegibility; border:0; font-family:Verdana, sans-serif; font-size:10px; padding:15px; color:gray; background-color:#F0F0F0;" autofocus="true">Add a comment</textarea>
+background:transparent;"></label>
+<textarea name="commenttext" id="commenttext" rows="4" cols="50" style="line-height:16px; text-rendering: optimizelegibility; border:0; font-family:Verdana, sans-serif; font-size:12px; padding:15px; color:green; background-color:#FBD3B5" autofocus="true" placeholder="Add a comment"></textarea>
 </td>
 
 <td>
 	
                         <label>Please answer the captcha to prevent spam.</label><br />
-                        <label style="font-weight:normal;">What is the name of the massive star at the center of the <?php echo link_to('Solar System', 'http://http://en.wikipedia.org/wiki/Solar_System'); ?> ?<br /> (<i>hint: begins with a S </i>)</label>
+
+           <label style="font-weight:normal;">
+
+
+
+What is the name of the massive star at the center of the <?php 
+
+echo link_to('Solar System', 'http://http://en.wikipedia.org/wiki/Solar_System'); ?> ?<br /> 
+(<i>hint: begins with a S </i>)</label>
+
+
 			<br />
 
-			<table style="width:100%; table-layout:fixed; border:0"><tr><td> <label>Your answer: </label></td><td>
-			<input type="text" style="padding:3px; border:0; line-height:14px; background-color:#F0F0F0; color:#333; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans"></input></td></tr></table>
+			<table style="width:100%; table-layout:fixed; border:0"><tr><td> 
+
+
+
+			<label>Your answer: </label></td><td>
+
+			<input type="text" style="padding:3px; border:0; line-height:14px; background-color:#FBD3B5; 
+
+color:green; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans">
+</input>
+
+</td></tr>
+
+</table>
 		</td></tr></table>
 
 		<input type="hidden" name="pid" id="pid" value="<?php echo $post->getId(); ?>"></input>
@@ -155,7 +200,9 @@ background:transparent;">Comment</label>
 
 	</form>
 
-</p>
+
+
+	<strong>Previous comments</strong>
 	<div id="comments"></div>
 
 
@@ -170,18 +217,9 @@ background:transparent;">Comment</label>
 
 
 
-
-
-
-
-
-
-<!-- 
+</div>
 
 </div>
- -->
-
-
 
 
 

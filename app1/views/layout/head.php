@@ -3,6 +3,9 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="content-type" content="text/html; charset="UTF-8" />
 <title><?php echo SITE_TITLE; ?></title>
+<link href="http://www.jamestarleton.com/bundles/acmedemo/css/demo.css" rel="stylesheet"></link>
+
+<!-- 
 <meta name='robots' content='noindex,nofollow' />
 <link rel="canonical" href="<?php echo BASEHREF; ?>" />
 <link rel="next" href="<?php echo BASEHREF; ?>" />
@@ -11,7 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/bs.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/andreasnew.css" />
 
-
+-->
 	
 
 </head>
@@ -29,15 +32,42 @@
 <script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/jquery.dataTables.js"></script>
 
 
+<div id="nav" class="twelve columns">
+	<ul id="nv">
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=index">Home</a></li>
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=about">About</a></li>
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=cats">Cats</a></li>
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=tags">Tags</a></li>
+	
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=archive">Archive</a></li>
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=otherplaces">Links</a></li>
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=pics">Pics</a></li>
+	
+	<li><a href="<?php echo BASEHREF; ?>index.php?p=misc">Misc</a></li>
+	<li><a href="javascript:void(0);" onClick="return alert('Contact');">Contact</a></li>
+
+<li><a href="javascript:void(0);" onClick="return alert('Search');">Search</a><li>	
+	
+	
+	</ul>
+	</div>
+
+
+<div style=" z-index:999;background-image:url('http://www.jamestarleton.com/bundles/acmedemo/images/sol.jpg'); height:349px; width: 1100px; margin:auto 0px;">
 
 
 
+	
 
-<div id="wrap"><?php //echo link_to(SITE_TITLE, BASEHREF); ?>
-	<div id="header"><?php //require_once('_topnav.php'); ?>
-		<h1><!-- style="z-index:99; padding-left:15px; padding-top:5px;">--><?php echo link_to('crystalbit',BASEHREF); ?></h1>
-		<p>version 1.0  <!-- <a href="index.html">3-col</a> &middot; <a href="index2.html">2-col a</a> &middot; <a href="index3.html">2-col b</a> &middot; <a href="print.html">Print</a> --></p>
-		<?php  $chars = range('b', 'd'); 
-		array_push($chars , 'g'); 
-		shuffle($chars); ?>
-	</div><div style="margin:5px 0; z-index:99; display:block; width:950px; height:225px; background-image: url('<?php echo sprintf('%simages/front-%s.jpg',BASEHREF, current($chars)); ?>');"></div>
+			<div style="margin:auto 0px;">
+
+			<div style="float:left;padding:0;margin:auto 2px;height:34px;line-height:40px;font-weight:bold;  color:#FA9A50;
+			font: 28pt fantasy, cursive, Serif;
+
+			">James's home page</div>
+
+			<div style="clear:both;"></div></div>
+</div>
+
+<div id="content">
+

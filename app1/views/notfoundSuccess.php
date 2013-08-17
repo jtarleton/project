@@ -1,4 +1,6 @@
-<div id="content"><h2>Not Found</h2>
+<div class="main" role="main">
+
+<h2>Not Found</h2>
 
 
 <strong><?php 

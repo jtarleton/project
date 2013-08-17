@@ -1,5 +1,16 @@
-<div id="content">
-<h2>Other Places</h2>
+<div class="main" role="main">
+
+<h2>Links</h2>
+
+
+
+
+	<div class="post"> <article class="entry">
+<p>
+
+	Other interesting places on the web:
+
+
 
 <?php
 
@@ -11,10 +22,10 @@
 
 $l = (@$_SESSION['isAuth2']) ? true : false;
 ?>
-<ul>
+<ul style="padding:10px;">
 
 	<?php foreach(WpLink::retrieveAll(0, 99999, $l) as $cat=>$rows):
-		?><li><?php echo $cat; ?><ul>
+		?><li><h3><br /><?php echo $cat; ?></h3><ul>
 		<?php foreach($rows as $linkObj): ?>
 
 	<li><?php echo link_to($linkObj->getAttribute('text'), $linkObj->getAttribute('url')); ?></li>
@@ -28,4 +39,8 @@ $l = (@$_SESSION['isAuth2']) ? true : false;
 
 </ul>
 
+
+</p>
+</article>
+</div>
 </div>
