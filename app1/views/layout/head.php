@@ -3,7 +3,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="content-type" content="text/html; charset="UTF-8" />
 <title><?php echo SITE_TITLE; ?></title>
-<link href="http://www.jamestarleton.com/bundles/acmedemo/css/demo.css" rel="stylesheet"></link>
+<link href="<?php echo BASEHREF; ?>stylesheets/demo.css" rel="stylesheet"></link>
 
 <!-- 
 <meta name='robots' content='noindex,nofollow' />
@@ -53,7 +53,7 @@
 	</div>
 
 
-<div style=" z-index:999;background-image:url('http://www.jamestarleton.com/bundles/acmedemo/images/sol.jpg'); height:349px; width: 1100px; margin:auto 0px;">
+<div style=" z-index:999;background-image:url('./images/sol.jpg'); height:349px; width: 1100px; margin:auto 0px;">
 
 
 
