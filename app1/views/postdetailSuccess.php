@@ -148,10 +148,10 @@ border:0px solid #808080;
 <table style="table-layout:fixed;border:0; width:100%"><tr><td>
 <label for="commenttext" style="margin-bottom:20px;text-rendering: optimizelegibility; 
 background:transparent;"></label>
-<textarea name="commenttext" id="commenttext" rows="4" cols="50" style="line-height:16px; text-rendering: optimizelegibility; border:0; font-family:Verdana, sans-serif; font-size:12px; padding:15px; color:green; background-color:#FBD3B5" autofocus="true" placeholder="Add a comment"></textarea>
+<textarea type="text" name="commenttext" id="commenttext" rows="4" cols="50" autofocus="true" placeholder="Add a comment"></textarea>
 </td>
 
-<td>
+<td style="padding:40px;">
 	
                         <label>Please answer the captcha to prevent spam.</label><br />
 
@@ -173,9 +173,7 @@ echo link_to('Solar System', 'http://http://en.wikipedia.org/wiki/Solar_System')
 
 			<label>Your answer: </label></td><td>
 
-			<input type="text" style="padding:3px; border:0; line-height:14px; background-color:#FBD3B5; 
-
-color:green; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans">
+			<input type="text" style="width:70px;" maxlength="5" id="textcaptcha_ans" name="textcaptcha_ans">
 </input>
 
 </td></tr>
@@ -190,17 +188,18 @@ color:green; font-family:Verdana, sans-serif; font-size:10px; width:70px;" maxle
 
 
 
-
-
+<br />
 
 		<div style="text-align:left;padding:5px;">
-			<button type="button" class="btn btn-primary" id="submitBtn">Submit</button> 
-			<button type="reset" class="btn">Reset</button>
+			<a class="bigbtn" id="submitBtn">Submit</button></a> 
+			<a class="bigbtn" href="" onClick="return function(){
+jQuery('textarea').val('');
+}">Reset</a>
 		</div>		
 
 	</form>
 
-
+<br /><br />
 
 	<strong>Previous comments</strong>
 	<div id="comments"></div>

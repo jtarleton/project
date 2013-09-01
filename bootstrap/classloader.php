@@ -3,6 +3,8 @@
 * Classloader
 */
 
+if(!defined('DOCROOT'))
+	define('DOCROOT', '/var/project/');
 
 
 //CONFIG

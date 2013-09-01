@@ -9,8 +9,11 @@
 
 
 <header>
-<h1>Miscellaneous</h1></header>
+<h1>Category <?php echo $_GET['cat']; ?></h1></header>
 
-</div></div>
+
+<p>
+
+      </p></div></div>
 
 

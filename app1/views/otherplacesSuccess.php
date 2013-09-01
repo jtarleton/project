@@ -1,11 +1,17 @@
+
 <div class="main" role="main">
 
-<h2>Links</h2>
+
+<div class="post">
+
+<article class="entry">
 
 
 
+<header>
+<h1>Links </h1></header>
 
-	<div class="post"> <article class="entry">
+
 <p>
 
 	Other interesting places on the web:

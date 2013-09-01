@@ -69,41 +69,7 @@ function postMe(commenttext){
 
 
 
-jQuery(document).ready(function(){ 
-	//alert('READY'); 
-	var host=window.location.host;
-
-
-	var pid=jQuery('#pid').val();
-
-	var dataString = 'p=commentpost&pid='+pid;
-
-	jQuery.ajax({
-		url: "http://"+host+"/",
-		type: "GET",
-		data: dataString,
-		dataType: "html",
-		success: function(data){
-			jQuery('#comments').html(data);
-		},
-		error: function(msg){
-			console.log('error');
-		},
-		complete: function(msg){
-			console.log(msg);		
-		}
-	});
-
-	jQuery('#submitBtn').click(function(){
-		var commenttext=jQuery('#commenttext').val();
-		jQuery('#commenttext').val('');
-		jQuery('#comments').fadeOut('fast');
-		postMe(commenttext); return false;		
-	});
-});
-
-/*
-
+/* 
         jQuery('#clickme').unbind('click');
 	
 	jQuery('#clickme').bind('click', function(){
@@ -121,10 +87,9 @@ jQuery(document).ready(function(){
 */
 
 
-FB.init({appId: "434060650015939", status: true, cookie: true});
+//FB.init({appId: "434060650015939", status: true, cookie: true});
 function postToFeed(nm, desc) 
 {
-
         // calling the API ...
         var obj = {
           method: 'feed',
@@ -141,7 +106,7 @@ function postToFeed(nm, desc)
           document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
         }
 
-        FB.ui(obj, callback);
+//        FB.ui(obj, callback);
 }
 
 
@@ -150,6 +115,76 @@ function postToFeed(nm, desc)
 
 
 
+
+
+
+
+	/***************************/
+//@Author: Adrian "yEnS" Mato Gondelle
+//@website: www.yensdesign.com
+//@email: yensamg@gmail.com
+//@license: Feel free to use it, but keep this credits please!                                  
+/***************************/
+
+//SETTING UP OUR POPUP
+//0 means disabled; 1 means enabled;
+var popupStatus = 0;
+
+//loading popup with jQuery magic!
+function loadPopup(q){
+        
+	v = ( q.attr('id') == 'button' ) ?'':2;
+
+
+
+	//loads popup only if it is disabled
+        if(popupStatus==0){
+                $("#backgroundPopup"+v).css({
+                        "opacity": "0.7"
+                });
+                $("#backgroundPopup"+v).fadeIn("slow");
+                $("#popupContact"+v).fadeIn("slow");
+                popupStatus = 1;
+        }
+}
+
+//disabling popup with jQuery magic!
+function disablePopup(q){
+
+	v = ( q.attr('id') == 'popupContactClose' ) ?'':2;
+
+        //disables popup only if it is enabled
+        if(popupStatus==1){
+                $("#backgroundPopup" + v).fadeOut("slow");
+                $("#popupContact" + v).fadeOut("slow");
+                popupStatus = 0;
+        }
+}
+
+//centering popup
+function centerPopup(q){
+
+	v = ( q.attr('id') == 'button' ) ?'':2;
+
+
+        //request data for centering
+        var windowWidth = document.documentElement.clientWidth;
+        var windowHeight = document.documentElement.clientHeight;
+        var popupHeight = $("#popupContact"+v).height();
+        var popupWidth = $("#popupContact"+v).width();
+        //centering
+        $("#popupContact, #popupContact2 ").css({
+                "position": "absolute",
+                "top": windowHeight/2-popupHeight/2,
+                "left": windowWidth/2-popupWidth/2
+        });
+        //only need force for IE6
+
+        $("#backgroundPopup, #backgroundPopup2").css({
+                "height": windowHeight
+        });
+
+}
 
 
 
@@ -164,7 +199,42 @@ UPDATED: 3/25/2010
 DESCRIPTION: This is the JavaScript required to create the accordion style menu.  Requires jQuery library
 NOTE: Because of a bug in jQuery with IE8 we had to add an IE stylesheet hack to get the system to work in all browsers. I hate hacks but had no choice :(.
 ************************************************************************************************************************/
-$(document).ready(function() {
+jQuery(document).ready(function() {
+
+
+        //LOADING POPUP
+        //Click the button event!
+        jQuery("#button, #button2").click(function(){
+                //centering with css
+                centerPopup( jQuery(this) ) ;
+                //load popup
+                loadPopup( jQuery(this) );
+        });
+
+        //CLOSING POPUP
+        //Click the x event!
+        jQuery("#popupContactClose, #popupContactClose2").click(function(){
+                disablePopup( jQuery(this) );
+        });
+        //Click out event!
+        jQuery("#backgroundPopup, #backgroundPopup2").click(function(){
+                disablePopup( jQuery(this) );
+        });
+        //Press Escape event!
+        jQuery(document).keypress(function(e){
+                if(e.keyCode==27 && popupStatus==1){
+                        disablePopup( jQuery(this ) );
+                }
+        });
+
+
+
+
+
+
+
+
+
 	 
 	//ACCORDION BUTTON ACTION (ON CLICK DO THE FOLLOWING)
 	$('.accordionButton').click(function() {
@@ -207,7 +277,53 @@ $(document).ready(function() {
 	********************************************************************************************************************/	
 	$('.accordionContent').hide();
 
-});
 
+
+
+
+
+
+
+
+
+
+
+	//alert('READY'); 
+        var host=window.location.host;
+
+
+        var pid=jQuery('#pid').val();
+
+        var dataString = 'p=commentpost&pid='+pid;
+
+        jQuery.ajax({
+                url: "http://"+host+"/",
+                type: "GET",
+                data: dataString,
+                dataType: "html",
+                success: function(data){
+                        jQuery('#comments').html(data);
+                },
+                error: function(msg){
+                        console.log('error');
+                },
+                complete: function(msg){
+                        console.log(msg);
+                }
+        });
+
+        jQuery('#submitBtn').click(function(){
+                var commenttext=jQuery('#commenttext').val();
+                jQuery('#commenttext').val('');
+                jQuery('#comments').fadeOut('fast');
+                postMe(commenttext); return false;
+        });
+
+
+
+
+
+
+});
 
 

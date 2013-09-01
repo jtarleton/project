@@ -1,8 +1,16 @@
 <div class="main" role="main">
 
 
-<h2>Category Index</h2>
-<pre>
+<div class="post">
+
+<article class="entry">
+
+
+
+<header>
+<h1>Category Index</h1></header>
+
+<ul>
 
 
 	<?php
@@ -17,13 +25,17 @@ $menus['Tags'][] =  $termObj->getAttribute('name');
 foreach(WpTerm::retrieveAll('category') as $termObj) $menus['Cats'][] = $termObj->getAttribute('name');
 
 
-print_r(  $menus['Cats'] );
+asort(  $menus['Cats'] );
+foreach(  $menus['Cats'] as $cat ): ?>
+<li><p><?php  echo $cat; ?></p></li>
+<?php endforeach; ?>
 
+</ul>
 
-?>
+</article>
 
-
-
-
-</pre>
 </div>
+</div>
+
+
+

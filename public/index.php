@@ -3,12 +3,13 @@
 * Front controller
 */
 
+session_start();
+
 //Set date and time
 date_default_timezone_set('America/New_York');
 
 //Config
 require_once '../config/privateconfig.inc.php';
-session_start(); 
 
 //Load classes
 require_once('../bootstrap/classloader.php'); 

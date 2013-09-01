@@ -51,10 +51,13 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
 
     </header>
 
-    <div class="post">
+
+<article class="entry">
+<p>
+   <!-- <div class="post">
 
        <article class="entry">
-
+-->
             <?php echo (!empty($post)) ? $post->getAttribute('post_content'): null; ?>
 
 
@@ -72,7 +75,7 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
                 ?>
 
 
-
+</p>
 
             <footer>
 
@@ -109,13 +112,14 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
 
         </article>
 
-    </div>
 
 
 <?php endforeach;
+?>
+<br />
+<?php
 
-
-//echo paginated_links( 12, 2, $s  );
+echo paginated_links( 12, 2, $s  );
 
 ?>
 

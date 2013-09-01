@@ -1,38 +1,43 @@
+
+
+
 <div class="main" role="main">
 
-<h2>About</h2>
+
+<div class="post">
+
+<article class="entry">
 
 
 
-<div class="post"> <article class="entry">
-<p>
-Welcome. Crystal Bit is my personal home page and original web application.  Thank you for stopping by.
+<header>
+<h1>About</h1></header>
+
+<p>Welcome. Crystal Bit is my personal home page and original web application.  Thank you for stopping by.
 </p>
 
 <p>
 </p>
 
-<p>
-- James
-</p>
+<p>James</p>
 
 <?php if(@$_SESSION['isAuth2']): ?>
 
-<ul><?php
-echo "<li>Last modified: " . date ('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', getlastmod()) .'</li>';;
+<?php
+echo "<p>Last modified: " . date ('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', getlastmod()) .'</p>';;
 
 
-echo '<li>Owner: ' . get_current_user().'</li>';
+echo '<p>Owner: ' . get_current_user().'</p>';
 
 $pid = getmypid();
 if(file_exists('/proc/'.$pid))
 {
-    echo '<li>Process ID: '. $pid.'</li>';
+    echo '<p>Process ID: '. $pid.'</p>';
 }
 
-echo '<li>Powered by PHP '.phpversion().'</li>';
+echo '<p>Powered by PHP '.phpversion().'</p>';
 ?>
-</ul><?php 
+<?php 
 ob_start();
 
 //phpcredits(CREDITS_GENERAL); 

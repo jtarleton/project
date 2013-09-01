@@ -9,8 +9,11 @@
 
 
 <header>
-<h1>Miscellaneous</h1></header>
+<h1>Tagged <?php echo $_GET['tag']; ?></h1></header>
 
-</div></div>
+
+<p>
+
+      </p></div></div>
 
 

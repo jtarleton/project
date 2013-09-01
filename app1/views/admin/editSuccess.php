@@ -61,7 +61,7 @@ $post = WpPost::retrieveByPK($_GET['pid']);
 
 <p>
 <input type="hidden" value="<?php echo $_GET['pid']; ?>" name="pid"/>
-<input type="submit" class="btn" value="Edit Post"></input>
+<input type="submit" class="bigbtn" value="Edit Post"></input>
 </p>
 </form>
 
