@@ -153,6 +153,8 @@ function disablePopup(q){
 
 	v = ( q.attr('id') == 'popupContactClose' ) ?'':2;
 
+
+	//alert(v);
         //disables popup only if it is enabled
         if(popupStatus==1){
                 $("#backgroundPopup" + v).fadeOut("slow");
