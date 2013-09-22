@@ -17,7 +17,27 @@
         bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
 </script>
 <script type="text/javascript">
+
+function toggleSrc()
+{
+
+alert( ' toggle src!' ) ;
+
+alert( jQuery('.nicEdit-main' ).val() ) ;
+
+//jQuery('textarea[name="post_content"]').is(':hidden') 
+jQuery('textarea[name="post_content"]').css('display','block').val(jQuery('.nicEdit-main' ).val());
+
+
+
+
+}
+
 jQuery(document).ready(function(){
+
+
+
+	
 
 	jQuery('#post_title').focus();
 

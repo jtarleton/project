@@ -9,6 +9,9 @@
 
 
                          if(@$_SESSION['isAuth2']) : ?>
+
+			<?php require('_widgets.php'); ?>
+
                         <?php $menus['Admin'][0] = '<a href="' .BASEHREF .'admin.php?p=index">Admin</a><br />'; ?>
 
 
@@ -63,13 +66,14 @@ endforeach;
 
 					<div style="color:#6781BA;
 font-size:14px;
+padding-left:15px;
 font-weight:bold;
 line-height:50px;
 "><?php echo $k; ?></div>
 
 				</div>
 
-				<div class="accordionContent" style="width:100%;margin:0;padding:0;">
+				<div class="accordionContent" style="width:100%;margin:0;padding:0;padding-left:15px;">
 			
 				<?php foreach($v as $w) echo '<div style="color:#6781BA;
 font-size:14px;

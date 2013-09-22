@@ -15,7 +15,16 @@ Coded in the U.S.A. using vi, Coda, and <a href="http://www.sublimetext.com/">Su
 <a href="http://www.youtube.com/watch?v=62G_IruzCc4">We Will Not Tolerate Scum</a>
 <br />
 
-<img src="./images/html5.png" style="width:50px; height:50px;" />
+
+<?php
+$end   = (float) array_sum(explode(' ', microtime()));
+
+echo sprintf('HTML 5 rendered in: %s %s %s microseconds', round(1000 * ($end - $_SESSION['start']), 2), PHP_EOL, PHP_EOL); ?>
+
+
+<br />
+<img src="http://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" style="width:51.2px; height:51.2px;" />
+
 
 </center>
 </p>
@@ -46,7 +55,16 @@ Coded in the U.S.A. using vi, Coda, and <a href="http://www.sublimetext.com/">Su
 		<span id="contactArea">
 
 			<form>
-				<input type="text" name="email"></input>
+
+
+				<input placeholder="Email" type="text" name="email"></input>
+
+
+				
+
+				
+				<br />	
+				<br /><br />
 				<a class="bigbtn">Submit</a>
 
 			</form>
@@ -63,7 +81,11 @@ Coded in the U.S.A. using vi, Coda, and <a href="http://www.sublimetext.com/">Su
 
                 <span id="contactArea2">
                 	<form>
-				<input type="text" name="search"/>
+				
+				<input placeholder="Search" type="text" name="search"/>
+
+				<br />
+				<br /><br />
 				<a class="bigbtn">Search</a>
 			</form>
 		</span>

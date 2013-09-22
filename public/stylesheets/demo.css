@@ -941,7 +941,7 @@ display:block;
 }
 
 #hp {
-float:left;padding:0;margin:auto 2px;height:34px;line-height:40px;font-weight:bold;  color:#FA9A50;
+float:left;padding:0;margin:10px auto auto 15px;height:34px;line-height:40px;font-weight:bold;  color:#FA9A50;
 			font: 28pt fantasy, cursive, Serif;
 }
 

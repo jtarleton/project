@@ -1,3 +1,11 @@
+<?php 
+//see helper sec2hms https://gist.github.com/4435891
+
+$_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
+//$end   = (float) array_sum(explode(' ', microtime()));
+//$out   = sprintf('Execution time: %s %s %s', sec2hms($end - $start), PHP_EOL, PHP_EOL);
+
+?>
 <!DOCTYPE html>
 <head>
 
@@ -72,7 +80,7 @@
 
 			<div style="margin:auto 0px;">
 
-			<div id="hp">James's home page</div>
+			<div id="hp">James's Home Page</div>
 
 			<div style="clear:both;"></div></div>
 </div>
