@@ -57,7 +57,19 @@
 
 <li><a href="<?php echo BASEHREF; ?>index.php?p=index" target="_BLANK">View Site In New Tab</a></li>
 <li><a><b>Session Variables</b></a></li>
-<?php foreach (@$_SESSION as $k=>$v): ?> <li><a><?php echo $k .' : '. $v; ?></a></li><?php endforeach; ?>
+
+
+
+<?php foreach (@$_SESSION as $k=>$v): ?> 
+
+<li><?php echo $v; ?></li>
+
+
+
+
+<?php endforeach; ?>
+
+
 <?php endif; ?>
 
 

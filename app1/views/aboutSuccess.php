@@ -13,13 +13,30 @@
 <header>
 <h1>About</h1></header>
 
-<p>Welcome. Crystal Bit is my personal home page and original web application.  Thank you for stopping by.
-</p>
+<p>Welcome. Crystal Bit is my personal home page and original web application.
 
-<p>
+Thank you for stopping by.
 </p>
 
 <p>James</p>
+
+
+<div style="padding:25px; vertical-align:top; baseline:bottom; height:275px;">
+<img style="vertical-align:top;" src="<?php echo BASEHREF; ?>images/debian.png" />
+&nbsp;&nbsp;&nbsp;
+
+
+<img style="vertical-align:top;" src="<?php echo BASEHREF; ?>images/apache-logo.png" />&nbsp;&nbsp;&nbsp;
+<img style="vertical-align:top;" src="<?php echo BASEHREF; ?>images/powered-by-mysql-125x64.png" />
+&nbsp;&nbsp;&nbsp;
+<img style="vertical-align:top;" src="<?php echo BASEHREF; ?>images/mongodb.png" />
+&nbsp;&nbsp;&nbsp;
+<img style="vertical-align:top;" src="<?php echo BASEHREF; ?>images/PHP-Elephant.png" />
+&nbsp;&nbsp;&nbsp;
+</div>
+
+
+
 
 <?php if(@$_SESSION['isAuth2']): ?>
 
