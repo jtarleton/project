@@ -13,7 +13,7 @@
 <header>
 <h1>About</h1></header>
 
-<p>Welcome. Crystal Bit is my personal home page and original web application.
+<p>Welcome. Crystal Bit is my personal home page and original web application (a work in progress).
 
 Thank you for stopping by.
 </p>
