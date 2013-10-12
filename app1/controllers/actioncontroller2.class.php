@@ -244,7 +244,7 @@ $mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>
 
 
         foreach($post as $k=>$v )
-        $$k=$v;
+        $$k=utf8_encode($v);
 
         $mongo=MongoFactory::MongoCreate();
         $updates = array(
