@@ -58,7 +58,7 @@ global $wpNext;
   
         <article><p>
 <?php
-	echo (!empty($post)) ? $post->getAttribute('post_content'): null;
+	echo (!empty($post)) ? html_entity_decode($post->getAttribute('post_content')) : null;
 	?>
 </p>
 	 <footer>

@@ -182,6 +182,14 @@ class WpPost extends BaseObject
 	}
 
 
+	public function getTagIdArray(){
+	return array_keys($this->getTags());
+	}
+	public function getCatIdArray(){
+	//@todo make only cats
+        return array_keys($this->getTags());
+        }
+
 	public function getTags()
 	{
 
@@ -199,12 +207,12 @@ class WpPost extends BaseObject
 		$term_ids = array();
 		foreach($term_taxonomy_objs as $obj) 
 		{
-			$term_ids[] = $obj->getAttribute('term_id');
+			$term_ids[   ] = $obj->getAttribute('term_id');
 		}
 
 		$wpterms = array();
-		foreach($term_ids as $tid)
-			$wpterms[] = new WpTerm($tid);
+			foreach($term_ids as $tid)
+			$wpterms[ $tid->{'$id'}  ] = new WpTerm($tid);
 
 		return $wpterms; //array(new WpTerm('50fc8bbc9c76846836000000'), new WpTerm('50fc8c5e9c76846836000001'), new WpTerm('50fc75349c7684f23c000000'));
 

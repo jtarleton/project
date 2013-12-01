@@ -229,22 +229,18 @@ $mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>
     {   
 
         $post = $_POST;
-    
+        //foreach($post as $k=>$v )
+        //$$k=utf8_encode($v);
+
+	$tags = $_POST['tags'];
+        $cats=	$_POST['cats'];
+	$post_title = $_POST['post_title'];
+	$post_content = $_POST['post_content'];
+	$post_status = $_POST['post_status'];
+	$pid = (int)$_POST['pid'];
 
 
 
-
-
-
-
-
-
-
-
-
-
-        foreach($post as $k=>$v )
-        $$k=utf8_encode($v);
 
         $mongo=MongoFactory::MongoCreate();
         $updates = array(
@@ -259,24 +255,8 @@ $mongo->test->wp_term->update(array('_id'=>new MongoId($catid) ), array('$set'=>
         foreach($rels as $rel)
         {
             WpTermRelationship::deleteByPK($rel->getId());
-        
         }
-        /* 
-        foreach($tags as $term_id)
-        {
-            //get term tax id for termid
-            $term_taxonomy_id = null;
         
-            $doc = array(
-                'object_id'=>$pid,
-                //'term_id'=>$term_id,
-                'term_taxonomy_id'=>null, //getTaxFromTermId$term_id
-            );
-            $mongo->test->wp_term_relationship->insert($doc);
-        }
-    */
-    
-    
         foreach($tags as $term_id)
         {
                 

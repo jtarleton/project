@@ -58,7 +58,7 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
 
        <article class="entry">
 -->
-            <?php echo (!empty($post)) ? $post->getAttribute('post_content'): null; ?>
+            <?php echo (!empty($post)) ? html_entity_decode($post->getAttribute('post_content')): null; ?>
 
 
 

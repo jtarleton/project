@@ -73,7 +73,9 @@ $_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
 	</ul>
 	
 </div>
-
+<div style="text-align:center;background-color:#293E6F; border-top: 0px solid #4A6294; border-bottom:0px solid #4A6294; margin:0; padding:5px; color:#FA9A50; font-weight:900;">
+Ticker
+</div>
 
 <div id="sol">
 
