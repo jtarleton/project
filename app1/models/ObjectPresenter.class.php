@@ -77,15 +77,13 @@ echo strip_tags( $string);
                 <p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
                         <strong>Tags: 
 
-
-
-
-
 <?php 
 echo $p->getTagString();
 ?>
 
-</strong> | <strong>Comments: 0</strong>
+
+
+</strong> | <strong>Categories: </strong> | <strong>Comments: 0</strong>
                 </p>
         </div>
 </div>

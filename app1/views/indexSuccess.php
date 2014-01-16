@@ -106,6 +106,7 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
 
                 <strong>Tags: <?php echo $post->getTagString() ?></strong> 
 
+		| <strong>Categories: </strong>
                 </p>
 
             </footer>
@@ -116,7 +117,7 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
 
 <?php endforeach;
 ?>
-<br />
+<div style="padding:3px;background-color:#C5E0F9;">
 <?php
 
 echo paginated_links( 12, 2, $s  );

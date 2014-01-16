@@ -73,9 +73,6 @@ $_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
 	</ul>
 	
 </div>
-<div style="text-align:center;background-color:#293E6F; border-top: 0px solid #4A6294; border-bottom:0px solid #4A6294; margin:0; padding:5px; color:#FA9A50; font-weight:900;">
-Ticker
-</div>
 
 <div id="sol">
 
@@ -90,8 +87,9 @@ Ticker
 
 
 
-
-
+<div style="text-align:center; margin:0; padding:5px; font-weight:normal; font-size:90%;font-family:fantasy,cursive,Serif;" id="grad">
+<img src="http://www.crystalbit.com/images/jigsoar-icons/light/16px/16_info.png" border="0" style="margin-right:5px;"></img>Today is <?php echo date('l, F jS, Y \| h:i:s A T \| e'); ?> | Sunrise: 7:05 am | Sunset: 4:40 pm | Hi:55&#176;/Lo:39&#176;
+</div>
 
 
 

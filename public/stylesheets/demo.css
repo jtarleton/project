@@ -28,6 +28,12 @@ background-attachment:fixed;
 background-position:center; 
 */	color:#555;
 }
+
+#grad {
+color:#FFF;
+background-color:#000;
+border-bottom:2px solid #FA9A50;
+}
 #subnav {
 	display: block;
 	position: relative;
@@ -74,14 +80,12 @@ h1.logo a:hover, h2.logo a:hover {
 	font-weight:normal;
 	letter-spacing:0.1em;
 }
-nav {
-	border-bottom:2px solid green;
-	border-top:2px solid green;
-	background:#FFF;
-	opacity:0.8;
-	float:left;
-	width:100&#37;
+#nav {
 
+	border-top:0px ridge #FA9A50;		
+	border-bottom:0px solid #000;
+
+	background:#FFF;
 
 
 }
