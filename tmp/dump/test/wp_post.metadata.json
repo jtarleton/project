@@ -1,0 +1,1 @@
+{ "indexes" : [ { "name" : "_id_", "ns" : "test.wp_post", "key" : { "_id" : 1 } }, { "v" : 1, "key" : { "post_slug" : 1 }, "ns" : "test.wp_post", "name" : "post_slug_1" } ] }

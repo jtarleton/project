@@ -1,0 +1,1 @@
+{ "indexes" : [ { "name" : "_id_", "ns" : "test.wp_term", "key" : { "_id" : 1 } } ] }

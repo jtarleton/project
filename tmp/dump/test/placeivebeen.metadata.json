@@ -1,0 +1,1 @@
+{ "indexes" : [ { "name" : "_id_", "ns" : "test.placeivebeen", "key" : { "_id" : 1 } } ] }

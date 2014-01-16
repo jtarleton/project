@@ -1,0 +1,1 @@
+{ "indexes" : [ { "name" : "_id_", "ns" : "test.wp_postmeta", "key" : { "_id" : 1 } } ] }

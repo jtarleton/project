@@ -1,0 +1,1 @@
+{ "indexes" : [ { "name" : "_id_", "ns" : "test.visitor", "key" : { "_id" : 1 } } ] }

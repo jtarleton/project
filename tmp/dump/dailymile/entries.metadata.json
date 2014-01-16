@@ -1,0 +1,1 @@
+{ "indexes" : [ { "name" : "_id_", "ns" : "dailymile.entries", "key" : { "_id" : 1 } } ] }
