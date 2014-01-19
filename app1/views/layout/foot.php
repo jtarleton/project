@@ -23,6 +23,13 @@ echo sprintf('HTML 5 rendered in: %s %s %s microseconds', round(1000 * ($end - $
 
 
 <br />
+
+
+<script src="http://www.dailymile.com/people/jtarleton/widgets/distance/mini.js" type="text/javascript"></script><noscript><a href="http://www.dailymile.com/people/jtarleton" title="Running Training Log"><img alt="Running Training Log" src="http://www.dailymile.com/images/badges/dailymile_badge_180x60_orange.gif" style="border: 0;" /></a></noscript>
+
+
+<br />
+
 <img src="http://www.w3.org/html/logo/downloads/HTML5_1Color_White.png" style="width:51.2px; height:51.2px;" />
 
 
