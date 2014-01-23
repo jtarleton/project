@@ -323,8 +323,11 @@ jQuery(document).ready(function() {
 
 
 
-
-
+	jQuery('.menubtn').bind('click', function() {
+		
+		jQuery('#nav-sub').fadeIn();
+		//jQuery(this).attr('id');
+	});
 
 });
 

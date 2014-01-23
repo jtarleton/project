@@ -67,12 +67,12 @@ $_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
 
 	<li><a id="button" href="javascript:void(0);">Contact</a></li>
 
-	<li><a id="button2" href="javascript:void(0);">Search</a><li>	
+	<li><a class="menubtn" id="tools" href="javascript:void(0);">Tools</a><li>	
 	
 	
-	</ul>
-	
+	</ul><p id="nav-sub" style="display:none;background-color:#293E6F;"><a id="button2">Search</a> </p>	
 </div>
+
 
 <div id="sol">
 
