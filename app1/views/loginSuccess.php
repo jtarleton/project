@@ -28,7 +28,7 @@ if(e.keyCode == '13'){
 <div id="respond"> 
 
 <?php if(!@$_SESSION['isAuth2']): ?>
-<form class="form-horizontal" id="authform" method="post" action="<?php echo BASEHREF; ?>index.php?p=authcallback">
+<form class="form-horizontal" id="authform" method="post" action="<?php echo SBASEHREF; ?>sindex.php?p=authcallback">
 <fieldset>
 
 <!-- Form Name -->

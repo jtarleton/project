@@ -3,16 +3,16 @@
 <head>
 <title>ADMIN</title>
 <meta name='robots' content='noindex,nofollow' />
-<link rel="canonical" href="<?php echo BASEHREF; ?>" />
-<link rel="next" href="<?php echo BASEHREF; ?>" />
+<link rel="canonical" href="<?php echo SBASEHREF; ?>" />
+<link rel="next" href="<?php echo SBASEHREF; ?>" />
 <meta name="description" content="<?php echo SITE_DESC;  ?>" />
 <meta name="keywords" content="<?php echo SITE_KEYWORDS;  ?>" />
-<link rel="stylesheet" type="text/css" href="<?php echo BASEHREF; ?>stylesheets/admstyles/css/transdmin.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo SBASEHREF; ?>stylesheets/admstyles/css/transdmin.css" />
 <script type="text/javascript" src="<?php echo JQUERY; ?>"></script>
 <script type="text/javascript" src="<?php echo JSLIB; ?>"></script>
 
 
-        <script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/niceditor.js"></script>
+        <script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/niceditor.js"></script>
 <script type="text/javascript">
         bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
 </script>
@@ -69,7 +69,7 @@ jQuery(document).ready(function(){
 
 		<li><a href="admin.php?p=up">UP</a></li>
 		
-                <li class="logout"><a href="index.php?p=logout">LOGOUT</a></li>
+                <li class="logout"><a href="sindex.php?p=logout">LOGOUT</a></li>
 
 
 	<!--

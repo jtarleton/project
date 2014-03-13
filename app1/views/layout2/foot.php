@@ -23,7 +23,7 @@ Toggle Editor SourceView
 </button>
 
  
-        <p id="footer">Feel free to use and customize it. <a href="http://www.perspectived.com">Credit is appreciated.</a></p>
+        <p id="footer"><a href="https://www.crystalbit.com">crystalbit</a></p>
     </div>
     <!-- // #wrapper -->
 </body>

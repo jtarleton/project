@@ -5,10 +5,10 @@
                     <!-- <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span> -->
-                  </a><!-- class="brand" href="<?php echo BASEHREF; ?>">Crystal Bit</a></div> --> 
+                  </a><!-- class="brand" href="<?php echo SBASEHREF; ?>">Crystal Bit</a></div> --> 
                   <div class="nav-collapse collapse navbar-responsive-collapse">
                     <ul class="nav" style="margin-left:0; padding-left:0;">
-                      <li><a href="<?php echo BASEHREF; ?>">Crystal Bit</a>   </li>
+                      <li><a href="<?php echo SBASEHREF; ?>">Crystal Bit</a>   </li>
 			<li class="<?php if(!isset($_GET['p'])): echo 'active'; else : echo NavUtils::getTopNavClass(@$_GET['p'], 'index'); endif; ?>"><a href="?p=index">Home</a></li>
                       <li class="<?php echo NavUtils::getTopNavClass(@$_GET['p'], 'otherplaces'); ?>"><a href="?p=otherplaces">Links</a></li>
                       <li class="<?php echo NavUtils::getTopNavClass(@$_GET['p'], 'github'); ?>" ><a href="?p=github">Site Updates</a></li>

@@ -12,7 +12,7 @@
 
 			<?php require('_widgets.php'); ?>
 
-                        <?php $menus['Admin'][0] = '<a href="' .BASEHREF .'admin.php?p=index">Admin</a><br />'; ?>
+                        <?php $menus['Admin'][0] = '<a href="' .SBASEHREF .'admin.php?p=index">Admin</a><br />'; ?>
 
 
                                 <?php foreach (@$_SESSION as $k=>$v): ?>
@@ -26,7 +26,7 @@ $menus['Today']=array();
 
 $menus['Sun Info']=array();  
 
-$menus['Other Places']= array('<a href="index.php?p=login">Login</a>', '<a class="current" href="index.php?p=about">About</a>','<a href="index.php?p=otherplaces">Other Places</a>');
+$menus['Other Places']= array('<a href="sindex.php?p=login">Login</a>', '<a class="current" href="sindex.php?p=about">About</a>','<a href="sindex.php?p=otherplaces">Other Places</a>');
 
 $menus['Tags']=array(); 
 
@@ -34,14 +34,14 @@ $menus['Cats']=array();
 
 foreach(WpTerm::retrieveAll()           as $termObj) 
 	
-	$menus['Tags'][] =  '<a href="'.BASEHREF.'?p=tagged&tag=' . $termObj->getAttribute('name')  . '">'.$termObj->getAttribute('name') .'</a>'; 
+	$menus['Tags'][] =  '<a href="'.SBASEHREF.'?p=tagged&tag=' . $termObj->getAttribute('name')  . '">'.$termObj->getAttribute('name') .'</a>'; 
 
 
 
 
 foreach(WpTerm::retrieveAll('category') as $termObj) 
 
-	$menus['Cats'][] = '<a href="'.BASEHREF.'?p=categorized&cat=' . $termObj->getAttribute('name') . '">' .$termObj->getAttribute('name') .'</a>';
+	$menus['Cats'][] = '<a href="'.SBASEHREF.'?p=categorized&cat=' . $termObj->getAttribute('name') . '">' .$termObj->getAttribute('name') .'</a>';
 
 
 

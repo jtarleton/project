@@ -16,9 +16,15 @@ $_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
 <meta name       ="keywords"     content="Jamess Home Page" />
 
 <!-- Link -->
-<link rel="stylesheet"   href="<?php echo BASEHREF; ?>stylesheets/demo.css" ></link>
-<link rel="canonical"    href="<?php echo BASEHREF; ?>" />
-<link rel="next"         href="<?php echo BASEHREF; ?>" />
+<link href="<?php echo SBASEHREF; ?>crystalbit_sass/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
+<!--[if IE]>
+	<link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<link rel="stylesheet"   href="<?php echo SBASEHREF; ?>stylesheets/demo.css" ></link>
+<link rel="canonical"    href="<?php echo SBASEHREF; ?>" />
+<link rel="next"         href="<?php echo SBASEHREF; ?>" />
 
 <!-- Title -->
 <title>James's Home Page</title>
@@ -29,17 +35,17 @@ $_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
 
 
 <!-- Javascript
-<script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/jquery.dataTables.js"></script>
+<script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/jquery.dataTables.js"></script>
 -->
 
-<script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/jquery-latest.min.js"></script>
+<script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/jquery-latest.min.js"></script>
 <!-- <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
 
 -->
-<!-- <script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/js.js"></script>
+<!-- <script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/js.js"></script>
 -->
 
-<script type="text/javascript" src="<?php echo BASEHREF; ?>javascripts/js2.js"></script>
+<script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/js2.js"></script>
 
 
 
@@ -54,23 +60,23 @@ $_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
 
 	<ul id="nv">
 
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=index">Home</a></li>
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=about">About</a></li>
-	<li><a title="Categories" href="<?php echo BASEHREF; ?>index.php?p=cats">Cats</a></li>
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=tags">Tags</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=index">Home</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=about">About</a></li>
+	<li><a title="Categories" href="<?php echo SBASEHREF; ?>sindex.php?p=cats">Cats</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=tags">Tags</a></li>
 	
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=archive">Archive</a></li>
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=otherplaces">Links</a></li>
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=pics">Pics</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=archive">Archive</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=otherplaces">Links</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=pics">Pics</a></li>
 	
-	<li><a href="<?php echo BASEHREF; ?>index.php?p=misc">Misc</a></li>
+	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=misc">Misc</a></li>
 
 	<li><a id="button" href="javascript:void(0);">Contact</a></li>
 
 	<li><a class="menubtn" id="tools" href="javascript:void(0);">Tools</a><li>	
 	
 	
-	</ul><p id="nav-sub" style="display:none;background-color:#293E6F;"><a id="button2">Search</a> </p>	
+	</ul><ul id="nav-sub" style="padding:10px;padding-left:25px;display:none;background-color:#293E6F;"><li><a id="button2">Search</a></li></ul>	
 </div>
 
 

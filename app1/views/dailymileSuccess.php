@@ -1,6 +1,21 @@
 <div class="main" role="main">
 
 
+
+<p>
+
+
+<?php if( isset( $_GET['code']) ) {
+
+
+
+echo 'Received token '. strip_tags($_GET['code']);
+
+}
+
+?>
+</p>
+
 <table id="example" style="margin:0;">
                         <thead style="margin:0;">
                                 <tr><th>id</th><th>date</th>

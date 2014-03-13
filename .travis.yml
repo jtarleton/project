@@ -1,5 +1,25 @@
 language: php
 php:
-  - 5.5
-  - 5.4
+  - "5.5"
+  - "5.4"
+
+#before_script: phpenv config-add myconfig.ini
+mysql:
+  database: tarlejh_venus
+  username: root
+  encoding: utf8
+
+before_install:
+  - sudo apt-get update > /dev/null
+
+install:
+  # install php packages
+  - sudo apt-get install -y --force-yes php5-cgi php5-mysql
+
+before_script:
+  # navigate out of module directory to prevent blown stack by recursive module lookup
+  - cd ../..
+
+  - mysql -e 'create database tarlejh_venus'
+
 

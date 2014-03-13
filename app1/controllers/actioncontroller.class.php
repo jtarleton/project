@@ -153,7 +153,7 @@ class ActionController
 	private function executeLogout()
 	{ 
 		$_SESSION['isAuth2'] = false; 
-		header('Location: '.BASEHREF);
+		header('Location: '.SBASEHREF);
 		exit(0);
 	}
 	private function executeAuthcallback()
@@ -188,7 +188,7 @@ class ActionController
 
 			session_write_close(); 
 
-			header('Location: '.BASEHREF); 
+			header('Location: '.SBASEHREF.'sindex.php?p=index');
 			exit(0);
 			
 		}
@@ -196,7 +196,7 @@ class ActionController
 		{
 			//unset($_SESSION['isAuth']); 
 			//$_SESSION = array();
-			header('Location: '.BASEHREF.'index.php?p=login'); exit(0);
+			header('Location: '.SSBASEHREF.'sindex.php?p=login'); exit(0);
 		}
 		
 	}

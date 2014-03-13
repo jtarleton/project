@@ -64,7 +64,7 @@ if($p instanceof WpPost ): ?>
 
 
 <div class="post">
-        <h2> <?php echo link_to($p->getAttribute('post_title'), 'index.php?p=postdetail&pid=' . $p->getId()) ; ?></h2>
+        <h2> <?php echo link_to($p->getAttribute('post_title'), 'sindex.php?p=postdetail&pid=' . $p->getId()) ; ?></h2>
 
         <div class="contenttext <?php //echo zebraClass($r); ?>">
 <p>
@@ -72,7 +72,7 @@ if($p instanceof WpPost ): ?>
 
 $string = tokenTruncate($p->getAttribute('post_content'), 500);
 echo strip_tags( $string);
-                ?><span>...</span></p><p><?php echo link_to('Read &gt;', 'index.php?p=postdetail&pid=' . $p->getId()); ?></p>
+                ?><span>...</span></p><p><?php echo link_to('Read &gt;', 'sindex.php?p=postdetail&pid=' . $p->getId()); ?></p>
 
                 <p class="postinfo">Posted by root on <?php echo date('l, F j\<\s\u\p\>S\<\/\s\u\p\>, Y \a\t g:ia', time()); ?><br />
                         <strong>Tags: 

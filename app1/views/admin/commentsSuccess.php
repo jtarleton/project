@@ -24,7 +24,7 @@ foreach( WpComment::retrieveAll(0, 99999) as $comment):
 <?php 
 
 
-echo link_to( $comment->getAttribute('comment_text') , BASEHREF .'admin.php?p=editcomm&commid='. $comment->getId() ); 
+echo link_to( $comment->getAttribute('comment_text') , SBASEHREF .'admin.php?p=editcomm&commid='. $comment->getId() ); 
 ?></td><td><?php 
 echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delcomm&commid='. $comment->getId()  );
 
