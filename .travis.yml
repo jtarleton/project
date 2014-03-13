@@ -17,10 +17,7 @@ install:
   - sudo apt-get install -y --force-yes php5-cgi php5-mysql
 
 before_script:
-  # navigate out of module directory to prevent blown stack by recursive module lookup
-  - cd ../..
-
   - mysql -e 'create database tarlejh_venus'
 
-  - pwd
+  - echo `pwd`
 script: "./run-tests.sh"
