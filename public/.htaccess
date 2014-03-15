@@ -1,7 +1,0 @@
-SetEnvIfNoCase Referer "^http://www.bing.com/" BadReferrer
-SetEnvIfNoCase Referer "^http://www.google.com/" BadReferrer
-SetEnvIfNoCase Referer "^http://www.yahoo.com/" BadReferrer
-order deny,allow
-deny from env=BadReferrer
-
-

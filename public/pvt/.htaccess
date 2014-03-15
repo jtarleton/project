@@ -1,4 +1,0 @@
-AuthType Basic
-AuthName "Authenticate"
-AuthUserFile /var/project/public/pvt/.htpasswd
-Require valid-user
