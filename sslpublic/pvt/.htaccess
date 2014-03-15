@@ -1,4 +1,11 @@
-AuthType Basic
-AuthName "Authenticate"
 AuthUserFile /var/project/sslpublic/pvt/.htpasswd
-Require valid-user
+AuthGroupFile /dev/null
+AuthName "Restricted Access"
+AuthType Basic
+
+<Limit GET POST>
+        Require valid-user
+</Limit>
+
+
+
