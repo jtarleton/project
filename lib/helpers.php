@@ -29,7 +29,7 @@ function zebraClass($r)
 }
 
 
-function paginated_links( $totalRecs , $pageSize, $k, $controller = 'index') 
+function paginated_links( $totalRecs , $pageSize, $k, $controller = 'sindex') 
 {
 
 

@@ -68,7 +68,7 @@ if(0):
 
                 echo (!empty($post))
 
-                    ? '<a href="index.php?p=postdetail&pid='
+                    ? '<a href="sindex.php?p=postdetail&pid='
                             .$post->getId().'">Read &gt;'
                             .'</a>'
 
