@@ -18,8 +18,8 @@
 
 <?php
 
-$path = '/var/project/public/images/mypics/';
-if ($handle = opendir($path)) 
+
+if ($handle = opendir(PICSPATH)) 
 {
     while (false !== ($file = readdir($handle))) {
         // do something with the file
