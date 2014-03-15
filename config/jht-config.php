@@ -26,5 +26,5 @@ define('CSSMAIN', BASEHREF.'stylesheets/styles.css');
 define('JQUERY', BASEHREF.'javascripts/jquery-latest.min.js');
 define('GESHICSS', BASEHREF.'stylesheets/vibrant-ink.css');
 define('JSBLINDS', BASEHREF.'jquery.blinds-0.9.js');
-define('PICSPATH','/var/project/sslpublic/images/mypics/);
+define('PICSPATH','/var/project/sslpublic/images/mypics/');
 
