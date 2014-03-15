@@ -23,9 +23,9 @@ $new = array();
 <div class="main" role="main">
 
 
-<?php 
+<?php //$wps =  WpPost::retrieveLive( $s );
 
-foreach( WpPost::retrieveLive( $s ) as $post ) :
+foreach(array() as $post ) :
 
     $new[] = $p;
 
@@ -33,6 +33,8 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
     $new[] = new stdClass;
 
     //ObjectPresenter::prin($new); 
+
+  
 ?>
 
 
@@ -43,8 +45,8 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
         <h1>
 
         <?php
-
-                            echo $post->getAttribute('post_title') 
+if(0):
+                            echo $post->getAttribute('post_title') ; endif;
                 ?>
         </h1>
 
@@ -90,8 +92,8 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
 
                     <?php if( @$_SESSION['isAuth2']==1) : ?>
 
-                        <a href="admin.php?p=edit&pid=<?php echo $post->getId(); ?>">E</a>
-                        <a onclick="return postToFeed('<?php echo  $post->getAttribute('post_title'); ?>',
+                        <a href="admin.php?p=edit&pid=<?php //echo $post->getId(); ?>">E</a>
+                        <a onclick="return postToFeed('<?php //echo  $post->getAttribute('post_title'); ?>',
                         'Lorem ipsum dolor sit amet.<?php //echo $post->getAttribute('post_content'); ?>');">Post to Feed
                         </a>
                         </p>
@@ -104,7 +106,7 @@ foreach( WpPost::retrieveLive( $s ) as $post ) :
                
                 <p>
 
-                <strong>Tags: <?php echo $post->getTagString() ?></strong> 
+                <strong>Tags: <?php //echo $post->getTagString() ?></strong> 
 
 		| <strong>Categories: </strong>
                 </p>

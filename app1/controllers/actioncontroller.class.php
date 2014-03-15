@@ -25,7 +25,7 @@ class ActionController
 		global $json;
 		$this->initOutlet(); 
 		$this->setP($p); 
-		Visitor::logVisitor();
+		//Visitor::logVisitor();
 	}
 
 

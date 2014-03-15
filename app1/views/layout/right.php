@@ -31,7 +31,7 @@ $menus['Other Places']= array('<a href="sindex.php?p=login">Login</a>', '<a clas
 $menus['Tags']=array(); 
 
 $menus['Cats']=array(); 
-
+if(0):
 foreach(WpTerm::retrieveAll()           as $termObj) 
 	
 	$menus['Tags'][] =  '<a href="'.SBASEHREF.'?p=tagged&tag=' . $termObj->getAttribute('name')  . '">'.$termObj->getAttribute('name') .'</a>'; 
@@ -53,7 +53,7 @@ $menus['Today'][]=  date(' g:ia');
 foreach (date_sun_info(time(), 40.760179, -73.914168) as $key => $val):                              
 $menus['Sun Info'][] = ucfirst(str_replace('_',' ',$key) .': '. date("g:ia", $val)); 
 endforeach;
-
+endif;
 
 ?>
 

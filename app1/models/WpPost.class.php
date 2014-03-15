@@ -28,7 +28,7 @@ class WpPost extends BaseObject
 	{
 
 		
-
+		return;
 
 
 

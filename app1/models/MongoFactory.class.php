@@ -88,7 +88,7 @@ class MongoFactory
 	catch(MongoConnectionException $e ) 
 	{
 		echo '<p>Couldn\'t connect to mongodb, is the "mongo" process running?</p>';
-    		exit(0);
+    		//exit(0);
 	}
 
         if( $cache )
