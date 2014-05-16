@@ -42,7 +42,7 @@ foreach($wps as $post ) :
 
     <header>
 
-        <h1>
+        <h1>test12345
 
         <?php
 if(1):
