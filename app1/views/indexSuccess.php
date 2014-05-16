@@ -23,9 +23,9 @@ $new = array();
 <div class="main" role="main">
 
 
-<?php //$wps =  WpPost::retrieveLive( $s );
+<?php $wps =  WpPost::retrieveLive( $s );
 
-foreach(array() as $post ) :
+foreach($wps as $post ) :
 
     $new[] = $p;
 
@@ -45,7 +45,7 @@ foreach(array() as $post ) :
         <h1>
 
         <?php
-if(0):
+if(1):
                             echo $post->getAttribute('post_title') ; endif;
                 ?>
         </h1>
