@@ -4,7 +4,14 @@ define('MAINTENANCE_MODE', false);
 define('OUTLET_CONFIG_PATH', DOCROOT.'config/outlet-config.php');
 define('WEBROOT', DOCROOT.'public/');
 define('BASEHREF', 'http://www.crystalbit.com/'); 
-define('SBASEHREF', 'https://www.crystalbit.com/');
+if($_SERVER['HTTP_HOST']){
+	define('SBASEHREF', 'http://jamess-macbook-air.local/'); 
+}
+else {
+	define('SBASEHREF', 'https://www.crystalbit.com/'); 
+
+}
+//0; //');
 define('IMG', BASEHREF.'images/');
 define('SITE_TITLE', 'James\'s Home Page');
 define('SITE_DESC', 'James\'s Home Page');

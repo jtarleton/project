@@ -196,7 +196,7 @@ class ActionController
 		{
 			//unset($_SESSION['isAuth']); 
 			//$_SESSION = array();
-			header('Location: '.SSBASEHREF.'sindex.php?p=login'); exit(0);
+			header('Location: '.SBASEHREF.'sindex.php?p=login'); exit(0);
 		}
 		
 	}
