@@ -9,7 +9,7 @@
 </div>
 </body>
 </html>
-<?php
+<?php exit;
 /**
 * Front controller
 */
