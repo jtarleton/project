@@ -1,3 +1,14 @@
+<html>
+<head>
+<title>Crystal Bit</title>
+</head>
+<body>
+<div>
+<h1>crystalbit.com</h1> 
+<p>Coming June 29, 2014</p>
+</div>
+</body>
+</html>
 <?php
 /**
 * Front controller
