@@ -5,66 +5,15 @@
 //session_start();
 global $posts; 
 global $p;
-//$path='/home/tarlejh/project/app1/views/xml/index_xml.php';
- 
 
 
-
-
-$s = isset($_GET['s'] ) ? $_GET['s']  : 1;
-
-$r=0;
-
-$new = array(); 
-
-?>
-
-
-<div class="main" role="main">
-
-
-<?php $wps =  WpPost::retrieveLive( $s );
-
-foreach($wps as $post ) :
-
-    $new[] = $p;
-
-    $new[] = new stdClass;
-    $new[] = new stdClass;
-
-    //ObjectPresenter::prin($new); 
-
-  
-?>
-
-
-<article class="entry %s">
-
-    <header>
-
-        <h1>test12345
-
-        <?php
+/* 
 if(1):
                             echo $post->getAttribute('post_title') ; endif;
                 ?>
-        </h1>
 
-
-    </header>
-
-
-<article class="entry">
-<p>
-   <!-- <div class="post">
-
-       <article class="entry">
--->
             <?php echo (!empty($post)) ? html_entity_decode($post->getAttribute('post_content')): null; ?>
 
-
-
-		     <?php
 
                 echo (!empty($post))
 
@@ -73,15 +22,6 @@ if(1):
                             .'</a>'
 
                     : Null;
-
-                ?>
-
-
-</p>
-
-            <footer>
-
-                <p>Posted by James on 
 
                     <time>
                     <?php echo (!empty($post)) 
@@ -96,38 +36,94 @@ if(1):
                         <a onclick="return postToFeed('<?php //echo  $post->getAttribute('post_title'); ?>',
                         'Lorem ipsum dolor sit amet.<?php //echo $post->getAttribute('post_content'); ?>');">Post to Feed
                         </a>
-                        </p>
-                        <div id='fb-root'></div>
-                        <p id='msg'></p>
+                     */ ?>
+<div class="alert alert-dismissable alert-warning">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4>Warning!</h4>
+<p>Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
+</div>
 
-                    <?php endif; ?>
+<!-- Panel -->
+<div class="panel panel-default">
+  <div class="rt panel-heading"><div style="float:left">Post</div> 1 June 2012</div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <code><pre>&lt;?php 
+    for ($i=0; $i < ; $i++) { 
+      //code...
+      echo 'dfksdjlkj';
+      echo 'dfksdjlkj';
+      echo 'dfksdjlkj';
+      echo 'dfksdjlkj';
+      echo 'dfksdjlkj';
+    }
+    ?&gt;</pre>
+    </code>     
+    <br />
+  <hr />
+  Categories: <a href="">Foo</a>, <a href="">Bar</a><br />
+  Tags: <a href="">Qux</a>, <a href="">Baz</a><br />
+  </div>
+</div> 
 
-                </p>
-               
-                <p>
+<!-- nested 2 column row-->
+<div class="row">
+  <!-- col1 -->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="rt panel-heading"><div style="float:left">Post</div>1 June 2012</div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 
-                <strong>Tags: <?php //echo $post->getTagString() ?></strong> 
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+        mollit anim id est laborum.
+        <br />
+        <hr />
+        Categories: <a href="">Foo</a>, <a href="">Bar</a><br />
+        Tags: <a href="">Qux</a>, <a href="">Baz</a><br />
+      </div>
+    </div> 
+  </div>
+  <!-- /col1 -->
+  <!-- col2 -->
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="rt panel-heading"><div style="float:left">Post</div>1 June 2012</div>
+      <div class="panel-body">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut 
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
 
-		| <strong>Categories: </strong>
-                </p>
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+        mollit anim id est laborum.
+        <br />
+        <hr />
+        Categories: <a href="">Foo</a>, <a href="">Bar</a><br />
+        Tags: <a href="">Qux</a>, <a href="">Baz</a><br />
+      </div>
+    </div> 
+  </div>
+  <!-- /col2 -->
+</div><!-- /row -->
 
-            </footer>
-
-        </article>
-
-
-
-<?php endforeach;
-?>
-<div style="padding:3px;background-color:#C5E0F9;">
-<?php
-
-echo paginated_links( 12, 2, $s  );
-
-?>
+<div class="panel panel-default">
+  <div class="rt panel-heading"><div style="float:left">Post</div> 1 June 2012</div>
+  <div class="panel-body">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.     <br />
+    <hr />
+    Categories: <a href="">Foo</a>, <a href="">Bar</a><br />
+    Tags: <a href="">Qux</a>, <a href="">Baz</a><br />
+  </div>
+</div> 
 
 
-</div><!-- // Main -->
+
+      <!-- /row -->
+    </div>
+
 
 
 

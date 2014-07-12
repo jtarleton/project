@@ -24,7 +24,7 @@ foreach( WpTerm::retrieveAll( 'category',@$_GET['s'], 5)  as $tag) :
 <?php 
 
 
-echo link_to( $tag->getAttribute('name') , BASEHREF. 'admin.php?p=editcat&catid='. $tag->getId() ); 
+echo link_to( $tag->getAttribute('name') , SBASEHREF. 'admin.php?p=editcat&catid='. $tag->getId() ); 
 ?></td><td><?php 
 echo link_to( '<button class="btn" onClick="return confirm(\'Really?\');">Delete</button>',  'admin.php?p=delcat&catid='. $tag->getId()  );
 

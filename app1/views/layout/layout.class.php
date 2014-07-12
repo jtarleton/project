@@ -29,16 +29,17 @@ class Layout
 		if (!$templateOnly)
 		{
 			eval('?>' . file_get_contents(HEAD) );
-			eval('?>' . file_get_contents(LEFT) ); 
-			eval('?>'.file_get_contents(RIGHT));
-			//echo '<!-- End Head -->';
+			
+			
+			
 		}	
 	
 		eval('?>'.$template); 
 	
 		if (!$templateOnly)
 		{
-			//echo '<!-- Begin Foot -->';
+			eval('?>' . file_get_contents(LEFT) ); 
+			eval('?>'.file_get_contents(RIGHT));
 			/* eval('?>'.file_get_contents(RIGHT));
 			*/
 			eval('?>'.file_get_contents(FOOT)); 

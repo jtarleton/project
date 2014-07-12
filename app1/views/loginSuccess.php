@@ -1,101 +1,90 @@
 
-
-
-
-<SCRIPT type="text/javascript">
-
-jQuery(document).ready(function(){
-
-jQuery('#pass').bind('keypress', function(e){
-
-if(e.keyCode == '13'){
-
-
-
-	jQuery(this).parents('form').submit();
-
-}
-
-});   
-
-});
-
-</SCRIPT>
-
-
-<div class="main" role="main">
-
-<div id="respond"> 
-
 <?php if(!@$_SESSION['isAuth2']): ?>
-<form class="form-horizontal" id="authform" method="post" action="<?php echo SBASEHREF; ?>sindex.php?p=authcallback">
-<fieldset>
 
-<!-- Form Name -->
-<legend>Login</legend>
-<!-- Text input-->
-<div class="control-group">
-  <label class="control-label"> </label>
-  <div class="controls">
-    <input id="username" name="username" placeholder="user name" class="input-xlarge" type="text">
-    <p class="help-block"></p>
-  </div>
+<div class="alert alert-dismissable alert-danger">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4>Invalid Login</h4>
+<p>There seems to be a problem with your credentials</p>
 </div>
 
-<!-- Password input-->
-<div class="control-group">
-  <label class="control-label"> </label>
-  <div class="controls">
-    <input id="pass" name="pass" placeholder="password" class="input-xlarge" type="password">
-    <p class="help-block">case-sensitive</p>
+<div class="bs-component">
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <form class="form-horizontal" id="authform"  method="post" action="<?php echo SBASEHREF; ?>sindex.php?p=authcallback">
+        <fieldset>
+          <legend>Login to Crystal Bit</legend>
+          <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+            <div class="col-lg-10">
+              <input class="form-control" id="inputEmail" placeholder="Email" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+          <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+          <div class="col-lg-10">
+            <input class="form-control" id="inputPassword" placeholder="Password" type="password">
+          </div>
+          
+          </div>
+          <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+             
+              <button type="submit" class="btn btn-primary">Login</button>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
   </div>
 </div>
+<p class="bs-component">
+  <button type="button" class="btn btn-default">Default</button>
+  <button type="button" class="btn btn-primary">Primary</button><br /><br />
+  <button type="button" class="btn btn-success">Success</button>
+  <button type="button" class="btn btn-info">Info</button>
+  <button type="button" class="btn btn-warning">Warning</button><br /><br />
+  <button type="button" class="btn btn-danger">Danger</button>
+  <button type="button" class="btn btn-link">Link</button>
+</p>
 
-<!-- Button -->
-<div class="control-group">
-  <label class="control-label"></label>
-  <div class="controls">
-    <a id="singlebutton" href="javascript:void(0);" name="singlebutton" class="bigbtn" onClick="return alert(jQuery(this).parents('form').submit());">Login</a>
-  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php else: ?> 
+<div class="alert alert-dismissable alert-danger">
+<button type="button" class="close" data-dismiss="alert">&times;</button>
+<h4>Alert</h4>
+<p><?php echo @$_SESSION['username']; ?> is already logged in.</p>
 </div>
 
-</fieldset>
-</form>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php else: ?> <?php echo @$_SESSION['username']; ?> is already logged in.
 <?php endif; ?>
 
+    <!-- /row -->
+    </div>
 
-</div>
-</div>
+
+

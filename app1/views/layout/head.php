@@ -1,102 +1,277 @@
-<?php 
-//see helper sec2hms https://gist.github.com/4435891
-
-$_SESSION['start'] = (float) array_sum(explode(' ', microtime()));
-//$end   = (float) array_sum(explode(' ', microtime()));
-//$out   = sprintf('Execution time: %s %s %s', sec2hms($end - $start), PHP_EOL, PHP_EOL);
-
-?>
 <!DOCTYPE html>
-<head>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template</title>
+   <!--  <link href="https://www.crystalbit.com/tbs/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link href="http://bootswatch.com/superhero/bootstrap.css" rel="stylesheet">
 
-<!-- Meta -->
-<meta http-equiv ="content-type" content="text/html; charset=UTF-8" />
-<meta name       ="robots"       content="noindex,nofollow" />
-<meta name       ="description"  content="Jamess Home Page" />
-<meta name       ="keywords"     content="Jamess Home Page" />
-
-<!-- Link -->
-<link href="<?php echo SBASEHREF; ?>crystalbit_sass/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-<!--[if IE]>
-	<link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-<![endif]-->
-
-<link rel="stylesheet"   href="<?php echo SBASEHREF; ?>stylesheets/demo.css" ></link>
-<link rel="canonical"    href="<?php echo SBASEHREF; ?>" />
-<link rel="next"         href="<?php echo SBASEHREF; ?>" />
-
-<!-- Title -->
-<title>James's Home Page</title>
+<style type="text/css">
+body{
+  background-color: #000;
+}
+.container{
+  background-color:#2B3E50;
+}
 
 
 
 
+[class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  //background-color: #344B60;
+  color:#D8C7B6; /* #9F7956; */
+  //background-color: rgba(86,61,124,.15);
+  border: 0px solid #111;
+  //border: 1px solid rgba(86,61,124,.2);
+}
+
+code, pre {
+  margin:0;
+  padding:0;
+  border:0;
+  //padding:2px;
+  background-color: transparent;
+  color:#D8C7B6;
+  font-weight: 400;
+}
 
 
-<!-- Javascript
-<script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/jquery.dataTables.js"></script>
--->
+#nav {
 
-<script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/jquery-latest.min.js"></script>
-<!-- <script type="text/javascript" src="http://connect.facebook.net/en_US/all.js"></script>
+  border-top:0px ridge #FA9A50;   
+  border-bottom:0px solid #000;
 
--->
-<!-- <script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/js.js"></script>
--->
-
-<script type="text/javascript" src="<?php echo SBASEHREF; ?>javascripts/js2.js"></script>
+  background:#FFF;
 
 
+}
 
 
-</head>
+ul {
+list-style:none;
+}
 
-<body>
 
-<div id="fb-root"></div>
+#nav  ul {
+  
+  list-style:none;
+  
+}
+.nav-footer { margin:0; }
+.nav-footer ul { margin:0 0 0 0; }
+#nav li {
+  opacity:0.8;
+  height:50px;
+  display:block;
+  float:left;
+  
+}
 
-<div id="nav" class="twelve columns">
+#nav a {
+  font-size:14px;
+  font-weight: bold;
+  padding:20px;
+  line-height:50px;
+  color:#000;
+  text-decoration:none;
+}
+#nav li:hover {
+//width:100&#37;  
+//background-color:#FFC59F;
+//color:magenta;
+  
+}
 
-	<ul id="nv">
+#nv {
+background-color:#293E6F;
+}
 
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=index">Home</a></li>
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=about">About</a></li>
-	<li><a title="Categories" href="<?php echo SBASEHREF; ?>sindex.php?p=cats">Cats</a></li>
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=tags">Tags</a></li>
-	
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=archive">Archive</a></li>
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=otherplaces">Links</a></li>
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=pics">Pics</a></li>
-	
-	<li><a href="<?php echo SBASEHREF; ?>sindex.php?p=misc">Misc</a></li>
+ul#nv li {
+  min-height:30px;
+  cursor:pointer;
+  text-align: center;
+  font-size:24px;
+  line-height: 30px;
+  display: inline;
+  padding: 10px 0px;
+  z-index:999; border-top:0px solid yellow; margin:0; z-index:-1; 
+  }
+  
+  #nv > li a:link {   min-height:25px;line-height: 30px;min-height:30px;cursor:pointer;border-top:0px solid magenta;
+  background-color:transparent; color:#FBD3B5; margin:0px; padding: 10px 30px; z-index:-1; }
+  #nv > li a:visited { min-height:25px; line-height: 30px;cursor:pointer;color:#FBD3B5; border-top:0px solid magenta;
+  background-color:transparent; margin:0px; padding: 10px 30px;z-index:-1; }
+  #nv > li a:hover { min-height:25px;line-height: 30px;cursor:pointer;color:#FA9A50; border-top:0px solid #58b2fa;
+  background-color:transparent; opacity:1; margin:0px; padding: 10px 30px; margin:0; z-index:-1; }
+  #nv > li a:active { min-height:25px;line-height: 30px;cursor:pointer;border-top:0px solid cyan;
+  background-color:transparent; color:#FBD3B5; margin:0px; padding: 10px 30px; margin:0; z-index:-1; }
+  
 
-	<li><a id="button" href="javascript:void(0);">Contact</a></li>
 
-	<li><a class="menubtn" id="tools" href="javascript:void(0);">Tools</a><li>	
-	
-	
-	</ul><ul id="nav-sub" style="padding:10px;padding-left:25px;display:none;background-color:#293E6F;"><li><a id="button2">Search</a></li></ul>	
+
+#hp {
+float:left;padding:0;margin:10px auto auto 15px;height:34px;line-height:40px;font-weight:bold;  color:#FA9A50;
+      font: 28pt fantasy, cursive, Serif;
+}
+
+.rt {
+  text-align: right;
+}
+
+ /* 
+h4 {
+  margin-top: 25px;
+}
+.row {
+  margin-bottom: 20px;
+}
+.row .row {
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+
+p {
+  margin:0;
+  padding:0;
+  -webkit-margin-before: 0; -webkit-margin-after: 0;
+}
+
+hr {
+  margin-top: 40px;
+  margin-bottom: 40px; } */
+#sol{
+  
+
+  z-index:999;background-image:url('https://www.crystalbit.com/images/sol.jpg'); min-height:349px; min-width: 1170px; margin:auto 0px; margin-top: 0;
+  
+}
+</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+
+  <body>
+<div class="container">
+  <div class="row">
+
+    <div class="navbar navbar-default" style="margin-bottom:0; ">
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="#">Home</a></li>
+    <!-- <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    </button>
+    </div> -->
+  </ul>
+  <div class="navbar-collapse collapse navbar-responsive-collapse">
+    <ul class="nav navbar-nav">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sun <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Sunrise</a></li>
+          <li><a href="#">Sunset</a></li>
+          <li><a href="#">Solar Transit</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Today <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">NYT What You Need To Know</a></li>
+          <li><a href="#">Weather</a></li>
+          
+        </ul>
+      </li>
+
+     
+
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Tags</a></li>
+          <li><a href="#">Archives</a></li>
+        </ul>
+      </li> 
+
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pics <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Cool</a></li>
+           <li><a href="#">Various NYC</a></li>
+        </ul>
+      </li>
+
+
+
+
+       <li><a href="#">Other Places</a></li>
+    </ul>
+    <!-- <form class="navbar-form navbar-left">
+      <input type="text" class="form-control col-lg-8" placeholder="Search">
+    </form> -->
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Contact</a></li>
+     <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Me</a></li>
+          <li><a href="#">You</a></li>
+          
+        </ul>
+      </li>
+
+      
+     
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+           <li><a href="#">Register</a></li>
+          <li><a href="#">Logout</a></li>
+          <li><a href="#">Edit Account</a></li>
+          <li><a href="#">View Account</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="alert alert-dismissable alert-success" style="margin-bottom:0;">
+<button type="button" class="close" data-dismiss="alert">×</button>
+<strong>Hello</strong> visitor from <?php echo $_SERVER['REMOTE_ADDR']; ?>.
+</div>
+
+<div id="sol" style="width:1170px;">
+  <div style="margin:auto 0px;">
+    <div id="hp">James's Home Page
+    </div>
+    <div style="clear:both;">
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-dismissable alert-info" style="margin-bottom:0;">
+<button type="button" class="close" data-dismiss="alert">×</button>
+<strong>Welcome!</strong> Please <a href="bs101.php?ind=reg" class="alert-link">register</a> for my website.
 </div>
 
 
-<div id="sol">
+<!-- <div class="alert alert-success" role="alert">...</div>
+<div class="alert alert-info" role="alert">...</div>
+<div class="alert alert-warning" role="alert">...</div> 
+<div class="alert alert-danger" role="alert">...</div>-->
 
-
-			<div style="margin:auto 0px;">
-
-			<div id="hp">James's Home Page</div>
-
-			<div style="clear:both;"></div></div>
-</div>
-
-
-
-
-<div style="text-align:center; margin:0; padding:5px; font-weight:normal; font-size:90%;font-family:fantasy,cursive,Serif;" id="grad">
-<img src="http://www.crystalbit.com/images/jigsoar-icons/light/16px/16_info.png" border="0" style="margin-right:5px;"></img>Today is <?php echo date('l, F jS, Y \| h:i:s A T \| e'); ?> | Sunrise: 7:05 am | Sunset: 4:40 pm | Hi:55&#176;/Lo:39&#176;
-</div>
-
-
-
-<div id="content">
+<!-- Left (Main) -->
+<div class="col-md-8" style="min-height:1000px;">
