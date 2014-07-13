@@ -238,10 +238,14 @@ hr {
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
         <ul class="dropdown-menu">
-           <li><a href="#">Register</a></li>
-          <li><a href="#">Logout</a></li>
+           <li><a href="sindex.php?p=register">Register</a></li>
+         
+          <?php if($_SESSION['isAuth2']): ?>
+          <li><a href="sindex.php?p=logout">Logout</a></li><li><a href="admin.php?p=index">Admin</a></li>
           <li><a href="#">Edit Account</a></li>
-          <li><a href="#">View Account</a></li>
+          <li><a href="#">View Account</a></li><?php else: ?>
+ <li><a href="sindex.php?p=login">Login</a></li>
+        <?php endif; ?>
         </ul>
       </li>
     </ul>

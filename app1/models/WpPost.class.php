@@ -28,15 +28,14 @@ class WpPost extends BaseObject
 	{
 
 		
-		return;
-
+		
 
 
                 $doc = ( isset( $id) ) ? $this->db->test->wp_post->findOne(array('_id'=>(int)$id ) ) : null;
         
 
                 
-		 if(!isset( $doc ) ) return; // new Exception('Post not found for id '. $id);
+		 if(!isset( $doc ) ) throw new Exception('Post not found for id '. $id);
                
 
 

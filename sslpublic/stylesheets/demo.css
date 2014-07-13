@@ -5,11 +5,11 @@
 	margin:0; padding:0;
 	} /*--- Stylesheet Reset ---*/
 
-.whitesmoke {
-background-color:#F5F5F5;
+.whitesmoke { background-color:#FFF; 
+/* background-color:#F5F5F5; */
 }
 .papayawhip {
-background-color: #FFEFD5;
+#background-color: #FFEFD5;
 }
 body {
 	font-family: verdana, arial, sans-serif;
@@ -17,7 +17,7 @@ body {
 	line-height: 20px;
 	width: 1100px;
 	margin:0 auto;
-	background-color: #151821  ;
+	background-color: #151821  ; 
 	background-position: top;
 /* 	background-image:url('http://www.crystalbit.com/images/v.jpg'); 
 *.
@@ -132,7 +132,7 @@ nav li:hover {
 	
 	padding-top:0;
 	border-top:0;
-	background-color: #FAFFE5;/* #D8BFD8; */
+	background-color: #FFF;/*  FAFFE5 #D8BFD8; */
 	
 }
 .main div nav {

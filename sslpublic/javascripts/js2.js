@@ -324,7 +324,7 @@ jQuery(document).ready(function() {
 
 
 	jQuery('.menubtn').bind('click', function() {
-	
+	jQuery('.sub').slideUp('fast');
 		if( jQuery('#nav-sub').is(':hidden') ) 	
 		{
 			jQuery('#nav-sub').hide().slideDown('fast');
@@ -333,8 +333,30 @@ jQuery(document).ready(function() {
 		{
 			jQuery('#nav-sub').slideUp('fast');
 			//jQuery(this).attr('id');
+		} });
+
+jQuery('.menubtn2').bind('click', function() {
+	jQuery('.sub').slideUp('fast');
+		if( jQuery('#nav-sub2').is(':hidden') ) 	
+		{
+			jQuery('#nav-sub2').hide().slideDown('fast');
 		}
-	});
+		else
+		{
+			jQuery('#nav-sub2').slideUp('fast');
+			//jQuery(this).attr('id');
+		}
+});
+
+
+
+
+
+
+
+
+
+
 
 });
 

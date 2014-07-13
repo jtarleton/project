@@ -1,11 +1,15 @@
 
 <?php if(!@$_SESSION['isAuth2']): ?>
 
-<div class="alert alert-dismissable alert-danger">
+
+<?php if(isset($_SESSION['flash']['notice'])): ?>
+
+  <div class="alert alert-dismissable alert-danger">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 <h4>Invalid Login</h4>
-<p>There seems to be a problem with your credentials</p>
+<p><?php echo $_SESSION['flash']['notice']; unset($_SESSION['flash']['notice'] ); ?></p>
 </div>
+<?php endif; ?>
 
 <div class="bs-component">
   <div class="panel panel-default">
@@ -16,13 +20,13 @@
           <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-              <input class="form-control" id="inputEmail" placeholder="Email" type="text">
+              <input name="username" class="form-control" id="inputEmail" placeholder="Email" type="text">
             </div>
           </div>
           <div class="form-group">
           <label for="inputPassword" class="col-lg-2 control-label">Password</label>
           <div class="col-lg-10">
-            <input class="form-control" id="inputPassword" placeholder="Password" type="password">
+            <input class="form-control" name="pass" id="inputPassword" placeholder="Password" type="password">
           </div>
           
           </div>

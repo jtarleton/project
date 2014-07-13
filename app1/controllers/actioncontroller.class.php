@@ -111,10 +111,23 @@ class ActionController
 			$_SESSION['isAuth2'] = true;
 			return true;
 		}
-		
+		$_SESSION['flash']['notice'] = 'There seems to be a problem with your credentials';
 		return false;
 	}
 
+	private function executeProcessreg()
+	{ 
+
+//		die(var_dump($_POST['email']));
+//		$_POST['pass1']
+//		$_POST['pass2']
+		//$this->executeRegister();
+		//header('Location: '.SBASEHREF.'sindex.php?p=register');
+
+		header('Location: '.SBASEHREF.'sindex.php?p=register');
+	exit(0);
+
+	}
 	private function executeCommentpost()
 	{
 	
@@ -156,6 +169,7 @@ class ActionController
 		header('Location: '.SBASEHREF);
 		exit(0);
 	}
+	
 	private function executeAuthcallback()
 	{
 
@@ -211,11 +225,11 @@ class ActionController
 
 		$output = array();
 		$cols = array('_id'=>'_id','date'=>'date',
-'activity_type'=>'activity_type',
-'distance'=>'distance',
-'time'=>'time',
-'felt'=>'felt'
-);
+			'activity_type'=>'activity_type',
+			'distance'=>'distance',
+			'time'=>'time',
+			'felt'=>'felt'
+		);
 
 		$i= 0; 
 		foreach(DailyMile::retrieveAll(0, 999999) as $row)

@@ -1,15 +1,4 @@
-<html>
-<head>
-<title>Crystal Bit</title>
-</head>
-<body>
-<div>
-<h1>crystalbit.com</h1> 
-<p>Coming June 29, 2014...</p>
-</div>
-</body>
-</html>
-<?php exit;
+<?php
 /**
 * Front controller
 */
@@ -31,7 +20,7 @@ $p = (empty($_GET['p']))
 	: strip_tags($_GET['p']);
 
 //some pages should not use shared layout
-$layoutOnly = ($p=='commentpost') 
+$layoutOnly = ($p=='commentpost' || $p=='processreg') 
 	? true 
 	: false;
 

@@ -4,6 +4,7 @@
 
 //session_start();
 global $posts; 
+$posts = WpPost:: retrieveLive();
 global $p;
 
 
@@ -37,12 +38,16 @@ if(1):
                         'Lorem ipsum dolor sit amet.<?php //echo $post->getAttribute('post_content'); ?>');">Post to Feed
                         </a>
                      */ ?>
+
+
+
+                     <!-- 
 <div class="alert alert-dismissable alert-warning">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 <h4>Warning!</h4>
 <p>Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
-</div>
-
+</div> -->
+<?php if(0): ?>
 <!-- Panel -->
 <div class="panel panel-default">
   <div class="rt panel-heading"><div style="float:left">Post</div> 1 June 2012</div>
@@ -106,19 +111,18 @@ if(1):
     </div> 
   </div>
   <!-- /col2 -->
-</div><!-- /row -->
-
+</div><!-- /row --><?php endif; ?>
+<?php  foreach ($posts as $key => $post) : ?>
 <div class="panel panel-default">
-  <div class="rt panel-heading"><div style="float:left">Post</div> 1 June 2012</div>
+  <div class="rt panel-heading"><div style="float:left"><?php echo $post->getAttribute('post_title') ; ?></div> 1 June 2012</div>
   <div class="panel-body">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.     <br />
+ <?php echo (!empty($post)) ? html_entity_decode($post->getAttribute('post_content')): null; ?>   <br />
     <hr />
     Categories: <a href="">Foo</a>, <a href="">Bar</a><br />
     Tags: <a href="">Qux</a>, <a href="">Baz</a><br />
   </div>
 </div> 
-
+<?php endforeach; ?>
 
 
       <!-- /row -->
