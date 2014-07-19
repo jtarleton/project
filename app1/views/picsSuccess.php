@@ -1,15 +1,6 @@
 
-<div class="main" role="main">
 
-
-<div class="post">
-
-<article class="entry">
-
-
-
-<header>
-<h1>Pics Index</h1></header>
+<strong>Pics Index</strong><br />
 
 
 
@@ -35,4 +26,5 @@ if ($handle = opendir(PICSPATH))
 
 
 ?>
-</div></div>
+ <!-- /row -->
+    </div>

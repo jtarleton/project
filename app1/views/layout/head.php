@@ -166,7 +166,7 @@ hr {
 
     <div class="navbar navbar-default" style="margin-bottom:0; ">
   <ul class="nav navbar-nav">
-    <li class="active"><a href="#">Home</a></li>
+    <li class="active"><a href="sindex.php?p=index">Home</a></li>
     <!-- <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
     <span class="icon-bar"></span>
@@ -180,9 +180,9 @@ hr {
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Sun <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Sunrise</a></li>
-          <li><a href="#">Sunset</a></li>
-          <li><a href="#">Solar Transit</a></li>
+          <li><a href="sindex.php?p=sunrise">Sunrise</a></li>
+          <li><a href="sindex.php?p=sunset">Sunset</a></li>
+          <li><a href="sindex.php?p=solartransit">Solar Transit</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -200,24 +200,24 @@ hr {
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Categories</a></li>
-          <li><a href="#">Tags</a></li>
-          <li><a href="#">Archives</a></li>
+          <li><a href="sindex.php?p=cats">Categories</a></li>
+          <li><a href="sindex.php?p=tags">Tags</a></li>
+          <li><a href="sindex.php?p=archive">Archives</a></li>
         </ul>
       </li> 
 
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pics <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Cool</a></li>
-           <li><a href="#">Various NYC</a></li>
+          <li><a href="sindex.php?p=pics">Cool</a></li>
+           <li><a href="sindex.php?p=pics">Various NYC</a></li>
         </ul>
       </li>
 
 
 
 
-       <li><a href="#">Other Places</a></li>
+       <li><a href="sindex.php?p=otherplaces">Other Places</a></li>
     </ul>
     <!-- <form class="navbar-form navbar-left">
       <input type="text" class="form-control col-lg-8" placeholder="Search">
@@ -227,7 +227,7 @@ hr {
      <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Me</a></li>
+          <li><a href="sindex.php?p=about">Me</a></li>
           <li><a href="#">You</a></li>
           
         </ul>
@@ -254,7 +254,12 @@ hr {
 
 <div class="alert alert-dismissable alert-success" style="margin-bottom:0;">
 <button type="button" class="close" data-dismiss="alert">×</button>
-<strong>Hello</strong> visitor from <?php echo $_SERVER['REMOTE_ADDR']; ?>.
+
+<?php if(isset($_SESSION['isAuth2'])): ?>
+You are logged in
+<?php else : ?>
+<strong>Hello</strong> visitor from <?php echo $_SERVER['REMOTE_ADDR']; ?>
+<?php endif; ?>
 </div>
 
 <div id="sol" style="width:1170px;">
@@ -268,7 +273,7 @@ hr {
 
 <div class="alert alert-dismissable alert-info" style="margin-bottom:0;">
 <button type="button" class="close" data-dismiss="alert">×</button>
-<strong>Welcome!</strong> Please <a href="bs101.php?ind=reg" class="alert-link">register</a> for my website.
+<strong>Welcome!</strong> Please <a href="sindex.php?p=register" class="alert-link">register</a> for my website.
 </div>
 
 

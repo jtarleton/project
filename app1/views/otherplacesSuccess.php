@@ -1,16 +1,6 @@
 
-<div class="main" role="main">
 
-
-<div class="post">
-
-<article class="entry">
-
-
-
-<header>
-<h1>Links </h1></header>
-
+Links <br />
 
 <p>
 
@@ -47,6 +37,6 @@ $l = (@$_SESSION['isAuth2']) ? true : false;
 
 
 </p>
-</article>
-</div>
-</div>
+
+ <!-- /row -->
+    </div>

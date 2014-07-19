@@ -114,7 +114,7 @@ if(1):
 </div><!-- /row --><?php endif; ?>
 <?php  foreach ($posts as $key => $post) : ?>
 <div class="panel panel-default">
-  <div class="rt panel-heading"><div style="float:left"><?php echo $post->getAttribute('post_title') ; ?></div> 1 June 2012</div>
+  <div class="rt panel-heading"><div style="float:left"><a href="sindex.php?p=postdetail&pid=<?php echo $post->getId(); ?>"><?php echo $post->getAttribute('post_title') ; ?></a></div> 1 June 2012</div>
   <div class="panel-body">
  <?php echo (!empty($post)) ? html_entity_decode($post->getAttribute('post_content')): null; ?>   <br />
     <hr />
