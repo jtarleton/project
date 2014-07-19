@@ -255,7 +255,7 @@ hr {
 <div class="alert alert-dismissable alert-success" style="margin-bottom:0;">
 <button type="button" class="close" data-dismiss="alert">×</button>
 
-<?php if(isset($_SESSION['isAuth2'])): ?>
+<?php if(isset(@$_SESSION['isAuth2'])): ?>
 You are logged in
 <?php else : ?>
 <strong>Hello</strong> visitor from <?php echo $_SERVER['REMOTE_ADDR']; ?>
