@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Template</title>
    <!--  <link href="https://www.crystalbit.com/tbs/bootstrap-3.1.1-dist/css/bootstrap.min.css" rel="stylesheet"> -->
-    <link href="http://bootswatch.com/superhero/bootstrap.css" rel="stylesheet">
+    <link href="stylesheets/super.css" rel="stylesheet">
 
 <style type="text/css">
 body{
