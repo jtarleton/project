@@ -4,5 +4,4 @@
 
 <strong><?php 
 global $p; 
-echo $p; ?></strong> was not found. <!-- /row -->
-    </div>
+echo $p; ?></strong> was not found. 

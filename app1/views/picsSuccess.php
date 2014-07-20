@@ -26,5 +26,3 @@ if ($handle = opendir(PICSPATH))
 
 
 ?>
- <!-- /row -->
-    </div>

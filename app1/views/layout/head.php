@@ -146,8 +146,9 @@ hr {
   margin-bottom: 40px; } */
 #sol{
   
-
-  z-index:999;background-image:url('https://www.crystalbit.com/images/sol.jpg'); min-height:349px; min-width: 1170px; margin:auto 0px; margin-top: 0;
+overflow:auto;
+min-height:349px; /* min-width: 1170px; */
+  z-index:999;background-image:url('https://www.crystalbit.com/images/sol.jpg'); margin:auto 0px; margin-top: 0;
   
 }
 </style>
@@ -262,7 +263,7 @@ You are logged in
 <?php //endif; ?>
 </div>
 
-<div id="sol" style="width:1170px;">
+<div id="sol" style="">
   <div style="margin:auto 0px;">
     <div id="hp">James's Home Page
     </div>

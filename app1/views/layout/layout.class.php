@@ -35,6 +35,7 @@ class Layout
 			
 		}	
 	
+	
 		eval('?>'.$template); 
 	
 		if (!$templateOnly)

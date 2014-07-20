@@ -37,6 +37,3 @@ $l = (@$_SESSION['isAuth2']) ? true : false;
 
 
 </p>
-
- <!-- /row -->
-    </div>
