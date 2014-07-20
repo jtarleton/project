@@ -240,7 +240,7 @@ hr {
         <ul class="dropdown-menu">
            <li><a href="sindex.php?p=register">Register</a></li>
          
-          <?php if($_SESSION['isAuth2']): ?>
+          <?php if(@$_SESSION['isAuth2']): ?>
           <li><a href="sindex.php?p=logout">Logout</a></li><li><a href="admin.php?p=index">Admin</a></li>
           <li><a href="#">Edit Account</a></li>
           <li><a href="#">View Account</a></li><?php else: ?>
