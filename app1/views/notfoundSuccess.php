@@ -1,8 +1,8 @@
-<div class="main" role="main">
 
-<h2>Not Found</h2>
-
+<b>Not Found</b>
+<br />
 
 <strong><?php 
 global $p; 
-echo $p; ?></strong> was not found.</div>
+echo $p; ?></strong> was not found. <!-- /row -->
+    </div>
