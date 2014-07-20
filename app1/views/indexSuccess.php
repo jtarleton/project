@@ -4,7 +4,7 @@
 
 //session_start();
 global $posts; 
-$posts = WpPost:: retrieveLive();
+$posts = WpPost::retrieveLive();
 global $p;
 
 

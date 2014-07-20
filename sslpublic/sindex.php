@@ -20,11 +20,13 @@ $p = (empty($_GET['p']))
 	: strip_tags($_GET['p']);
 
 //some pages should not use shared layout
-$layoutOnly = ($p=='commentpost' || $p=='processreg') 
-	? true 
-	: false;
+$layoutOnly = 
 
 //action 
-Layout::getInstance()->render(ActionController::getInstance($p)->execute(), $layoutOnly); 
+
+
+Layout::getInstance()->render(ActionController::getInstance($p)->execute(), ($p=='commentpost' || $p=='processreg') 
+	? true 
+	: false); 
 
 exit(0);

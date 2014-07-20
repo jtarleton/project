@@ -1,7 +1,7 @@
 <?php 
 /**
 */
-
+error_reporting(-1);
 class Layout 
 {
 	static private $instance;
@@ -23,13 +23,14 @@ class Layout
 
 	public function render($template, $templateOnly=false)
 	{
-	
+	//
 		//session_start(); 
 		
 		if (!$templateOnly)
 		{
-			eval('?>' . file_get_contents(HEAD) );
-			
+
+		eval('?>'.file_get_contents(HEAD));
+
 			
 			
 		}	
@@ -38,12 +39,13 @@ class Layout
 	
 		if (!$templateOnly)
 		{
+		
 			eval('?>' . file_get_contents(LEFT) ); 
 			eval('?>'.file_get_contents(RIGHT));
-			/* eval('?>'.file_get_contents(RIGHT));
-			*/
+		
+			
 			eval('?>'.file_get_contents(FOOT)); 
-		}
+		} 
 	
 	}
 }
