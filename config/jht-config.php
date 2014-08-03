@@ -4,7 +4,7 @@ define('MAINTENANCE_MODE', false);
 define('OUTLET_CONFIG_PATH', DOCROOT.'config/outlet-config.php');
 define('WEBROOT', DOCROOT.'public/');
 define('BASEHREF', 'http://www.crystalbit.com/'); 
-if($_SERVER['HTTP_HOST']){
+if(0){ 
 	define('SBASEHREF', 'http://jamess-macbook-air.local/'); 
 }
 else {
