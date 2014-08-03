@@ -188,9 +188,9 @@ min-height:349px; /* min-width: 1170px; */
       </li>
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Today <b class="caret"></b></a>
-        <ul class="dropdown-menu">
+        <ul class="dropdown-menu"><!-- 
           <li><a href="sindex.php?p=todaysnews">NYT What You Need To Know</a></li>
-          <li><a href="sindex.php?p=weather">Weather</a></li>
+        -->  <li><a href="sindex.php?p=weather">Weather</a></li>
           
         </ul>
       </li>
