@@ -1,11 +1,11 @@
-
+<!--
 
 <div class="alert alert-dismissable alert-warning">
 <button type="button" class="close" data-dismiss="alert">&times;</button>
 <h4>Warning!</h4>
 <p>Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, <a href="#" class="alert-link">vel scelerisque nisl consectetur et</a>.</p>
 </div>
-
+-->
 <div class="bs-component">
 	<div class="panel panel-default">
 		<div class="panel-body">

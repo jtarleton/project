@@ -14,16 +14,6 @@ global $wpNext;
 ?>
 
 
-<div class="main" role="main">
-
-
-
-
-
-
-
-
-
 
 
 
@@ -211,14 +201,6 @@ jQuery('textarea').val('');
 
 
 
-
-
-
-
-
-</div>
-
-</div>
 
 
 
