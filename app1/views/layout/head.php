@@ -148,7 +148,7 @@ hr {
   
 overflow:auto;
 min-height:349px; /* min-width: 1170px; */
-  z-index:999;background-image:url('https://www.crystalbit.com/images/sol.jpg'); margin:auto 0px; margin-top: 0;
+  z-index:999;background-image:url('/images/sol.jpg'); margin:auto 0px; margin-top: 0;
   
 }
 </style>
@@ -189,8 +189,8 @@ min-height:349px; /* min-width: 1170px; */
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Today <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="#">NYT What You Need To Know</a></li>
-          <li><a href="#">Weather</a></li>
+          <li><a href="sindex.php?p=todaysnews">NYT What You Need To Know</a></li>
+          <li><a href="sindex.php?p=weather">Weather</a></li>
           
         </ul>
       </li>
@@ -224,12 +224,12 @@ min-height:349px; /* min-width: 1170px; */
       <input type="text" class="form-control col-lg-8" placeholder="Search">
     </form> -->
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#">Contact</a></li>
+      <li><a href="sindex.php?p=contact">Contact</a></li>
      <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">About <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          <li><a href="sindex.php?p=about">Me</a></li>
-          <li><a href="#">You</a></li>
+          <li><a href="sindex.php?p=about">About</a></li>
+          <li><a href="sindex.php?p=yourclient">Your Client</a></li>
           
         </ul>
       </li>
@@ -239,12 +239,12 @@ min-height:349px; /* min-width: 1170px; */
       <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
         <ul class="dropdown-menu">
-           <li><a href="sindex.php?p=register">Register</a></li>
+           <li><a href="sindex.php?p=register">Create Account</a></li>
          
           <?php if(@$_SESSION['isAuth2']): ?>
           <li><a href="sindex.php?p=logout">Logout</a></li><li><a href="admin.php?p=index">Admin</a></li>
-          <li><a href="#">Edit Account</a></li>
-          <li><a href="#">View Account</a></li><?php else: ?>
+          <li><a href="sindex.php?p=editacct">Edit Account</a></li>
+          <li><a href="sindex.php?p=viewacct">View Account</a></li><?php else: ?>
  <li><a href="sindex.php?p=login">Login</a></li>
         <?php endif; ?>
         </ul>
@@ -252,30 +252,30 @@ min-height:349px; /* min-width: 1170px; */
     </ul>
   </div>
 </div>
-
+<!-- 
 <div class="alert alert-dismissable alert-success" style="margin-bottom:0;">
 <button type="button" class="close" data-dismiss="alert">×</button>
 
 <?php //if(isset(@$_SESSION['isAuth2'])): ?>
 You are logged in
 <?php //else : ?>
-<strong>Hello</strong> visitor from <?php echo $_SERVER['REMOTE_ADDR']; ?>
-<?php //endif; ?>
-</div>
+<strong>Hello</strong> visitor from < ?php echo $_SERVER['REMOTE_ADDR']; ? >
 
+</div>
+-->
 <div id="sol" style="">
   <div style="margin:auto 0px;">
-    <div id="hp">James's Home Page
+    <div id="hp"><a href="sindex.php?p=index">James's Home Page</a>
     </div>
     <div style="clear:both;">
     </div>
   </div>
 </div>
-
+<!-- 
 <div class="alert alert-dismissable alert-info" style="margin-bottom:0;">
 <button type="button" class="close" data-dismiss="alert">×</button>
 <strong>Welcome!</strong> Please <a href="sindex.php?p=register" class="alert-link">register</a> for my website.
-</div>
+</div> -->
 
 
 <!-- <div class="alert alert-success" role="alert">...</div>
