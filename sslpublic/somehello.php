@@ -1,5 +1,6 @@
-<html>
-<head><title>Hello World</title>
+<!DOCTYPE html>
+<head>
+	<title>Hello World</title>
 
 <style type="text/css">body {
 	
