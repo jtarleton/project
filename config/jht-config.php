@@ -14,7 +14,7 @@ else {
 
 }
 //0; //');
-define('IMG', BASEHREF.'images/');
+define('IMG', SBASEHREF.'images/');
 define('SITE_TITLE', 'James\'s Home Page');
 define('SITE_DESC', 'James\'s Home Page');
 define('SITE_KEYWORDS', 'James\'s Home Page');
@@ -28,12 +28,13 @@ define('LEFT', DOCROOT.'app1/views/layout/left.php');
 define('RIGHT', DOCROOT.'app1/views/layout/right.php');
 define('FOOT', DOCROOT.'app1/views/layout/foot.php');
 define('HELPERS', DOCROOT.'app1/views/helpers.php');
-define('JSLIB', BASEHREF.'javascripts/js.js');
-define('JSLIB2', BASEHREF.'javascripts/js2.js');
+define('JSLIB', SBASEHREF.'javascripts/js.js');
+define('JSLIB2', SBASEHREF.'javascripts/js2.js');
 define('GMAPURL', 'http://maps.google.com/maps/api/js?sensor=false');
-define('CSSMAIN', BASEHREF.'stylesheets/styles.css');
-define('JQUERY', BASEHREF.'javascripts/jquery-latest.min.js');
-define('GESHICSS', BASEHREF.'stylesheets/vibrant-ink.css');
-define('JSBLINDS', BASEHREF.'jquery.blinds-0.9.js');
+define('CSSMAIN', SBASEHREF.'stylesheets/styles.css');
+define('JQUERY', SBASEHREF.'javascripts/jquery-latest.min.js');
+define('GESHICSS', SBASEHREF.'stylesheets/vibrant-ink.css');
+define('JSBLINDS', SBASEHREF.'jquery.blinds-0.9.js');
 define('PICSPATH','/var/project/sslpublic/images/mypics/');
+define('MRUNSPICSPATH', '/var/project/sslpublic/images/mrunspics/');
 
