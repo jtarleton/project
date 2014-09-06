@@ -3,7 +3,7 @@
 class WpTerm extends BaseObject
 {
 
-
+public $sort;
 	public $data;
 
 	public function __construct($id=null)
@@ -33,7 +33,7 @@ class WpTerm extends BaseObject
 
 
 		//die(var_dump($doc));
-
+$this->sort =  $doc['name'];
 		$this->data['_id'] = $doc['_id']; //->{'$id'};
 		$this->data['name'] = $doc['name'];
 		$this->data['slug'] = $doc['slug'];
@@ -258,7 +258,7 @@ class WpTerm extends BaseObject
 			
 			$objs[$id] = new self($id);
 		}
-
+sort($objs);
                 return $objs;
 
 
