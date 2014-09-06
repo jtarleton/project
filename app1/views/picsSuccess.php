@@ -10,18 +10,20 @@
   <div class="carousel-inner">
     <div class="item active">
       <img src="
-https://www.crystalbit.com/images/mypics/beautiful-scenery-wallpapers-184.jpg" alt="...">
+https://www.crystalbit.com/images/mypics/beautiful-scenery-wallpapers-184.jpg" alt="">
       <div class="carousel-caption">
-        ...
+        Caption
       </div>
     </div>
 <?php 
-if ($handle = opendir(PICSPATH))
-{
- while (false !== ($file = readdir($handle))) {
+if ($handle = opendir(PICSPATH)):
+
+ while (false !== ($file = readdir($handle))) :  
+
+  if($file!='.' && $file!='..'):
  // do something with the file
 ?><div class="item"><?php
-       if($file!='.' && $file!='..')
+      
        echo link_to(sprintf('<img src="%simages/mypics/%s" style="border:0; margin:0; padding:0;" />', SBASEHREF, $file), sprintf('%simages/mypics/%s', SBASEHREF, $file) );
        // note that '.' and '..' is returned even
        ?>
@@ -30,10 +32,10 @@ if ($handle = opendir(PICSPATH))
     </div>
   </div>
  <?php
-
- }
+endif;
+ endwhile;
  closedir($handle);
-}
+endif;
 
 
 
