@@ -4,7 +4,7 @@
 
 
 <!-- The data encoding type, enctype, MUST be specified as below -->
-<form enctype="multipart/form-data" action="http://www.crystalbit.com/admin.php?p=up" method="POST">
+<form enctype="multipart/form-data" action="admin.php?p=up" method="POST">
     <!-- MAX_FILE_SIZE must precede the file input field -->
     <input type="hidden" name="MAX_FILE_SIZE" value="6291456" />
     <!-- Name of input element determines name in $_FILES array -->

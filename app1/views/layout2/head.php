@@ -56,20 +56,15 @@ jQuery(document).ready(function(){
         <h1><a href="#"><span>Foo</span></a></h1> 
         <!-- You can name the links with lowercase, they will be transformed to uppercase by CSS, we prefered to name them with uppercase to have the same effect with disabled stylesheet -->
         <ul id="mainNav">
-                <li><a href="admin.php?p=index" class="active">POSTS</a></li> <!-- Use the "active" class for the active menu item  -->
-                <li><a href="admin.php?p=comments">COMMENTS</a></li>
-		<li><a href="admin.php?p=links">LINKS</a></li>
-		
-		<li><a href="admin.php?p=categories">CATS</a></li>
-                <li><a href="admin.php?p=tags">TAGS</a></li>
-
-                <li><a href="admin.php?p=settings">SETTINGS</a></li>
-
-		  <li><a href="admin.php?p=sessions">SESSIONS</a></li>
-
-		<li><a href="admin.php?p=up">UP</a></li>
-		
-                <li class="logout"><a href="sindex.php?p=logout">LOGOUT</a></li>
+            <li><a href="admin.php?p=index" class="active">POSTS</a></li> <!-- Use the "active" class for the active menu item  -->
+            <li><a href="admin.php?p=comments">COMMENTS</a></li>
+            <li><a href="admin.php?p=links">LINKS</a></li>
+            <li><a href="admin.php?p=categories">CATS</a></li>
+            <li><a href="admin.php?p=tags">TAGS</a></li>
+            <li><a href="admin.php?p=settings">SETTINGS</a></li>
+            <li><a href="admin.php?p=sessions">SESSIONS</a></li>
+            <li><a href="admin.php?p=up">UP</a></li>
+            <li class="logout"><a href="sindex.php?p=logout">LOGOUT</a></li>
 
 
 	<!--
@@ -94,22 +89,6 @@ SESSIONS
 
         </ul>
         <!-- // #end mainNav -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div id="containerHolder">
 	<div id="container">

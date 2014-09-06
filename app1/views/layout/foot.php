@@ -83,7 +83,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 	</div>
 	<div class="col-md-4">©2013 James <br /><br /><br /><br />
 	</div>
-	<div class="col-md-4"><a href="http://validator.w3.org/check?uri=http%3A%2F%2Fwww.crystalbit.com&charset=%28detect+automatically%29&doctype=Inline&group=0">HTML 5</a> rendered in: 0.03 microseconds<br /><br /><br /><br />
+	<div class="col-md-4"><a href="http://validator.w3.org/check?uri=<?php echo urlencode(SBASEHREF).'sindex.php'; ?>&charset=%28detect+automatically%29&doctype=Inline&group=0">HTML 5</a> rendered in: 0.03 microseconds<br /><br /><br /><br />
 	</div> 
 	</div>
 
