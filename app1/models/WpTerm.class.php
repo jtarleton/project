@@ -258,7 +258,7 @@ $this->sort =  $doc['name'];
 			
 			$objs[$id] = new self($id);
 		}
-sort($objs);
+asort($objs);
                 return $objs;
 
 
