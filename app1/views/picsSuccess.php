@@ -22,7 +22,7 @@ if ($handle = opendir(PICSPATH))
  // do something with the file
 ?><div class="item"><?php
        if($file!='.' && $file!='..')
-       echo link_to(sprintf('<img src="%simages/mypics/%s" style="border:0; margin:0; padding:0;width:400px; height:400px;" />', BASEHREF, $file), sprintf('%simages/mypics/%s', BASEHREF, $file) );
+       echo link_to(sprintf('<img src="%simages/mypics/%s" style="border:0; margin:0; padding:0;" />', SBASEHREF, $file), sprintf('%simages/mypics/%s', SBASEHREF, $file) );
        // note that '.' and '..' is returned even
        ?>
     <div class="carousel-caption">
@@ -53,4 +53,4 @@ if ($handle = opendir(PICSPATH))
   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
-</div>  End
+</div>  
