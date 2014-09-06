@@ -24,7 +24,7 @@ if ($handle = opendir(MRUNSPICSPATH)):
  // do something with the file
 ?><div class="item"><?php
       
-       echo link_to(sprintf('<img src="%simages/mypics/%s" style="border:0; margin:0; padding:0;" />', SBASEHREF, $file), sprintf('%simages/mypics/%s', SBASEHREF, $file) );
+       echo link_to(sprintf('<img src="%simages/mrunspics/%s" style="border:0; margin:0; padding:0;" />', SBASEHREF, $file), sprintf('%simages/mrunspics/%s', SBASEHREF, $file) );
        // note that '.' and '..' is returned even
        ?>
     <div class="carousel-caption">
