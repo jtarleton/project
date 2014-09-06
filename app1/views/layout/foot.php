@@ -9,8 +9,11 @@
 <div class="panel panel-default">
 <div class="panel-heading">Recent Posts
 </div>
-<div class="panel-body">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.     
+<div class="panel-body"><ul style="text-indent:0; margin:0;padding:0;">
+    <?php foreach(WpPost::retrieveLive() as $postObj): ?>
+<li><?php echo $postObj->getAttribute('post_title'); ?></li>
+<?php endforeach; ?>
+</ul>
 <br />
 </div>
 </div> 
@@ -21,8 +24,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="panel-heading">Tags
 </div>
 <div class="panel-body">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.     
-<br />
+<ul style="text-indent:0; margin:0;padding:0;">
+    <?php foreach(WpTerm::retrieveAll() as $tObj): ?>
+<li><?php echo $tObj->getAttribute('name'); ?></li>
+<?php endforeach; ?>
+</ul><br />
 </div>
 </div> 
 </div>
@@ -32,8 +38,11 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="panel-heading">Categories
 </div>
 <div class="panel-body">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.     
-<br />
+<ul style="text-indent:0; margin:0;padding:0;">
+    <?php foreach(WpTerm::retrieveAll('category') as $tObj): ?>
+<li><?php echo $tObj->getAttribute('name'); ?></li>
+<?php endforeach; ?>
+</ul><br />
 </div>
 </div> 
 </div>
@@ -43,8 +52,32 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="panel-heading">Archives
 </div>
 <div class="panel-body">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</div>
+<ul style="text-indent:0; margin:0;padding:0;">
+   
+<?php
+ $months = array();
+
+ for ($i = 1; $i <= 12; $i++) 
+    {
+ $months[] = date('F', mktime(0, 0, 0,  $i, 1));
+ 
+}
+
+
+  $months = array_reverse($months, true);
+
+foreach(range(2012, 2013) as $y)
+{
+
+foreach($months as $key =>$value)
+{
+ echo      '<li>'.$value .' '. $y.'</li>';
+}
+}
+?>
+
+
+</ul></div>
 </div> 
 </div>
 
