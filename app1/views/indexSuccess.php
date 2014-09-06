@@ -22,8 +22,14 @@ foreach ($posts as $key => $post) : ?>
   <div class="panel-body">
  <?php echo (!empty($post)) ? html_entity_decode($post->getAttribute('post_content')): null; ?>   <br />
     <hr />
-    Categories: <a href="">Foo</a>, <a href="">Bar</a><br />
-    Tags: <a href="">Qux</a>, <a href="">Baz</a><br />
+ Categories: <?php
+echo $post->getTagString() 
+
+?><br />
+    Tags: <?php
+echo $post->getTagString();
+
+?><br />
   </div>
 </div>
 <?php endforeach; ?>
