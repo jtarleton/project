@@ -241,6 +241,7 @@ min-height:349px; /* min-width: 1170px; */
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Actions <b class="caret"></b></a>
         <ul class="dropdown-menu">
            <li><a href="sindex.php?p=register">Create Account</a></li>
+           <li><a href="sindex.php?p=fpass">Forgot Password</a></li>
          
           <?php if(@$_SESSION['isAuth2']): ?>
           <li><a href="sindex.php?p=logout">Logout</a></li><li><a href="admin.php?p=index">Admin</a></li>
