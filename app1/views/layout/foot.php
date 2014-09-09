@@ -40,7 +40,7 @@
 <div class="panel-body">
 <ul style="text-indent:0; margin:0;padding:0;">
     <?php foreach(WpTerm::retrieveAll('category') as $tObj): ?>
-<li><?php echo $tObj->getAttribute('name'); ?></li>
+<li><?php echo link_to($tObj->getAttribute('name'), 'sindex.php?p=categorized&cat=' . $tObj->getAttribute('name')); ?></li>
 <?php endforeach; ?>
 </ul><br />
 </div>
