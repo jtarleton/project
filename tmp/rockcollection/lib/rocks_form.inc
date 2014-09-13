@@ -28,7 +28,7 @@ function rocks_firstform_validate($form,&$form_state){
 	
 //(var_dump($form['#values']));
 
-var_dump($form['rockname']);
+var_dump($form);
 
 	return $form;
 }
