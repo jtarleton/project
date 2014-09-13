@@ -1,7 +1,7 @@
 name = rocks
 description = A nice hypertext rock collection 
 core = 7.x
-;package = Rocks
+package = Rocks
 ;dependencies[] = views
 configure = admin/config/rocks
 scripts[] = rocks.js

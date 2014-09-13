@@ -1,7 +1,7 @@
 <?php 
 
-/* custompage.tpl.php  */ 
+/* page-rocks.tpl.php  */ 
 
 ?>
-<div><p>Here is my custom page</p></div>
+<div class="bx" id="rocksdiv">Here is my rock collection</div>
 
