@@ -11,8 +11,9 @@ function rocks_firstform($form,&$form_state){
 
 	# an html textfield for our drupal form
   $form['rockname'] = array(
+ '#title' => t('Firstname'),
     '#type' => 'textfield',
-    '#title' => t('Rock Name'),
+    '#required' => TRUE,
   );
 
 	$form['submit'] = array(
