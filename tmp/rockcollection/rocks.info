@@ -1,0 +1,12 @@
+name = rocks
+description = A nice hypertext rock collection 
+core = 7.x
+;package = Rocks
+;dependencies[] = views
+configure = admin/config/rocks
+scripts[] = rocks.js
+stylesheets[all][] = rocks.css
+stylesheets[print][] = print.css
+files[] = lib/Rocks.class.inc
+files[] = lib/rocks_form.inc
+files[] = tests/rocks.test

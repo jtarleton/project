@@ -1,0 +1,32 @@
+<?php 
+
+/* rocks.module */
+function rocks_menu(){
+	// urls
+    $items['rocks/index'] = array(
+      'page callback' => 'pagething',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      //'type' => MENU_NORMAL,
+    ); 
+    return $items;
+}
+
+function pagething(){
+	return theme('yoyoyo');
+}
+
+//register theme
+function rocks_theme(){
+
+
+ $themes = array (
+        'yoyoyo' => array(
+            'template' => 'page-rocks', // your template file called page-rocks.tpl.php
+            'arguments' => array(),
+        ),
+    );
+    return $themes;
+
+	
+}
