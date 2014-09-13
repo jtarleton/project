@@ -3,6 +3,14 @@
 /* rocks.module */
 function rocks_menu(){
 	// urls
+
+ $items['rocks/form'] = array(
+      'page callback' => 'pageform',
+      'page arguments' => array(),
+      'access arguments' => array('access content'),
+      'file' => 'lib/rocks_form.inc',
+    ); 
+
     $items['rocks/index'] = array(
       'page callback' => 'pagething',
       'page arguments' => array(),
@@ -10,6 +18,10 @@ function rocks_menu(){
       //'type' => MENU_NORMAL,
     ); 
     return $items;
+}
+
+function pageform(){
+  return drupal_get_form('rocks_firstform');
 }
 
 function pagething(){
